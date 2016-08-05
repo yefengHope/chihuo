@@ -1,5 +1,6 @@
 package com.fengyu;
 
+import org.apache.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
@@ -12,7 +13,7 @@ import org.springframework.http.HttpStatus;
  */
 @SpringBootApplication
 public class ChihuoApplication {
-
+	private  final  static Logger logger =Logger.getLogger(ChihuoApplication.class);
 	/**
 	 * 错误跳转页面
 	 * @return
@@ -32,6 +33,6 @@ public class ChihuoApplication {
      */
 	public static void main(String[] args) {
 		SpringApplication.run(ChihuoApplication.class, args);
-		System.out.println("		>>>>>>>>>>>>>>>>>>>>>		启动完成 ! ! ! ! 	");
+		logger.info("---------------------- 启动完成 ! ! ! ! ");
 	}
 }
