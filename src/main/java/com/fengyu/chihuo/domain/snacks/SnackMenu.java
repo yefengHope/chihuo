@@ -17,7 +17,7 @@ public class SnackMenu extends BaseEnity{
     private static final long serialVersionUID = 8268802064066987460L;
 
     @ManyToOne
-    @Column(name = "snacksnacks_id")
+    @JoinColumn(name = "snacksnacks_id")
     private Snacks snacksnacksId;
 
     /**

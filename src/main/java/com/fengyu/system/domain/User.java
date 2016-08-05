@@ -50,7 +50,8 @@ public class User extends BaseEnity{
     /**
      * 账号状态
      */
-    private Integer status;
+    @Column(name = "a_status")
+    private Integer aStatus;
 
     /**
      * 用户手机号
@@ -70,6 +71,57 @@ public class User extends BaseEnity{
     private String headIcon;
 
 
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
+    }
+
+    public String getLoginNum() {
+        return loginNum;
+    }
+
+    public void setLoginNum(String loginNum) {
+        this.loginNum = loginNum;
+    }
+
+    public String getLoginPwd() {
+        return loginPwd;
+    }
+
+    public void setLoginPwd(String loginPwd) {
+        this.loginPwd = loginPwd;
+    }
+
+    public Integer getaStatus() {
+        return aStatus;
+    }
+
+    public void setaStatus(Integer aStatus) {
+        this.aStatus = aStatus;
+    }
+
+    public Integer getPhone() {
+        return phone;
+    }
+
+    public void setPhone(Integer phone) {
+        this.phone = phone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getHeadIcon() {
+        return headIcon;
+    }
+
+    public void setHeadIcon(String headIcon) {
+        this.headIcon = headIcon;
+    }
 
     public String getName() {
         return name;

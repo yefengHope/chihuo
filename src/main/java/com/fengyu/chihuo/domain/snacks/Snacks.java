@@ -1,14 +1,19 @@
 package com.fengyu.chihuo.domain.snacks;
 
+import com.fengyu.util.domain.BaseEnity;
+
 import javax.persistence.Column;
-import javax.persistence.Transient;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * 小吃信息
  *      主表
  * Created by 韩峰 on 2016/8/2.
  */
-public class Snacks {
+@Entity
+@Table(name = "t_ch_snacks")
+public class Snacks extends BaseEnity{
 
     /**
      * 小吃店名
@@ -57,4 +62,5 @@ public class Snacks {
     private String streetAddress;
 
     /* ↑↑↑↑↑↑ 小吃所在地 ↑↑↑*/
+
 }

@@ -1,5 +1,7 @@
 package com.fengyu.system.domain;
 
+import com.fengyu.util.domain.BaseEnity;
+
 import javax.persistence.Entity;
 import javax.persistence.Table;
 
@@ -10,6 +12,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "ts_user_system_personality")
-public class UserSystemPersonality {
+public class UserSystemPersonality extends BaseEnity{
 
 }
