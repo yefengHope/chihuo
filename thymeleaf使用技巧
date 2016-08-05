@@ -1,0 +1,13 @@
+hplus 前端页面路径 /html_model/hplus/
+thymeleaf 命名空间 <html xmlns:th="http://www.thymeleaf.org">
+
+模板引擎:thymeleaf
+绝对路径：<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
+必须将有thymeleaf命名空间的放入templates文件夹 类似:th:src,否则不会解析
+
+
+thymeleaf 使用技巧
+    @{}  templates文件夹下模板文件,访问的是static下的文件
+    系统跳转的自定义错误页不会解析 thymeleaf命名空间(是否延伸: static下所有文件的thymeleaf命名空间都不会解析)
+    static 可使用 <script src="../html5.js"></script>类似的相对路径
+    static中使用 绝对路径 /html  表示static/html/

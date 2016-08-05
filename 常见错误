@@ -1,0 +1,11 @@
+
+小吃街
+
+错误提醒:
+    spring boot自动构建自动引入tomcat去掉scope方可启动成功
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-tomcat</artifactId>
+        <!--<scope>provided</scope>-->
+    </dependency>
+ No newline at end of file

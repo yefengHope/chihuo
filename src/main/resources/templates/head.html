@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <th:block th:fragment="head">
+    <th:block th:fragment="head_css">
         <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
         <link th:href="@{/html_model/hplus/css/bootstrap.min.css-v=3.3.5.css}" rel="stylesheet"/>
         <link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>
@@ -10,6 +10,16 @@
         <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/>
     </th:block>
 
+    <th:block th:fragment="head_js">
+        <script th:src="@{/html_model/hplus/js/jquery.min.js-v=2.1.4.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/bootstrap.min.js-v=3.3.5.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/plugins/metisMenu/jquery.metisMenu.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/plugins/layer/layer.min.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/hplus.min.js-v=4.0.0.js}" ></script>
+        <script type="text/javascript" th:src="@{/html_model/hplus/js/contabs.min.js}" ></script>
+        <script th:src="@{/html_model/hplus/js/plugins/pace/pace.min.js}" ></script>
+    </th:block>
 </head>
 
 </html>
