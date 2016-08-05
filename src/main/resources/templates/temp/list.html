@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+    <title>**Title**</title>
+    <th:block th:include="head ::head_css"></th:block>
+    <!-- jqgrid-->
+    <link th:href="@{/html_model/hplus/css/plugins/jqgrid/ui.jqgrid.css-0820.css}">
+</head>
+<body>
+
+
+<div class="jqGrid_wrapper">
+    <table id="table_list_2"></table>
+    <div id="pager_list_2"></div>
+</div>
+
+<th:block th:include="head ::head_js"></th:block>
+<script src="js/plugins/peity/jquery.peity.min.js" th:src="@{/html_model/hplus/js/plugins/peity/jquery.peity.min.js}"></script>
+<script src="js/plugins/jqgrid/i18n/grid.locale-cn.js-0820.js" th:src="@{/html_model/hplus/js/plugins/jqgrid/i18n/grid.locale-cn.js-0820.js}"></script>
+<script src="js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js" th:src="@{/html_model/hplus/js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js}"></script>
+<script src="js/content.min.js-v=1.0.0.js" th:src="@{/html_model/hplus/js/content.min.js-v=1.0.0.js}"></script>
+<script>
+$(document).ready(function () {
+    $("#table_list_2").jqGrid({
+        /*data:mydata,*/
+        datatype:"local",
+        height:450,
+        autowidth:true,
+        shrinkToFit:true,
+        rowNum:20,
+        rowList:[10,20,30],
+        colNames:["序号","用户名称","登录账号","登录密码","账号状态","用户手机号","用户邮箱"],
+        colModel:[
+            {name:"id",index:"id",editable:true,width:60,sorttype:"int",search:true},
+            {name:"name",index:"name",editable:true,width:90,sorttype:"text"},
+            {name:"loginNum",index:"loginNum",editable:true,width:100,sorttype:"text"},
+            {name:"loginPwd",index:"loginPwd",editable:true,width:80,align:"right",sorttype:"text"},
+            {name:"status",index:"status",editable:true,width:80,align:"right",sorttype:"int"},
+            {name:"phone",index:"phone",editable:true,width:80,align:"right",sorttype:"int"},
+            {name:"email",index:"email",editable:true,width:100,sortable:false,formatter:"email"}],
+        pager:"#pager_list_2",
+        viewrecords:true,
+        caption:"jqGrid 示例 - 用户",
+        add:true,
+        edit:true,
+        addtext:"添加",
+        edittext:"编辑",
+        hidegrid:false});
+
+    $("#table_list_2").setSelection(4,true);
+    /**
+     * 功能按钮(增删改查,搜,刷新)设置
+     */
+    $("#table_list_2").jqGrid("navGrid","#pager_list_2",{edit:true,add:true,del:true,search:true},{height:200,reloadAfterSubmit:true});
+
+    $(window).bind("resize",function(){
+        var width=$(".jqGrid_wrapper").width();
+        $("#table_list_1").setGridWidth(width);
+        $("#table_list_2").setGridWidth(width)})
+})
+</script>
+</body>
+</html>

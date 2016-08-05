@@ -1,0 +1,82 @@
+package com.fengyu.system.domain;
+
+import com.fengyu.util.domain.BaseEnity;
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+
+/**
+ * 用户
+ * Created by 韩峰 on 2016/8/2.
+ */
+@Entity
+@Table(name = "ts_user")
+public class User extends BaseEnity{
+
+    private static final long serialVersionUID = -4886379701339312835L;
+
+    /*  登录说明:
+            可用账号,手机号和邮箱登录
+        安全:
+            安全问题;
+    */
+
+    /**
+     * 用户昵称
+     */
+    @NotBlank
+    @Column(name = "name")
+    private String name;
+
+    /**
+     * 登录账号
+     */
+    @NotBlank
+    @Column(name = "login_num",nullable = false,unique = true)
+    private String loginNum;
+
+    /**
+     * 登录密码
+     */
+    @NotEmpty
+    @Column(name = "login_pwd")
+    private String loginPwd;
+
+    /**
+     * 账号状态
+     */
+    private Integer status;
+
+    /**
+     * 用户手机号
+     */
+    @NotNull
+    private Integer phone;
+    /**
+     * 用户邮箱
+     */
+    @Email
+    private String email;
+
+    /**
+     * 用户头像
+     */
+    @Column(name = "head_icon")
+    private String headIcon;
+
+
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+}

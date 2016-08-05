@@ -1,331 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9b8ce191-6910-4225-a165-ac42a2b76f9f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/项目模块规划.docx" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/thymeleaf使用技巧" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/常见错误" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/注解搜集" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/项目约定" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/chihuo_war.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/artifacts/chihuo_war_exploded.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__antlr_antlr_2_7_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__aopalliance_aopalliance_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_classic_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ch_qos_logback_logback_core_1_1_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_1_0.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_6_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_6_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_6_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_sun_mail_javax_mail_1_5_5.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__dom4j_dom4j_1_6_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_activation_activation_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_transaction_javax_transaction_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_39.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__nz_net_ultraq_thymeleaf_thymeleaf_layout_dialect_1_3_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__ognl_ognl_3_0_8.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_core_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_el_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_logging_juli_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_embed_tomcat_embed_websocket_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_jdbc_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_tomcat_tomcat_juli_8_0_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_codehaus_groovy_groovy_2_4_7.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_3.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_common_hibernate_commons_annotations_4_0_5_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_core_4_3_11_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_entitymanager_4_3_11_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_2_4_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_javax_persistence_hibernate_jpa_2_1_api_1_0_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_javassist_javassist_3_18_1_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_jandex_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_3_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_annotations_1_2_0_Beta1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_10_19.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_2_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jcl_over_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_jul_to_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_log4j_over_slf4j_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_autoconfigure_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_aop_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_data_jpa_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_jdbc_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_logging_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_mail_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_test_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_thymeleaf_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_tomcat_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_validation_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_web_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_websocket_1_3_6_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_commons_1_11_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_data_spring_data_jpa_1_9_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_0_2_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aspects_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_messaging_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_orm_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_websocket_4_2_7_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_2_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_thymeleaf_thymeleaf_spring4_2_1_4_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_unbescape_unbescape_1_1_0_RELEASE.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_yaml_snakeyaml_1_16.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__xml_apis_xml_apis_1_0_b2.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/chihuo.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/remade.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/fengyu/controller/IndexController.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
+    <list default="true" id="9b8ce191-6910-4225-a165-ac42a2b76f9f" name="Default" comment="1.第一次提交dgg上电脑的代码,以合并家里电脑的代码">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/chihuo/domain/snacks/SnackMenu.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/chihuo/domain/snacks/Snacks.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/chihuo/domain/snacks/Taste.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/chihuo/domain/user/UserChiHuoPersonality.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/chihuo/domain/user/UserTaste.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/system/controller/IndexController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/system/domain/User.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/system/domain/UserSystemPersonality.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/util/CommonKey.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/util/CommonUtils.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/util/domain/BaseEnity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/static/js/custom/base/this/this.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/temp/list.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/templates/temp/说明.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fengyu/ChihuoApplication.java" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/ChihuoApplication.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/fengyu/ServletInitializer.java" afterPath="$PROJECT_DIR$/src/main/java/com/fengyu/ServletInitializer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/error/404.html" afterPath="$PROJECT_DIR$/src/main/resources/static/error/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/error/500.html" afterPath="$PROJECT_DIR$/src/main/resources/static/error/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/404.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/404.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/500.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/500.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/agile_board.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/agile_board.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/article.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/article.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/badges_labels.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/badges_labels.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/basic_gallery.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/basic_gallery.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/blog.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/blog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/blueimp.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/blueimp.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/buttons.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/buttons.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/calendar.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/calendar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/carousel.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/carousel.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/chat_view.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/chat_view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/clients.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/clients.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/code_editor.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/code_editor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/contacts.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/contacts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/animate.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/animate.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/bootstrap.min.css-v=3.3.5.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/bootstrap.min.css-v=3.3.5.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/awesome-bootstrap-checkbox/awesome-bootstrap-checkbox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/error.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/error.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/play-pause.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/play-pause.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/video-play.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/blueimp/img/video-play.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/chosen/chosen.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/chosen/chosen.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/clockpicker/clockpicker.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/clockpicker/clockpicker.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/codemirror/ambiance.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/codemirror/ambiance.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/codemirror/codemirror.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/codemirror/codemirror.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/colorpicker/css/bootstrap-colorpicker.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/cropper/cropper.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/cropper/cropper.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dataTables/dataTables.bootstrap.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dataTables/dataTables.bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/datapicker/datepicker3.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/datapicker/datepicker3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dropzone/basic.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dropzone/basic.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dropzone/dropzone.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/dropzone/dropzone.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/footable/fonts/footable.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/footable/fonts/footable.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/footable/footable.core.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/footable/footable.core.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/fullcalendar/fullcalendar.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/fullcalendar/fullcalendar.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/fullcalendar/fullcalendar.print.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/fullcalendar/fullcalendar.print.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/iCheck/custom.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/iCheck/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/ionRangeSlider/ion.rangeSlider.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/ionRangeSlider/ion.rangeSlider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/ionRangeSlider/ion.rangeSlider.skinFlat.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/jasny/jasny-bootstrap.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/jasny/jasny-bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/jqgrid/ui.jqgrid.css-0820.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/jqgrid/ui.jqgrid.css-0820.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/morris/morris-0.4.3.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/morris/morris-0.4.3.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/nouslider/jquery.nouislider.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/nouslider/jquery.nouislider.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/plyr/plyr.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/plyr/plyr.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/plyr/sprite.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/plyr/sprite.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/simditor/simditor.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/simditor/simditor.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/steps/jquery.steps.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/steps/jquery.steps.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/summernote/summernote-bs3.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/summernote/summernote-bs3.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/summernote/summernote.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/summernote/summernote.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/sweetalert/sweetalert.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/sweetalert/sweetalert.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/switchery/switchery.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/switchery/switchery.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/toastr/toastr.min.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/toastr/toastr.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/treeview/bootstrap-treeview.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/treeview/bootstrap-treeview.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/webuploader/webuploader.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css/plugins/webuploader/webuploader.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css_animation.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/css_animation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/diff.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/diff.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/draggable_panels.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/draggable_panels.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/empty_page.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/empty_page.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/error/ie.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/error/ie.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/faq.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/faq.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/file_manager.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/file_manager.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fontawesome.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fontawesome.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fonts/fontawesome-webfont.svg-v=4.4.0" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fonts/fontawesome-webfont.svg-v=4.4.0" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_advanced.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_advanced.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_avatar.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_avatar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_basic.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_basic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_builder.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_builder.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_editors.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_editors.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_file_upload.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_file_upload.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_markdown.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_markdown.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_simditor.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_simditor.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_validate.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_validate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_webuploader.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_webuploader.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_wizard.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/form_wizard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/forum_main.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/forum_main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/glyphicons.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/glyphicons.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_echarts.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_echarts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_flot.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_flot.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_metrics.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_metrics.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_morris.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_morris.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_peity.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_peity.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_rickshaw.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_rickshaw.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_sparkline.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/graph_sparkline.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/grid_options.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/grid_options.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/iconfont.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/iconfont.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index.htm" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v1.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v1.html-v=4.0.htm" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v1.html-v=4.0.htm" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v2.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v3.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v4.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v4.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v5.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/index_v5.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/invoice.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/invoice.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/invoice_print.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/invoice_print.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/bootstrap.min.js-v=3.3.5.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/bootstrap.min.js-v=3.3.5.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery-ui-1.10.4.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery-ui-1.10.4.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery-ui.custom.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery-ui.custom.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery.min.js-v=2.1.4.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/jquery.min.js-v=2.1.4.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/beautifyhtml/beautifyhtml.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/beautifyhtml/beautifyhtml.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/bootstrap-table-mobile.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/bootstrap-table.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/bootstrap-table.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/bootstrap-table/locale/bootstrap-table-zh-CN.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/chartJs/Chart.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/chartJs/Chart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/chosen/chosen.jquery.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/chosen/chosen.jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/clockpicker/clockpicker.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/clockpicker/clockpicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/codemirror/codemirror.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/codemirror/codemirror.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/codemirror/mode/javascript/javascript.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/codemirror/mode/javascript/javascript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/cropper/cropper.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/cropper/cropper.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dataTables/dataTables.bootstrap.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dataTables/dataTables.bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dataTables/jquery.dataTables.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dataTables/jquery.dataTables.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/datapicker/bootstrap-datepicker.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/datapicker/bootstrap-datepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/diff_match_patch/diff_match_patch.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/diff_match_patch/diff_match_patch.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dropzone/dropzone.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/dropzone/dropzone.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/easypiechart/jquery.easypiechart.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/easypiechart/jquery.easypiechart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/echarts/echarts-all-old.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/echarts/echarts-all-old.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/echarts/echarts-all.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/echarts/echarts-all.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fancybox/jquery.fancybox.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fancybox/jquery.fancybox.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fancybox/jquery.fancybox.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fancybox/jquery.fancybox.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/curvedLines.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/curvedLines.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.pie.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.pie.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.resize.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.resize.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.spline.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.spline.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.symbol.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.symbol.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.tooltip.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/flot/jquery.flot.tooltip.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/footable/footable.all.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/footable/footable.all.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fullcalendar/fullcalendar.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/fullcalendar/fullcalendar.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/gritter/jquery.gritter.css" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/gritter/jquery.gritter.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/gritter/jquery.gritter.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/gritter/jquery.gritter.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/iCheck/icheck.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/iCheck/icheck.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/ionRangeSlider/ion.rangeSlider.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jasny/jasny-bootstrap.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jasny/jasny-bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jeditable/jquery.jeditable.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jeditable/jquery.jeditable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jquery-ui/jquery-ui.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jquery-ui/jquery-ui.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jsKnob/jquery.knob.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jsKnob/jquery.knob.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jsTree/jstree.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jsTree/jstree.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/layer/layer.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/layer/layer.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/bootstrap-markdown.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/bootstrap-markdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/bootstrap-markdown.zh.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/bootstrap-markdown.zh.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/markdown.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/markdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/to-markdown.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/markdown/to-markdown.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/metisMenu/jquery.metisMenu.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/metisMenu/jquery.metisMenu.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/morris/morris.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/morris/morris.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/morris/raphael-2.1.0.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/morris/raphael-2.1.0.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/nestable/jquery.nestable.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/nestable/jquery.nestable.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/nouslider/jquery.nouislider.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/nouslider/jquery.nouislider.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/pace/pace.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/pace/pace.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/peity/jquery.peity.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/peity/jquery.peity.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/plyr/plyr.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/plyr/plyr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/preetyTextDiff/jquery.pretty-text-diff.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/prettyfile/bootstrap-prettyfile.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/prettyfile/bootstrap-prettyfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/rickshaw/vendor/d3.v3.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/rickshaw/vendor/d3.v3.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/hotkeys.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/hotkeys.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/module.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/module.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/simditor.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/simditor.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/uploader.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/simditor/uploader.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/sparkline/jquery.sparkline.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/sparkline/jquery.sparkline.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/staps/jquery.steps.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/staps/jquery.steps.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/suggest/bootstrap-suggest.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/suggest/bootstrap-suggest.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/suggest/data.json.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/suggest/data.json.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/summernote/summernote-zh-CN.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/summernote/summernote-zh-CN.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/summernote/summernote.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/summernote/summernote.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/toastr/toastr.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/toastr/toastr.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/treeview/bootstrap-treeview.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/treeview/bootstrap-treeview.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/validate/jquery.validate.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/validate/jquery.validate.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/validate/messages_zh.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/validate/messages_zh.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/webuploader/webuploader.min.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/js/plugins/webuploader/webuploader.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/jstree.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/jstree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layer.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layer.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layerdate.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layerdate.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layerphotos.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layerphotos.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layouts.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/layouts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/lockscreen.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/lockscreen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/login.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/login_v2.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/login_v2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mail_compose.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mail_compose.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mail_detail.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mail_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mailbox.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/mailbox.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/modal_window.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/modal_window.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/nestable_list.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/nestable_list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/notifications.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/notifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/pin_board.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/pin_board.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/plugins/fullavatareditor/scripts/swfobject.js" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/plugins/fullavatareditor/scripts/swfobject.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/plyr.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/plyr.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/profile.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/profile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/project_detail.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/project_detail.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/projects.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/projects.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/register.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/search_results.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/search_results.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/social_feed.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/social_feed.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/spinners.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/spinners.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/suggest.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/suggest.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/sweetalert.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/sweetalert.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_basic.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_basic.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_bootstrap.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_bootstrap.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_data_tables.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_data_tables.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_foo_table.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_foo_table.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_jqgrid.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/table_jqgrid.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/tabs_panels.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/tabs_panels.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/teams_board.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/teams_board.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/timeline.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/timeline.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/timeline_v2.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/timeline_v2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/toastr_notifications.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/toastr_notifications.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/tree_view.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/tree_view.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/typography.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/typography.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/webim.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/webim.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/widgets.html" afterPath="$PROJECT_DIR$/src/main/resources/static/html_model/hplus/widgets.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/foot.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/foot.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/head.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/head.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index_simple.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index_simple.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/templates/index_v3.html" afterPath="$PROJECT_DIR$/src/main/resources/templates/index_v3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/com/fengyu/ChihuoApplicationTests.java" afterPath="$PROJECT_DIR$/src/test/java/com/fengyu/ChihuoApplicationTests.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="chihuo.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path=".idea/dataSources.local.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -343,8 +40,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BaseEnity.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/fengyu/util/domain/BaseEnity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -367,6 +74,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--follow-tags" />
+        <option name="title" value="Current Branch" />
+      </GitPushTagMode>
+    </option>
   </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
@@ -479,6 +192,160 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fengyu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fengyu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fengyu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fengyu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="fengyu" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="chihuo" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="domain" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -927,12 +794,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1470356888040</updated>
-      <workItem from="1470356890897" duration="317000" />
+      <workItem from="1470356890897" duration="831000" />
     </task>
+    <task id="LOCAL-00001" summary="1.第一次提交dgg上电脑的代码,以合并家里电脑的代码">
+      <created>1470357507485</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1470357507485</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="317000" />
+    <option name="totallyTimeSpent" value="831000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -945,7 +820,7 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -968,8 +843,20 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1.第一次提交dgg上电脑的代码,以合并家里电脑的代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.第一次提交dgg上电脑的代码,以合并家里电脑的代码" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -993,6 +880,14 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/fengyu/util/domain/BaseEnity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />

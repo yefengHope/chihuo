@@ -1,0 +1,15 @@
+package com.fengyu.system.domain;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+/**
+ * 用户个性化
+ *  --  系统方面
+ * Created by 韩峰 on 2016/8/2.
+ */
+@Entity
+@Table(name = "ts_user_system_personality")
+public class UserSystemPersonality {
+
+}
