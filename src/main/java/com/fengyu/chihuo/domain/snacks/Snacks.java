@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.snacks;
 
-import com.fengyu.util.domain.BaseEnity;
+import com.fengyu.util.base.BaseEnity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

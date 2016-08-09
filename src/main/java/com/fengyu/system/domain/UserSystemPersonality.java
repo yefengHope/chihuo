@@ -1,9 +1,10 @@
 package com.fengyu.system.domain;
 
-import com.fengyu.util.domain.BaseEnity;
+import com.fengyu.util.base.BaseEnity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.io.Serializable;
 
 /**
  * 用户个性化

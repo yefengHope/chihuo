@@ -1,6 +1,6 @@
 package com.fengyu.system.domain;
 
-import com.fengyu.util.domain.BaseEnity;
+import com.fengyu.util.base.BaseEnity;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;

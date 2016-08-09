@@ -1,4 +1,4 @@
-package com.fengyu.util.domain;
+package com.fengyu.util.base;
 
 import com.fengyu.system.domain.User;
 import com.fengyu.util.CommonUtils;

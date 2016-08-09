@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.user;
 
-import com.fengyu.util.domain.BaseEnity;
+import com.fengyu.util.base.BaseEnity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
