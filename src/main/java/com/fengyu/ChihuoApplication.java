@@ -9,6 +9,7 @@ import org.springframework.boot.context.embedded.ErrorPage;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.HttpStatus;
 
 import javax.sql.DataSource;
@@ -17,7 +18,7 @@ import javax.sql.DataSource;
  * spring boot启动类
  */
 @SpringBootApplication
-@ImportResource()
+//@EnableJpaRepositories() //设置spring data jpa
 public class ChihuoApplication {
 
 	private  final  static Logger logger = Logger.getLogger(ChihuoApplication.class);
@@ -35,17 +36,6 @@ public class ChihuoApplication {
         });
     }*/
 
-
-	/**
-	 * spring boot properties已配置,为了跟多配置
-	 * 自定义配置数据源
-	 * @return
-     */
-	/*@Bean
-	@ConfigurationProperties(locations="classpath:jdbc.properties", prefix="datasource")
-	public DataSource dataSource(){
-		return DataSourceBuilder.create().build();
-	}*/
 
 	/**
 	 * 启动方法
