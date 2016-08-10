@@ -9,3 +9,8 @@
         <!--<scope>provided</scope>-->
     </dependency>
  No newline at end of file
+
+
+ 解决今天全局baserepository 启动报错
+    因为spring 1.2.5 在我的引入jar包中有些不存在,所以maven更新不成功,
+    注释掉其中的包maven更新成功,   plugins中 install 会报错,so以后多install
