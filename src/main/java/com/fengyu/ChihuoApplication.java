@@ -1,24 +1,16 @@
 package com.fengyu;
 
+import com.fengyu.system.domain.repository.base.BaseRepositoryFactoryBean;
 import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.jdbc.DataSourceBuilder;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
-import org.springframework.boot.context.embedded.ErrorPage;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ImportResource;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.http.HttpStatus;
-
-import javax.sql.DataSource;
 
 /**
  * spring boot启动类
  */
 @SpringBootApplication
-//@EnableJpaRepositories() //设置spring data jpa
+@EnableJpaRepositories(repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)	//设置spring data jpa
 public class ChihuoApplication {
 
 	private  final  static Logger logger = Logger.getLogger(ChihuoApplication.class);

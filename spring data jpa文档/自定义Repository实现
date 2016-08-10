@@ -1,0 +1,20 @@
+//--------------------------为单个的repository添加自定义方法-------------------------
+
+interface UserRepositoryCustom {
+    public void someCustomMethod(User user);
+}
+
+
+class UserRepositoryImpl implements UserRepositoryCustom {
+    public void someCustomMethod(User user) {
+        // 实现
+    }
+}
+
+public interface UserRepository extends CrudRepository<User, Long>, UserRepositoryCustom {
+    // 声明查询方法
+}
+
+
+
+//--------------------------为所有的repository添加自定义方法-------------------------
