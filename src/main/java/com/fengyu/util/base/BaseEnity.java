@@ -1,7 +1,7 @@
 package com.fengyu.util.base;
 
 import com.fengyu.system.domain.User;
-import com.fengyu.util.CommonUtils;
+import com.fengyu.util.common.CommonUtils;
 
 import javax.persistence.*;
 import java.io.Serializable;

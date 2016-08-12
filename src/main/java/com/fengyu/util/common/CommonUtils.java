@@ -1,4 +1,4 @@
-package com.fengyu.util;
+package com.fengyu.util.common;
 
 import com.fengyu.system.domain.User;
 import org.springframework.web.context.request.RequestContextHolder;

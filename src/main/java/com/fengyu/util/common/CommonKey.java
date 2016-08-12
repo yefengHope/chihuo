@@ -1,4 +1,4 @@
-package com.fengyu.util;
+package com.fengyu.util.common;
 
 /**
  * 公共常量

@@ -1,8 +1,6 @@
 package com.fengyu.system.service.impl;
 
-import com.fengyu.system.domain.UserRepository;
 import com.fengyu.system.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
