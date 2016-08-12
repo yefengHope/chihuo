@@ -11,3 +11,18 @@ thymeleaf 使用技巧
     系统跳转的自定义错误页不会解析 thymeleaf命名空间(是否延伸: static下所有文件的thymeleaf命名空间都不会解析)
     static 可使用 <script src="../html5.js"></script>类似的相对路径
     static中使用 绝对路径 /html  表示static/html/
+
+注释:
+
+1.标准html/xnl注释
+    语法：<!--  -->
+2.解释器级注释块
+    语法：<!--/*    */-->
+    thymeleaf解析时会移除代码
+
+    单行：<!--/*  xxxxx  */-->
+    双行：
+           <!--/*-->
+           Xxxxxx
+           Xxxxxx
+          <!--*/-->
