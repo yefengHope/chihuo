@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import java.io.Serializable;
 
 /**
+ * BaseRepository实现类
  * Created by 韩峰 on 2016/8/10.
  */
 public class BaseRepositoryImpl <T, ID extends Serializable> extends SimpleJpaRepository<T, ID> implements BaseRepository<T, ID> {
