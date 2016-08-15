@@ -61,7 +61,7 @@ public class BaseEnity implements Serializable {
      * 执行插入数据之后回调
      *  更新创建人人id,name和时间
      */
-    @PostPersist
+    /*@PostPersist*/
     public void setCreateUser(){
         User user = CommonUtils.getUserSession();
         this.createId = user.getId();
@@ -73,7 +73,7 @@ public class BaseEnity implements Serializable {
      * 执行更新之后回调
      *  更新最后修改人id,name和时间
      */
-    @PostUpdate
+    /*@PostUpdate*/
     public void seUpdateUser(){
         User user = CommonUtils.getUserSession();
         this.updateId = user.getId();

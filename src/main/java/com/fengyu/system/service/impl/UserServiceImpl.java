@@ -1,7 +1,14 @@
 package com.fengyu.system.service.impl;
 
+import com.fengyu.system.domain.User;
+import com.fengyu.system.domain.repository.UserRepository;
 import com.fengyu.system.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * Created by 韩峰 on 2016/8/10.
@@ -9,12 +16,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService{
 
-    /*@Autowired
-    private UserRepository userRepository;*/
+    @Autowired
+    private UserRepository userRepository;
 
-    public boolean test(){
-        String string = new String("123123123213");
-//       return userRepository.support(string);
-        return false;
+
+    @Override
+    public List<User> findAllList() {
+        List<User> users = (List<User>) userRepository.findAll();
+        return users;
+    }
+
+    @Override
+    public Page<User> findAllPageList(Pageable pageable) {
+        return userRepository.findAll(pageable);
+    }
+
+    public void save(User user){
+        userRepository.save(user);
     }
 }

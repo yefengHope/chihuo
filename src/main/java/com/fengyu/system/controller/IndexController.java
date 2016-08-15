@@ -15,10 +15,6 @@ public class IndexController {
 
     @RequestMapping(value = "/")
     public String indexVoid(HttpServletRequest request){
-        System.out.println(request.getSession().getServletContext().getRealPath("/"));
-
-        System.out.println(CommonPath.webProjectPath());
-        System.out.println("工程名:"+CommonPath.webProjectName());
         return "index_simple";
     }
 

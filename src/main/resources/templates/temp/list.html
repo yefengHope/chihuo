@@ -6,8 +6,7 @@
     <meta name="description" content=""/>
     <title>**Title**</title>
     <th:block th:include="head ::head_css"></th:block>
-    <!-- jqgrid-->
-    <link th:href="@{/html_model/hplus/css/plugins/jqgrid/ui.jqgrid.css-0820.css}">
+
 </head>
 <body>
 <!--/*-->
@@ -129,10 +128,7 @@ data-toolbar="#toolbar"     自定义导航栏,对应div
 
 
 <th:block th:include="head ::head_js"></th:block>
-<script src="js/plugins/peity/jquery.peity.min.js" th:src="@{/html_model/hplus/js/plugins/peity/jquery.peity.min.js}"></script>
-<script src="js/plugins/jqgrid/i18n/grid.locale-cn.js-0820.js" th:src="@{/html_model/hplus/js/plugins/jqgrid/i18n/grid.locale-cn.js-0820.js}"></script>
-<script src="js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js" th:src="@{/html_model/hplus/js/plugins/jqgrid/jquery.jqGrid.min.js-0820.js}"></script>
-<script src="js/content.min.js-v=1.0.0.js" th:src="@{/html_model/hplus/js/content.min.js-v=1.0.0.js}"></script>
+
 <script>
     function cellStyle(value, row, index) {
         var classes = ['active', 'success', 'info', 'warning', 'danger'];

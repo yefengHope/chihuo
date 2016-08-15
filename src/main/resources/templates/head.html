@@ -1,7 +1,8 @@
-<!--head.html 存放css  foot存放js-->
+<!--/* head.html 存放css  foot存放js */-->
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+    <!-- /* css */ -->
     <th:block th:fragment="head_css">
         <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
         <link th:href="@{/html_model/hplus/css/bootstrap.min.css-v=3.3.5.css}" rel="stylesheet"/>
@@ -10,6 +11,11 @@
         <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/>
     </th:block>
 
+    <th:block th:fragment="bootstrap_table_css">
+        <link th:href = "@{/component/bootstrap-table-v1.11.0/dist/bootstrap-table.css}" rel="stylesheet"/>
+    </th:block>
+
+    <!-- /* js */ -->
     <th:block th:fragment="head_js">
         <script th:src="@{/html_model/hplus/js/jquery.min.js-v=2.1.4.js}" ></script>
         <script th:src="@{/html_model/hplus/js/bootstrap.min.js-v=3.3.5.js}" ></script>
@@ -19,6 +25,11 @@
         <script th:src="@{/html_model/hplus/js/hplus.min.js-v=4.0.0.js}" ></script>
         <script type="text/javascript" th:src="@{/html_model/hplus/js/contabs.min.js}" ></script>
         <script th:src="@{/html_model/hplus/js/plugins/pace/pace.min.js}" ></script>
+    </th:block>
+
+    <th:block th:fragment="bootstrap_table_js">
+        <script th:src="@{/component/bootstrap-table-v1.11.0/dist/bootstrap-table.js}" ></script>
+        <script th:src="@{/component/bootstrap-table-v1.11.0/dist/locale/bootstrap-table-zh-CN.min.js}" ></script>
     </th:block>
 </head>
 

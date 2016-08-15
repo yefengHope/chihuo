@@ -57,7 +57,7 @@ public class User extends BaseEnity{
      * 用户手机号
      */
     @NotNull
-    private Integer phone;
+    private Long phone;
     /**
      * 用户邮箱
      */
@@ -99,11 +99,11 @@ public class User extends BaseEnity{
         this.aStatus = aStatus;
     }
 
-    public Integer getPhone() {
+    public Long getPhone() {
         return phone;
     }
 
-    public void setPhone(Integer phone) {
+    public void setPhone(Long phone) {
         this.phone = phone;
     }
 
