@@ -113,26 +113,14 @@ public class AreaJson {
                     continue;
                 }
                 Long sh2 = sheng(area2.getTid());
+                Long shi2 = shi(area2.getTid());
+                Long xi2 = xian(area2.getTid());
+                Long shshi2 = shshi(area2.getTid());
                 if (sh1.equals(sh2)){
-                    Long shi2 = shi(area2.getTid());
-                    //----------- 设置市 start---------------
-                    if (shi1.equals(shi2)){
-                        if (shi1 == shi2){
-
-                        }else if (shi1>shi2){
-                            break;
-                        }
-                        Long xi2 = xian(area2.getTid());
-                        if (!xi1.equals(xi2) && xi2 != 00L && area1.getTid().longValue() < area2.getTid().longValue() ){
-                            if( area1.getTid().longValue() == 1101L ){
-                                System.out.println("");
-                            }
-                            areaList.add(area2);
-                            area1.setChilds(areaList);
-                        }
-                    } else {
-                        //同省不同市
-                        //添加到省
+                    if (shi1<shi2 && xi1.equals(0L) && xi2.equals(0L)){
+                        areaList.add(area2);
+                        area1.setChilds(areaList);
+                    }else if (shshi1.equals(shshi2) && xi1.equals(0L) && xi1<xi2){
                         areaList.add(area2);
                         area1.setChilds(areaList);
                     }
