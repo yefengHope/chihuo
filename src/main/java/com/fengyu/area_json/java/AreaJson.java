@@ -83,6 +83,7 @@ public class AreaJson {
         return Long.parseLong(str.substring(0,4));
     }
 
+
     /**
      * 获取区县代码
      * @param id
@@ -91,6 +92,16 @@ public class AreaJson {
     public static Long xian(Long id){
         String str = id.toString();
         return Long.parseLong(str.substring(4));
+    }
+
+    /**
+     * 获取市县代码
+     * @param id
+     * @return
+     */
+    public static Long shixi(Long id){
+        String str = id.toString();
+        return Long.parseLong(str.substring(2));
     }
 
     public static List<Area> setChilds(List<Area> areas){
@@ -106,6 +117,7 @@ public class AreaJson {
             Long shi1 = shi(area1.getTid());
             Long xi1 = xian(area1.getTid());
             Long shshi1 = shshi(area1.getTid());
+            Long shixi1 = shixi(area1.getTid());
 //            System.out.println(area1.getTid()  + ":11:" +area1.getTid().longValue() );
 
             for (Area area2 : areas){
@@ -117,7 +129,7 @@ public class AreaJson {
                 Long xi2 = xian(area2.getTid());
                 Long shshi2 = shshi(area2.getTid());
                 if (sh1.equals(sh2)){
-                    if (shi1<shi2 && xi1.equals(0L) && xi2.equals(0L)){
+                    if (shixi1.equals(0L) && shi1<shi2 && xi1.equals(0L) && xi2.equals(0L)){
                         areaList.add(area2);
                         area1.setChilds(areaList);
                     }else if (shshi1.equals(shshi2) && xi1.equals(0L) && xi1<xi2){
