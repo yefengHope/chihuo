@@ -119,7 +119,9 @@ public class AreaJson {
             Long shshi1 = shshi(area1.getTid());
             Long shixi1 = shixi(area1.getTid());
 //            System.out.println(area1.getTid()  + ":11:" +area1.getTid().longValue() );
-
+            if (!xi1.equals(0L)){
+                continue;
+            }
             for (Area area2 : areas){
                 if (area2 == null){
                     continue;
@@ -142,11 +144,54 @@ public class AreaJson {
         return areas;
     }
 
-    public static void main(String[] args) {
+    /**
+     * 设置等级划分
+     * @param id    根id
+     * @return
+     */
+    public static List<Area> setLevel(List<Area> areas,String id){
+        //顶级前缀 + tid
+        String prefix = "0_-1_" + Long.parseLong(id);
+        for (Area area:areas){
+            if (shixi(area.getTid()).equals(0L)){
+                //设置省级前缀
+                area.setTlvie(prefix);
+                area.setTpid(Long.parseLong(id));
+                //获取市级前缀
+                String sprefix = prefix + "_" + area.getTid().toString();
+                if(area.getChilds() == null){
+                    continue;
+                }
+                //遍历市级
+                for (Area sArea : area.getChilds()){
+                    sArea.setTlvie(sprefix);
+                    sArea.setTpid(area.getTid());
+                    //获取县级前缀
+                    String xprefix = sprefix + "_" + sArea.getTid().toString();
+                    if(sArea.getChilds() == null){
+                        continue;
+                    }
+                    for (Area xArea : sArea.getChilds()){
+                        xArea.setTpid(sArea.getTid());
+                        xArea.setTlvie(xprefix);
+                    }
+                }
+            }
+        }
+        return areas;
+    }
 
-        String path = "F:\\space_exercise\\LearnWork\\chihuo\\src\\main\\java\\com\\fengyu\\area_json\\area.txt";
+    public static List<Area> createAreaList(){
+        String path = "F:\\workSpace\\GitWork\\chihuo\\src\\main\\java\\com\\fengyu\\area_json\\area.txt";
         List<Area> areas = readFileByLines(path);
         List<Area> areas1 =setChilds(areas);
+        List<Area> areas2 = setLevel(areas1,"7453706779315408896");
+        return areas2;
+    }
+
+    public static void main(String[] args) {
+
         System.out.println();
+
     }
 }

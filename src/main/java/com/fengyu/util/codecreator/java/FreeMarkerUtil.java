@@ -1,5 +1,7 @@
 package com.fengyu.util.codecreator.java;
 
+import com.fengyu.area_json.java.Area;
+import com.fengyu.area_json.java.AreaJson;
 import com.fengyu.util.codecreator.constants.Constants;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -10,6 +12,7 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -80,7 +83,7 @@ public class FreeMarkerUtil {
 
     /**
      * <h2>生成模板</h2>
-     * @param root              模板中需要的配置项map
+     * @param root              模板中需要的配置项
      * @param projectPath       项目路径
      * @param savePath          模板生成文件保存路径
      * @param fileName          模板生成的文件名
@@ -114,15 +117,52 @@ public class FreeMarkerUtil {
 
     }
 
+    //        for (Area area : areaList) {
+//            Map<String, Object> map = new HashMap<>();
+//            map.put("tid",area.getTid());
+//            map.put("tpid",area.getTpid());
+//            map.put("tname",area.getTname());
+//            map.put("ttext",area.getTtext());
+//            map.put("ttype",area.getTtype());
+//            map.put("tpx",area.getTpx());
+//            map.put("tdate",area.getTdate());
+//            map.put("tlvie",area.getTlvie());
+//        }
+
     /**
      * main生成模板
      * @param args
      * @throws Exception
      */
     public static void main(String[] args) throws Exception {
+        //----------测试生成模板 start---------
         FreeMarkerUtil hf = new FreeMarkerUtil();
         hf.init();
-        hf.process(hf);
+//      hf.process(hf);
+        //----------- 测试生成模板 end --------
+
+        /**
+         * http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/
+         * 上获取的行政区划代码转换成sql语句
+         *
+         * 首先生成Tree,再使用FreeMarker转换成sql
+         * start
+         */
+        List<Area> areaList = AreaJson.createAreaList();
+        Map<String, Object> mapList = new HashMap<>();
+        mapList.put("areas",areaList);
+        hf.processArea(mapList, hf);
+        // --/*结束*/--
 
     }
+
+    public void processArea(Map map, FreeMarkerUtil freeMarkerUtil) throws Exception {
+        String projectPath = "F://workSpace//GitWork//chihuo//src//main//java//com//fengyu//util//codecreator//testrusult//";
+        String fileName = "areasql.txt";
+        String savePath = "area";
+        Template template = freeMarkerUtil.cfg.getTemplate("AreaSql.ftl");
+        buildTemplate(map, projectPath, savePath, fileName, template);
+    }
+
+
 }

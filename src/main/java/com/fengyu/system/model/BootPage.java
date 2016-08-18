@@ -4,31 +4,45 @@ import java.util.List;
 
 /**
  * bootstrap 分页参数
+ *      构造方法慎重删除, 其中有改动
  * Created by 韩峰 on 2016/8/15.
  */
 public class BootPage<T> {
 
+
     /**
      * 总计
      */
-    protected Long total;
+    private Long total;
 
     /**
      * 数据
      */
-    protected List<T> rows;
+    private List<T> rows;
 
     /**
      * 分页的大小
      */
-    protected int limit=0;
+    private int limit ;
 
-    protected int offset = 0;
+    private int offset ;
 
     /**
      * 排序
      */
-    protected String order ="desc" ;
+    private String order ="desc" ;
+
+    /**
+     * bootstrap查询框
+     * 查询字符串
+     * @return
+     */
+    private String searchText;
+
+    /**
+     * bootstrap当前页
+     */
+    private Integer pageNumber;
 
     public Long getTotal() {
         return total;
@@ -68,5 +82,25 @@ public class BootPage<T> {
 
     public void setOrder(String order) {
         this.order = order;
+    }
+
+    public String getSearchText() {
+        return searchText;
+    }
+
+    public void setSearchText(String searchText) {
+        this.searchText = searchText;
+    }
+
+    public Integer getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(Integer pageNumber) {
+        //spring data jpa 分页类pageable 分页参数是0开始
+        if(pageNumber > 0){
+            pageNumber = pageNumber - 1;
+        }
+        this.pageNumber = pageNumber;
     }
 }
