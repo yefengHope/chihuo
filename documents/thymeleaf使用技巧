@@ -12,6 +12,12 @@ thymeleaf 使用技巧
     static 可使用 <script src="../html5.js"></script>类似的相对路径
     static中使用 绝对路径 /html  表示static/html/
 
+    url路径:
+        相对路径:
+            当前页为:http://localhost:8093/user/all_page_list.html
+            如果访问路径为 all_page_list1.html   ,则是http://localhost:8093/user/   +   all_page_list1.html
+        绝对路径:
+            当前页为:http://localhost:8093/user/all_page_list.html ,则是http://localhost:8093/   +   all_page_list1.html
 注释:
 
 1.标准html/xnl注释

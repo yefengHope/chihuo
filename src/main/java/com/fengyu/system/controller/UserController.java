@@ -110,4 +110,55 @@ public class UserController {
         }
         return JsonUtils.toJSONStringConvertNull(bootPage);
     }
+
+    /**
+     * 跳转到添加页
+     * @return
+     */
+    @RequestMapping(value = "add_user" ,method = RequestMethod.GET)
+    public String toAddUser() {
+        return null;
+    }
+
+    /**
+     * 添加
+     * @param user  用户实体
+     * @return
+     */
+    @RequestMapping(value = "add_user" ,method = RequestMethod.POST)
+    public String addUser(User user) {
+        return null;
+    }
+
+    /**
+     * 跳转到更新页
+     * @return
+     */
+    @RequestMapping(value = "update_user" , method = RequestMethod.GET)
+    public String toUpdateUser() {
+
+        return null;
+    }
+
+    /**
+     * 更新
+     * @param user  用户实体
+     * @return
+     */
+    @RequestMapping(value = "update_user" , method = RequestMethod.POST)
+    public String updateUser(User user) {
+
+        return null;
+    }
+
+    /**
+     * 删除
+     * @param id id
+     * @return
+     */
+    public String delUser(  Long id) {
+
+        return null;
+    }
+
 }

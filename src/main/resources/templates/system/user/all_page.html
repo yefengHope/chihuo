@@ -9,32 +9,51 @@
     <title>用户列表</title>
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
-    <th:block th:include="head ::head_css"></th:block>
+    <!--<th:block th:include="head ::head_css"></th:block>-->
     <th:block th:include="head ::bootstrap_table_css"></th:block>
 </head>
 <body>
+
+
+<div id="toolbar">
+    <div class="form-inline" role="form">
+        <div class="form-group">
+            <button type="button" class="btn btn-default" id="rowbtnid">
+                获取选中列
+            </button>
+        </div>
+        <!--/* 增删改 start */-->
+        <div class="form-group">
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-heart"></i>
+            </button>
+            <button type="button" class="btn btn-default">
+                <i class="glyphicon glyphicon-trash"></i>
+            </button>
+        </div>
+        <!--/* 增删改 end */-->
+        <!--<div class="form-group">
+        </div>-->
+        <div class="form-group">
+            <input name="search" class="form-control" type="text" placeholder="自定义文本框"/>
+        </div>
+        <button id="ok" type="submit" class="btn btn-default">美不美</button>
+    </div>
+</div>
 <table id="userId">
-    <thead>
-    <!--<tr>
-        <th data-checkbox="true" data-id="id"></th>
-        <th data-field="name">名称</th>
-        <th data-field="loginNum">登录账号</th>
-        <th data-field="loginPwd">登录密码</th>
-        <th data-field="phone">联系方式</th>
-        <th data-field="email">用户邮箱</th>
-        <th data-field="headIcon">头像</th>
-        <th data-field="aStatus">账号状态</th>
-    </tr>-->
-    </thead>
+
 </table>
-<th:block th:include="head ::head_js"></th:block>
+<!--<th:block th:include="head ::head_js"></th:block>-->
 <th:block th:include="head ::bootstrap_table_js"></th:block>
 <script>
     $(function(){
         $('#userId').bootstrapTable({
             method: 'post',
             contentType: "application/x-www-form-urlencoded",
-//        toolbar: '#toolbar',      //工具按钮用哪个容器
+            toolbar: '#toolbar',      //工具按钮用哪个容器
             striped: true,          //是否显示行间隔色
             cache: false,           //是否使用缓存，默认为true，所以一般情况下需要设置一下这个属性（*）
             pagination: true,       //是否显示分页（*）
@@ -43,7 +62,7 @@
             pageNumber:1,           //初始化加载第一页，默认第一页
             pageSize: 10,           //每页的记录行数（*）
             pageList: [10, 25, 50],     //可供选择的每页的行数（*）
-            url: "all_page_list.html",  //这个接口需要处理bootstrap table传递的固定参数
+                    url: "/user/all_page_list.html",  //这个接口需要处理bootstrap table传递的固定参数
             queryParamsType:'',    //默认值为 'limit' ,在默认情况下 传给服务端的参数为：offset,limit,sort
                                         // 设置为 ''  在这种情况下传给服务器的参数为：pageSize,pageNumber
             queryParams: function (params){
@@ -94,6 +113,19 @@
         })
     })
 
+    var $table = $('#userId'),
+            $button = $('#rowbtnid');
+    $button.click(function () {
+        var selects = $table.bootstrapTable('getSelections');
+        console.log(selects);
+        var culength = selects.length;
+        console.log(culength);
+        /*<![CDATA[*/
+        for(var i=0;i < culength;i++){
+            console.log(selects[i].id);
+        }
+        /*]]>*/
+    });
 
 </script>
 </body>
