@@ -19,7 +19,7 @@ function prin(number, str, zj) {
 
 
 var sanjiao = {
-    rowNumber: 0,
+    rowNumber: 10,
     rType: false, //false=倒三角 ,true=正三角 
     createZSJ: function(nub) {
         if (typeof(nub) !== "number") {

@@ -23,14 +23,30 @@ sum(4, 5);
  */
 
 //将Function对象的一个引用赋值给变量sum2
-var sum2 = function (a ,b) {
+var sum2 = function(a, b) {
     return Number(a) + Number(b);
 }
 
 //调用sum2
-sum2( 5, 6);
+sum2(5, 6);
 
 var sum3 = sum;
 sum3(7, 8);
 
 
+//-- 自执行函数 --
+(function jiajiajai() {
+    console.log("jiajiajai")
+})();
+//jiajiajai
+
+var abc = (function() {
+    console.log("我在自动执行");
+    return 5;
+})();
+abc; //5
+
+var abc = (function() {
+    console.log("我在自动执行");
+})();
+abc; //undefined
