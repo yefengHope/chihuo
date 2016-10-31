@@ -4,6 +4,7 @@
  * @param str    输出字符
  * @param zj     间隔字符串
  */
+
 function prin(number, str, zj) {
     if (zj === undefined) {
         zj = "\u0020"
