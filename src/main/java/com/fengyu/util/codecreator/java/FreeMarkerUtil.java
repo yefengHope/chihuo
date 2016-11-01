@@ -134,27 +134,27 @@ public class FreeMarkerUtil {
      * @param args
      * @throws Exception
      */
-    public static void main(String[] args) throws Exception {
+    /*public static void main(String[] args) throws Exception {
         //----------测试生成模板 start---------
         FreeMarkerUtil hf = new FreeMarkerUtil();
         hf.init();
 //      hf.process(hf);
         //----------- 测试生成模板 end --------
 
-        /**
+        *//**
          * http://www.stats.gov.cn/tjsj/tjbz/xzqhdm/
          * 上获取的行政区划代码转换成sql语句
          *
          * 首先生成Tree,再使用FreeMarker转换成sql
          * start
-         */
+         *//*
         List<Area> areaList = AreaJson.createAreaList();
         Map<String, Object> mapList = new HashMap<>();
         mapList.put("areas",areaList);
         hf.processArea(mapList, hf);
-        // --/*结束*/--
+        // --*//*结束*//*--
 
-    }
+    }*/
 
     public void processArea(Map map, FreeMarkerUtil freeMarkerUtil) throws Exception {
         String projectPath = "F://workSpace//GitWork//chihuo//src//main//java//com//fengyu//util//codecreator//testrusult//";
