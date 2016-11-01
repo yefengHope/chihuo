@@ -16,5 +16,5 @@ public interface BaseRepository<T, ID extends Serializable> extends PagingAndSor
      * @param modelType
      * @return
      */
-    boolean support(String modelType);
+    /*boolean support(String modelType);*/
 }

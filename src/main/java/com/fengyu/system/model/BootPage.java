@@ -1,48 +1,87 @@
 package com.fengyu.system.model;
 
+import com.fengyu.system.domain.User;
+import org.springframework.data.domain.Page;
+
 import java.util.List;
 
 /**
- * bootstrap 分页参数
- *      构造方法慎重删除, 其中有改动
+ * bootstrap-table 分页参数
+ *  构造方法慎重删除, 其中有改动
+ *  rows,total 是格式要求
  * Created by 韩峰 on 2016/8/15.
  */
 public class BootPage<T> {
 
 
     /**
-     * 总计
+     * 结果集总计大小
      */
     private Long total;
 
     /**
-     * 数据
+     * 数据行(结果集)
      */
     private List<T> rows;
 
     /**
-     * 分页的大小
+     * 分页大小
      */
     private int limit ;
 
-    private int offset ;
-
     /**
-     * 排序
+     * 当前页码
      */
-    private String order ="desc" ;
+    private Integer pageNumber;
 
     /**
-     * bootstrap查询框
+     * 排序列名
+     */
+    private String sortName ;
+
+    /**
+     * 排序方式
+     */
+    private String sortOrder ="desc" ;
+
+    /**
      * 查询字符串
      * @return
      */
     private String searchText;
 
     /**
-     * bootstrap当前页
+     * 构造方法,装入分页结果集
+     * @param limit         分页大小
+     * @param pageNumber    当前页码
+     * @param searchText    查询字符串
+     * @param sortOrder     排序方式
+     * @param sortName      排序列名
+     * @param page          查询结果集(Pageable查询的结果)
      */
-    private Integer pageNumber;
+    public BootPage (int limit,int pageNumber,String searchText,String sortOrder,String sortName
+        ,Page page) {
+        this.setTotal(page.getTotalElements());
+        this.setRows(page.getContent());
+        this.setSearchText(searchText);
+        this.setLimit(limit);
+        this.setPageNumber(pageNumber);
+        this.setSortOrder(sortOrder);
+        this.setSortName(sortName);
+    }
+
+
+    public Integer getPageNumber() {
+        return pageNumber;
+    }
+
+    public void setPageNumber(Integer pageNumber) {
+        //spring data jpa 分页类pageable 分页参数是0开始
+        if(pageNumber > 0){
+            pageNumber = pageNumber - 1;
+        }
+        this.pageNumber = pageNumber;
+    }
 
     public Long getTotal() {
         return total;
@@ -68,22 +107,6 @@ public class BootPage<T> {
         this.limit = limit;
     }
 
-    public int getOffset() {
-        return offset;
-    }
-
-    public void setOffset(int offset) {
-        this.offset = offset;
-    }
-
-    public String getOrder() {
-        return order;
-    }
-
-    public void setOrder(String order) {
-        this.order = order;
-    }
-
     public String getSearchText() {
         return searchText;
     }
@@ -92,15 +115,19 @@ public class BootPage<T> {
         this.searchText = searchText;
     }
 
-    public Integer getPageNumber() {
-        return pageNumber;
+    public String getSortName() {
+        return sortName;
     }
 
-    public void setPageNumber(Integer pageNumber) {
-        //spring data jpa 分页类pageable 分页参数是0开始
-        if(pageNumber > 0){
-            pageNumber = pageNumber - 1;
-        }
-        this.pageNumber = pageNumber;
+    public void setSortName(String sortName) {
+        this.sortName = sortName;
+    }
+
+    public String getSortOrder() {
+        return sortOrder;
+    }
+
+    public void setSortOrder(String sortOrder) {
+        this.sortOrder = sortOrder;
     }
 }

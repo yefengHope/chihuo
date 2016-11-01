@@ -36,7 +36,6 @@ public class BaseRepositoryFactoryBean <R extends JpaRepository<T, I>, T, I exte
             this.entityManager = entityManager;
         }
 
-        @Override
         protected Object getTargetRepository(RepositoryMetadata metadata) {
             return new BaseRepositoryImpl<T, I>((Class<T>) metadata.getDomainType(), entityManager);
         }
