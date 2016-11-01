@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by 韩峰 on 2016/8/15.
@@ -32,7 +31,7 @@ public class UserController {
      */
     @RequestMapping(value = "all_list")
     public String toAllList(){
-        /*for (int i=0;i<=30;i++){
+        for (int i=0;i<=30;i++){
             User user = new User();
             user.setName("test"+i);
             user.setStatus(1);
@@ -47,7 +46,7 @@ public class UserController {
             user.setUpdateId(1L);
             user.setUpdateName("超级管理员");
             userService.save(user);
-        }*/
+        }
         return "system/user/all_list";
     }
 
