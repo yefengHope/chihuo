@@ -1,4 +1,4 @@
-package com.fengyu.system.interceptor.annotation;
+package com.fengyu.system.util.interceptor.annotation;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

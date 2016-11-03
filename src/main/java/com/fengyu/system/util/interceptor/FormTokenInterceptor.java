@@ -1,7 +1,7 @@
-package com.fengyu.system.interceptor;
+package com.fengyu.system.util.interceptor;
 
 import com.fengyu.system.domain.User;
-import com.fengyu.system.interceptor.annotation.FormToken;
+import com.fengyu.system.util.interceptor.annotation.FormToken;
 import org.apache.log4j.Logger;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
