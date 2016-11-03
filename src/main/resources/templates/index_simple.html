@@ -27,6 +27,14 @@
 <th:block th:include="head :: head_js"></th:block>
 <script type="application/javascript" th:src="@{/js/util/math/numeral-js/min/numeral.min.js}"></script>
 
+<script>
+    $(document).on("click",function (event) {
+        var curObj = $(event.target);   //点击发生的地方
+        curObj.each(function (index) {
+            console.log("我来自当前页监听函数:");
+            console.log(index,this.name,this.value);
+        });
+    });
+</script>
 </body>
-
 </html>
