@@ -2,12 +2,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <!-- /* css */ -->
+    <<!--------/*  css  */-------->
     <th:block th:fragment="head_css">
-        <!--原生样式-->
+        <!--------/*  原生样式  */-------->
         <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
         <link th:href="@{/component/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
-        <!--非原生样式-->
+        <!--------/*  非原生样式  */-------->
         <link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>
         <link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>
         <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/><!--/*和bootstrap表格按钮样式有冲突*/-->
@@ -19,12 +19,15 @@
         <link th:href ="@{/component/bootstrap/bootstrap-table-v1.11.0/dist/bootstrap-table.css}" rel="stylesheet"/>
     </th:block>
 
-    <!-- /* js */ -->
+    <!--------/*  js  */-------->
     <th:block th:fragment="head_js">
-        <!--原生框架-->
+        <!--------/*  原生框架  */-------->
         <script th:src="@{/component/jquery/jquery-3.1.1/jquery-3.1.1.min.js}" ></script>
         <script th:src="@{/component/bootstrap/bootstrap-3.3.0-dist/js/bootstrap.min.js}" ></script>
-        <!--非原生js-->
+
+        <!--------/*  监控函数  */-------->
+        <script th:src="@{/js/util/listener/listener.js}"></script>
+        <!--------/*  非原生js  */-------->
         <script th:src="@{/html_model/hplus/js/plugins/metisMenu/jquery.metisMenu.js}" ></script>
         <script th:src="@{/html_model/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js}" ></script>
         <script th:src="@{/html_model/hplus/js/plugins/layer/layer.min.js}" ></script>

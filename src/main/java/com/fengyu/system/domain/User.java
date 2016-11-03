@@ -49,9 +49,10 @@ public class User extends BaseEnity{
 
     /**
      * 账号状态
+     * {0:"锁定",1:"正常"}
      */
     @Column(name = "a_status")
-    private Integer aStatus;
+    private Integer aStatus = 1;
 
     /**
      * 用户手机号

@@ -12,16 +12,21 @@
     <meta name="description" content=""/>
 
     <!--[if lt IE 8]>
-        <meta http-equiv="refresh" content="0;ie.html" />
+    <meta http-equiv="refresh" content="0;ie.html" />
     <![endif]-->
 
     <th:block th:include="head :: head_css"></th:block>
-    <script type="application/javascript" th:src="@{/js/util/math/numeral-js/min/numeral.min.js}"></script>
+
 </head>
 
 <body class="fixed-sidebar full-height-layout gray-bg" style="overflow:hidden">
 草  原来是没有东西看到
+<div style="background-color: #e5ffff">
+    <input type="button" name="点击" value="我欠揍" onclick="alert('我被打了')"/>我在document监测点击事件
+</div>
 <th:block th:include="head :: head_js"></th:block>
+<script type="application/javascript" th:src="@{/js/util/math/numeral-js/min/numeral.min.js}"></script>
+
 </body>
 
 </html>
