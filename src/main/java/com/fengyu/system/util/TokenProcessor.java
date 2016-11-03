@@ -12,7 +12,7 @@ public class TokenProcessor {
      * 获取当前系统纳秒级时间
      * @return
      */
-    private static Long createToken() {
+    public static Long createToken() {
         Long timeMillis = System.nanoTime();//纳秒级
         return timeMillis;
     }

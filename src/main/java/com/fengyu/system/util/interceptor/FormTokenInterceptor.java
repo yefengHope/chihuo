@@ -1,6 +1,7 @@
 package com.fengyu.system.util.interceptor;
 
 import com.fengyu.system.domain.User;
+import com.fengyu.system.util.TokenProcessor;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
 import org.apache.log4j.Logger;
 import org.springframework.web.method.HandlerMethod;
@@ -32,7 +33,7 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
             if (annotation != null) {
                 boolean needSaveSession = annotation.needSaveToken();
                 if (needSaveSession) {
-                    // request.getSession(false).setAttribute("token", TokenProcessor.getInstance().generateToken());
+                    request.getSession(false).setAttribute("token", TokenProcessor.createToken());
                 }
 
                 boolean needRemoveSession = annotation.needRemoveToken();
