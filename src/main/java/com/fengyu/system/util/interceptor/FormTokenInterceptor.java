@@ -1,7 +1,7 @@
 package com.fengyu.system.util.interceptor;
 
 import com.fengyu.system.domain.User;
-import com.fengyu.system.util.TokenProcessor;
+import com.fengyu.system.util.common.TokenProcessor;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
 import org.apache.log4j.Logger;
 import org.springframework.web.method.HandlerMethod;
@@ -33,13 +33,13 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
             if (annotation != null) {
                 boolean needSaveSession = annotation.needSaveToken();
                 if (needSaveSession) {
-                    request.getSession(false).setAttribute("token", TokenProcessor.createToken());
+                    request.getSession(false).setAttribute("token", TokenProcessor.createToken(TokenProcessor.NANOTIME));
                 }
 
                 boolean needRemoveSession = annotation.needRemoveToken();
                 if (needRemoveSession) {
                     if (isRepeatSubmit(request)) {
-                        LOG.warn("please don't repeat submit,[user:" + user.getName() + ",url:"
+                        LOG.warn("请不要重复提交,[用户名:" + user.getName() + ",url:"
                                 + request.getServletPath() + "]");
                         return false;
                     }
@@ -50,6 +50,11 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
         return true;
     }
 
+    /**
+     * 是否重复提交
+     * @param request   request
+     * @return {boolean}
+     */
     private boolean isRepeatSubmit(HttpServletRequest request) {
         String serverToken = (String) request.getSession(false).getAttribute("token");
         if (serverToken == null) {
