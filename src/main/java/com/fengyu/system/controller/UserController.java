@@ -16,6 +16,7 @@ import javax.annotation.Resource;
 import java.util.Date;
 
 /**
+ * 用户controller
  * Created by 韩峰 on 2016/8/15.
  */
 @Controller
