@@ -1,4 +1,4 @@
-package com.fengyu.util.codecreator.java;
+package com.fengyu.engine.codecreator.java;
 
 /**
  * 生成地区的sql

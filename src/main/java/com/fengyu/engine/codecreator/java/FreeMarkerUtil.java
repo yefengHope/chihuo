@@ -1,8 +1,6 @@
-package com.fengyu.util.codecreator.java;
+package com.fengyu.engine.codecreator.java;
 
-import com.fengyu.area_json.java.Area;
-import com.fengyu.area_json.java.AreaJson;
-import com.fengyu.util.codecreator.constants.Constants;
+import com.fengyu.engine.codecreator.constants.Constants;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 
@@ -12,7 +10,6 @@ import java.io.OutputStreamWriter;
 import java.io.Writer;
 import java.util.Date;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 

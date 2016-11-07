@@ -1,4 +1,4 @@
-package com.fengyu.util.codecreator.constants;
+package com.fengyu.engine.codecreator.constants;
 
 /**
  * 常量类
