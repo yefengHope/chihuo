@@ -46,8 +46,8 @@ var listener = {
 $(document).on("click",function (event) {
     var curObj = $(event.target);   //点击发生的地方
     curObj.each(function (index) {
-        console.log("我来自listener监听函数:");
-        console.log(index,this.name,this.value);
+       /* console.log("我来自listener监听函数:");
+        console.log(index,this.name,this.value);*/
     });
 });
 

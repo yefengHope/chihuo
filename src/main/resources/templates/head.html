@@ -8,9 +8,9 @@
         <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
         <link th:href="@{/component/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
         <!--/*  非原生样式  */-->
-        <link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>
-        <link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>
-        <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/><!--/*和bootstrap表格按钮样式有冲突*/-->
+        <!--<link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>-->
+        <!--<link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>-->
+        <!--<link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/>&lt;!&ndash;/*和bootstrap表格按钮样式有冲突*/&ndash;&gt;-->
     </th:block>
 
     <th:block th:fragment="bootstrap_table_css">
@@ -18,6 +18,7 @@
         <link th:href="@{/component/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
         <link th:href ="@{/component/bootstrap/bootstrap-table-v1.11.0/dist/bootstrap-table.css}" rel="stylesheet"/>
     </th:block>
+
 
     <!--/*  js  */-->
     <th:block th:fragment="head_js">
@@ -42,6 +43,20 @@
 
         <script th:src="@{/component/bootstrap/bootstrap-table-v1.11.0/dist/bootstrap-table.js}" ></script>
         <script th:src="@{/component/bootstrap/bootstrap-table-v1.11.0/dist/locale/bootstrap-table-zh-CN.min.js}" ></script>
+    </th:block>
+
+    <th:block th:fragment="form_componet_css">
+        <th:block th:include="head :: head_css"/>  <!--/*  引用上面  */-->
+        <link th:href="@{/component/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css}" rel="stylesheet"/>    <!--/*  下拉框  */-->
+        <link th:href="@{/component/form/icheck-1.x/skins/flat/green.css}" rel="stylesheet"/>
+        
+    </th:block>
+    <th:block th:fragment="form_componet_js">
+        <th:block th:include="head ::head_js"/>   <!--/*  引用上面  */-->
+        <script th:src="@{/component/bootstrap/bootstrap-select-1.11.2/dist/js/bootstrap-select.min.js}" ></script> <!--/*  下拉框  */-->
+        <script th:src="@{/component/bootstrap/bootstrap-select-1.11.2/dist/js/i18n/defaults-zh_CN.min.js}" ></script>
+        <script th:src="@{/component/tree/zTree_v3-master/js/jquery.ztree.all.min.js}" ></script>
+        <script th:src="@{/component/form/icheck-1.x/icheck.min.js}" ></script> <!--/*  单选,复选框  */-->
     </th:block>
 </head>
 

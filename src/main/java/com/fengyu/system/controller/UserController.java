@@ -86,7 +86,7 @@ public class UserController {
      */
     @RequestMapping(value = "add_user" ,method = RequestMethod.GET)
     public String toAddUser() {
-        return null;
+        return "system/user/add_user";
     }
 
     /**
