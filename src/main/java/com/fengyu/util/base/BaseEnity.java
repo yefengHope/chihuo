@@ -51,6 +51,12 @@ public class BaseEnity implements Serializable {
     private Date updateDate;
 
     /**
+     * 版本控制 (乐观锁)
+     */
+    @Version
+    private Integer version;
+
+    /**
      * 状态
      *  0 = 删除, 1= 正常
      *  默认 : 1;
@@ -147,6 +153,14 @@ public class BaseEnity implements Serializable {
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
+    }
+
+    public Integer getVersion() {
+        return version;
+    }
+
+    public void setVersion(Integer version) {
+        this.version = version;
     }
 
     public Integer getStatus() {
