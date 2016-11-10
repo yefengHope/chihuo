@@ -8,9 +8,10 @@
         <link rel="shortcut icon" th:href="@{/html_model/hplus/favicon.ico}" />
         <link th:href="@{/component/bootstrap/bootstrap-3.3.0-dist/css/bootstrap.min.css}" rel="stylesheet"/>
         <!--/*  非原生样式  */-->
-        <!--<link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>-->
-        <!--<link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>-->
-        <!--<link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/>&lt;!&ndash;/*和bootstrap表格按钮样式有冲突*/&ndash;&gt;-->
+        <link th:href="@{/html_model/hplus/css/font-awesome.min.css-v=4.4.0.css}"  rel="stylesheet"/>
+        <link th:href="@{/html_model/hplus/css/animate.min.css}"  rel="stylesheet"/>
+        <link th:href="@{/html_model/hplus/css/style.min.css-v=4.0.0.css}" rel="stylesheet"/><!--/*h+主要样式 和bootstrap表格按钮样式有冲突*/-->
+        
     </th:block>
 
     <th:block th:fragment="bootstrap_table_css">
@@ -33,7 +34,8 @@
         <script th:src="@{/html_model/hplus/js/plugins/slimscroll/jquery.slimscroll.min.js}" ></script>
         <script th:src="@{/html_model/hplus/js/plugins/layer/layer.min.js}" ></script>
         <script th:src="@{/html_model/hplus/js/hplus.min.js-v=4.0.0.js}" ></script>
-        <script th:src="@{/html_model/hplus/js/contabs.min.js}" ></script>
+        <!--<script th:src="@{/html_model/hplus/js/contabs.min.js}" ></script>                  &lt;!&ndash;/*  点击iframe  */&ndash;&gt;-->
+        <script th:src="@{/js/h_frame/js/contabs.js}" ></script>                  <!--/*  点击iframe  */-->
         <script th:src="@{/html_model/hplus/js/plugins/pace/pace.min.js}" ></script>
     </th:block>
 

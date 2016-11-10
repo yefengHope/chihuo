@@ -1,18 +1,10 @@
 package com.fengyu;
 
-import com.fengyu.system.domain.User;
-import com.fengyu.system.domain.repository.UserRepository;
 import com.fengyu.system.domain.repository.base.BaseRepositoryFactoryBean;
-import com.fengyu.system.service.UserService;
-import com.fengyu.util.common.CommonPath;
 import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.web.context.request.RequestContextListener;
-
-import javax.annotation.Resource;
 
 /**
  * spring boot启动类
@@ -54,7 +46,7 @@ public class ChihuoApplication {
      */
 	public static void main(String[] args) {
 		SpringApplication.run(ChihuoApplication.class, args);
-		logger.info("---------------------- 启动完成 ! ! ! ! ");
+		logger.info("************************************ 	启动完成 ! ! ! !  ************************************");
 
 
 	}

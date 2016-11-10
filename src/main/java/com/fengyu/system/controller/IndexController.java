@@ -1,6 +1,5 @@
 package com.fengyu.system.controller;
 
-import com.fengyu.util.common.CommonPath;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -19,7 +18,17 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/index")
-    public String index(){
-        return "index_simple";
+    public String index2(){
+        return "index";
+    }
+
+    @RequestMapping(value = "/index_v3")
+    public String index3(){
+        return "index_v3";
+    }
+
+    @RequestMapping(value = "/layouts")
+    public String layouts(){
+        return "layouts";
     }
 }
