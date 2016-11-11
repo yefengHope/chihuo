@@ -1,3 +1,6 @@
+/**
+ * Created by 韩峰 on 2016/11/11.
+ */
 $(function () {
     function t(t) {
         var e = 0;
@@ -61,7 +64,7 @@ $(function () {
         }, "fast")
     }
     function n() {
-        var t = $(this).attr("href"),
+        var t = $(this).data("src"),
             a = $(this).data("index"),
             i = $.trim($(this).text()),
             n = !0;
@@ -74,14 +77,14 @@ $(function () {
             }), n) {
             var s = '<a href="javascript:;" class="active J_menuTab" data-id="' + t + '">' + i + ' <i class="fa fa-times-circle"></i></a>';
             $(".J_menuTab").removeClass("active");
-            var r = '<iframe class="J_iframe" name="iframe' + a + '" width="100%" height="100%" src="' + t + '?v=4.0" frameborder="0" data-id="' + t + '" seamless></iframe>';
+            var r = '<iframe class="J_iframe" name="iframe' + a + '" width="100%" height="100%" src="' + t + '?v=4.0" frameborder="0" data-id="' + t + '"></iframe>';
             $(".J_mainContent").find("iframe.J_iframe").hide().parents(".J_mainContent").append(r);
             var o = layer.load();
-            $(".J_mainContent iframe:visible").load(function () {
+            $(".J_mainContent iframe:visible").load("",function () {
                 layer.close(o)
-            }),
-                $(".J_menuTabs .page-tabs-content").append(s),
-                e($(".J_menuTab.active"))
+            });
+            $(".J_menuTabs .page-tabs-content").append(s);
+            e($(".J_menuTab.active"));
         }
         return !1
     }
@@ -89,31 +92,33 @@ $(function () {
         var t = $(this).parents(".J_menuTab").data("id"),
             a = $(this).parents(".J_menuTab").width();
         if ($(this).parents(".J_menuTab").hasClass("active")) {
-            if ($(this).parents(".J_menuTab").next(".J_menuTab").size()) {
+            var parent = $(this).parents(".J_menuTab");
+            var parentNext = parent.next(".J_menuTab");
+            if ($(this).parents(".J_menuTab").next(".J_menuTab").length) {
                 var i = $(this).parents(".J_menuTab").next(".J_menuTab:eq(0)").data("id");
-                $(this).parents(".J_menuTab").next(".J_menuTab:eq(0)").addClass("active"),
-                    $(".J_mainContent .J_iframe").each(function () {
-                        return $(this).data("id") == i ? ($(this).show().siblings(".J_iframe").hide(), !1) : void 0
-                    });
+                $(this).parents(".J_menuTab").next(".J_menuTab:eq(0)").addClass("active");
+                $(".J_mainContent .J_iframe").each(function () {
+                    return $(this).data("id") == i ? ($(this).show().siblings(".J_iframe").hide(), !1) : void 0
+                });
                 var n = parseInt($(".page-tabs-content").css("margin-left"));
                 0 > n && $(".page-tabs-content").animate({
                     marginLeft : n + a + "px"
-                }, "fast"),
-                    $(this).parents(".J_menuTab").remove(),
-                    $(".J_mainContent .J_iframe").each(function () {
-                        return $(this).data("id") == t ? ($(this).remove(), !1) : void 0
-                    })
+                }, "fast");
+                $(this).parents(".J_menuTab").remove();
+                $(".J_mainContent .J_iframe").each(function () {
+                    return $(this).data("id") == t ? ($(this).remove(), !1) : void 0
+                });
             }
-            if ($(this).parents(".J_menuTab").prev(".J_menuTab").size()) {
+            if ($(this).parents(".J_menuTab").prev(".J_menuTab").length) {
                 var i = $(this).parents(".J_menuTab").prev(".J_menuTab:last").data("id");
-                $(this).parents(".J_menuTab").prev(".J_menuTab:last").addClass("active"),
-                    $(".J_mainContent .J_iframe").each(function () {
-                        return $(this).data("id") == i ? ($(this).show().siblings(".J_iframe").hide(), !1) : void 0
-                    }),
-                    $(this).parents(".J_menuTab").remove(),
-                    $(".J_mainContent .J_iframe").each(function () {
-                        return $(this).data("id") == t ? ($(this).remove(), !1) : void 0
-                    })
+                $(this).parents(".J_menuTab").prev(".J_menuTab:last").addClass("active");
+                $(".J_mainContent .J_iframe").each(function () {
+                    return $(this).data("id") == i ? ($(this).show().siblings(".J_iframe").hide(), !1) : void 0
+                });
+                $(this).parents(".J_menuTab").remove();
+                $(".J_mainContent .J_iframe").each(function () {
+                    return $(this).data("id") == t ? ($(this).remove(), !1) : void 0
+                });
             }
         } else
             $(this).parents(".J_menuTab").remove(), $(".J_mainContent .J_iframe").each(function () {
@@ -123,10 +128,10 @@ $(function () {
     }
     function r() {
         $(".page-tabs-content").children("[data-id]").not(":first").not(".active").each(function () {
-            $('.J_iframe[data-id="' + $(this).data("id") + '"]').remove(),
-                $(this).remove()
-        }),
-            $(".page-tabs-content").css("margin-left", "0")
+            $('.J_iframe[data-id="' + $(this).data("id") + '"]').remove();
+            $(this).remove();
+        });
+        $(".page-tabs-content").css("margin-left", "0");
     }
     function o() {
         e($(".J_menuTab.active"))
@@ -136,39 +141,41 @@ $(function () {
             var t = $(this).data("id");
             $(".J_mainContent .J_iframe").each(function () {
                 return $(this).data("id") == t ? ($(this).show().siblings(".J_iframe").hide(), !1) : void 0
-            }),
-                $(this).addClass("active").siblings(".J_menuTab").removeClass("active"),
-                e(this)
+            });
+            $(this).addClass("active").siblings(".J_menuTab").removeClass("active");
+            e(this);
         }
     }
     function c() {
         var t = $('.J_iframe[data-id="' + $(this).data("id") + '"]'),
             e = t.attr("src"),
             a = layer.load();
-        t.attr("src", e).load(function () {
+        t.attr("src", e).load("",function () {
             layer.close(a)
         })
     }
+
     $(".J_menuItem").each(function (t) {
         $(this).attr("data-index") || $(this).attr("data-index", t)
-    }),
-        $(".J_menuItem").on("click", n),
-        $(".J_menuTabs").on("click", ".J_menuTab i", s),
-        $(".J_tabCloseOther").on("click", r),
-        $(".J_tabShowActive").on("click", o),
-        $(".J_menuTabs").on("click", ".J_menuTab", d),
-        $(".J_menuTabs").on("dblclick", ".J_menuTab", c),
-        $(".J_tabLeft").on("click", a),
-        $(".J_tabRight").on("click", i),
-        $(".J_tabCloseAll").on("click", function () {
-            $(".page-tabs-content").children("[data-id]").not(":first").each(function () {
-                $('.J_iframe[data-id="' + $(this).data("id") + '"]').remove(),
-                    $(this).remove()
-            }),
-                $(".page-tabs-content").children("[data-id]:first").each(function () {
-                    $('.J_iframe[data-id="' + $(this).data("id") + '"]').show(),
-                        $(this).addClass("active")
-                }),
-                $(".page-tabs-content").css("margin-left", "0")
-        })
+    });
+
+    $(".J_menuItem").on("click", n);                    /*菜单点击打开iframe*/
+    $(".J_menuTabs").on("click", ".J_menuTab i", s);    /*iframe关闭*/
+    $(".J_tabCloseOther").on("click", r);
+    $(".J_tabShowActive").on("click", o);
+    $(".J_menuTabs").on("click", ".J_menuTab", d);
+    $(".J_menuTabs").on("dblclick", ".J_menuTab", c);   /*双击刷新iframe*/
+    $(".J_tabLeft").on("click", a);
+    $(".J_tabRight").on("click", i);
+    $(".J_tabCloseAll").on("click", function () {
+        $(".page-tabs-content").children("[data-id]").not(":first").each(function () {
+            $('.J_iframe[data-id="' + $(this).data("id") + '"]').remove();
+            $(this).remove();
+        });
+        $(".page-tabs-content").children("[data-id]:first").each(function () {
+            $('.J_iframe[data-id="' + $(this).data("id") + '"]').show();
+            $(this).addClass("active");
+        });
+        $(".page-tabs-content").css("margin-left", "0");
+    })
 });

@@ -6,9 +6,9 @@
     <meta name="keywords" content=""/>
     <title>小吃街后台管理 - 主页</title>
 
-    <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html" />
-    <![endif]-->
+    <!--&lt;!&ndash;[if lt IE 8]>-->
+    <!--<meta http-equiv="refresh" content="0;ie.html" />-->
+    <!--<![endif]&ndash;&gt;-->
 
     <div th:include="head :: head_css"></div>
 </head>
@@ -73,7 +73,7 @@
 
                 </li>
                 <li>
-                    <a class="J_menuItem" th:href="@{/layouts}" href="layouts.html"><i class="fa fa-columns"></i> <span class="nav-label">布局</span></a>
+                    <a class="J_menuItem" href="#" th:attr="data-src='/layouts'"><i class="fa fa-columns"></i> <span class="nav-label">布局</span></a>
                 </li>
                 <li>
                     <a href="#">
