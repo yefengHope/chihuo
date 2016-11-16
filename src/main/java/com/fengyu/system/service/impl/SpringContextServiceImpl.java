@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * spring 上下文配置
  * Created by rain on 2016/11/16.
@@ -19,7 +21,8 @@ public class SpringContextServiceImpl implements SpringContextService {
     /* 1.沿用springTest的这种方法 是否会更好？
     *  2.get/set方式*/
     @Autowired
-    ApplicationContext applicationContext;
+    private ApplicationContext applicationContext;
+
 /*
     private static ApplicationContext applicationContext = null;
 
@@ -40,8 +43,14 @@ public class SpringContextServiceImpl implements SpringContextService {
      * @return
      * @throws BeansException
      */
+    @Override
     public Object getBean(String name) throws BeansException {
         return applicationContext.getBean(name);
+    }
+
+    @Override
+    public List<Object> getBeans() throws BeansException {
+        return null;
     }
 
     /**

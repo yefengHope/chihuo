@@ -2,6 +2,8 @@ package com.fengyu.system.service;
 
 import org.springframework.beans.BeansException;
 
+import java.util.List;
+
 /**
  * spring 上下文配置
  * Created by rain on 2016/11/16.
@@ -16,6 +18,14 @@ public interface SpringContextService {
      * @throws BeansException
      */
     Object getBean(String name) throws BeansException;
+
+
+    /**
+     * 获取所有bean
+     * @return {List}
+     * @throws BeansException
+     */
+    List<Object> getBeans() throws BeansException;
 
     /**
      * 根据类名获取到bean
