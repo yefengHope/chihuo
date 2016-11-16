@@ -4,16 +4,20 @@ import com.fengyu.system.domain.repository.base.BaseRepositoryFactoryBean;
 import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * spring boot启动类
  */
 @SpringBootApplication
 @EnableJpaRepositories(repositoryFactoryBeanClass = BaseRepositoryFactoryBean.class)	//设置spring data jpa
+@EnableAsync	//开启异步支持,并在非static方法上配置@Async
 public class ChihuoApplication {
 
 	private  final  static Logger logger = Logger.getLogger(ChihuoApplication.class);
+
 
 	/**
 	 * 错误跳转页面
@@ -45,9 +49,12 @@ public class ChihuoApplication {
 	 * @param args
      */
 	public static void main(String[] args) {
-		SpringApplication.run(ChihuoApplication.class, args);
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(ChihuoApplication.class, args);
 		logger.info("************************************ 	启动完成 ! ! ! !  ************************************");
-
+//		Object userService = applicationContext.getBean(UserServiceImpl.class);		//启动时报错
+		Object userServiceName = applicationContext.getBean("userServiceImpl");
+//		System.out.println(userService);
+		System.out.println(userServiceName);
 
 	}
 }
