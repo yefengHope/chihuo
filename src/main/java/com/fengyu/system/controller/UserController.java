@@ -4,6 +4,7 @@ import com.fengyu.system.domain.User;
 import com.fengyu.system.model.BootPage;
 import com.fengyu.system.service.UserService;
 import com.fengyu.util.common.jsonutils.JsonUtils;
+import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import javax.persistence.Entity;
 import java.util.Date;
+import java.util.Map;
 
 /**
  * 用户controller
@@ -25,6 +28,9 @@ public class UserController {
 
     @Resource
     private UserService userService;
+
+    @Resource
+    private ApplicationContext applicationContext;
 
     /**
      * 用户列表 list json到页面
@@ -77,6 +83,10 @@ public class UserController {
         Pageable pageable = new PageRequest(pageNumber,limit);
         Page<User> page = userService.findAllPageList(pageable);
         BootPage bootPage = new BootPage(limit,pageNumber,searchText,sortOrder,sortName,page);
+
+        //------------------ 测试代码 ------------------Object userName = applicationContext.getBean("user");
+        // Map<String,Object> map = applicationContext.getBeansWithAnnotation(Entity.class);
+        // System.out.println(map.toString());
         return JsonUtils.toJSONStringConvertNull(bootPage);
     }
 

@@ -34,6 +34,20 @@ public class MessagePage {
      */
     public String url;
 
+    /**
+     * 返回页面提示
+     * @param status    返回状态  (ERROR = 0; //错误  ,SUCCESS = 1; //成功  , GOTO = 2;  //跳转)
+     * @param info      返回提示内容
+     * @param data      返回数据
+     * @param url       返回url
+     */
+    public MessagePage(Integer status, String info, String data, String url) {
+        this.status = status;
+        this.info = info;
+        this.data = data;
+        this.url = url;
+    }
+
     public Integer getStatus() {
         return status;
     }

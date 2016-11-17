@@ -2,10 +2,13 @@ package com.fengyu.system.domain;
 
 import com.fengyu.util.base.BaseEnity;
 
+import javax.persistence.Entity;
+
 /**
  * 菜单类
  * Created by rain on 2016/11/7.
  */
+@Entity
 public class Menu extends BaseEnity{
 
     /**

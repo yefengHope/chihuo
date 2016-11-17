@@ -5,8 +5,14 @@ import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
+
+import javax.persistence.Entity;
+import java.lang.reflect.AnnotatedType;
+import java.util.List;
+import java.util.Map;
 
 /**
  * spring boot启动类
@@ -52,9 +58,19 @@ public class ChihuoApplication {
 		ConfigurableApplicationContext applicationContext = SpringApplication.run(ChihuoApplication.class, args);
 		logger.info("************************************ 	启动完成 ! ! ! !  ************************************");
 //		Object userService = applicationContext.getBean(UserServiceImpl.class);		//启动时报错
-		Object userServiceName = applicationContext.getBean("userServiceImpl");
+// 		Object userServiceName = applicationContext.getBean("userServiceImpl");
+		// System.out.println(userServiceName);
 //		System.out.println(userService);
-		System.out.println(userServiceName);
+// 		String beanName []= applicationContext.getBeanDefinitionNames();
+// 		for (int i = 0; i < beanName.length; i++) {
+// 			System.out.println(beanName[i]);
+// 		}
+
+		// String beanNameForEntity []= applicationContext.getBeanNamesForAnnotation(Entity.class);
+		// for (int i = 0; i < beanNameForEntity.length; i++) {
+		// 	System.out.println(beanNameForEntity[i]);
+		// }
+		
 
 	}
 }
