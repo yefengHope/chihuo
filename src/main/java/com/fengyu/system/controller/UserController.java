@@ -3,7 +3,7 @@ package com.fengyu.system.controller;
 import com.fengyu.system.domain.User;
 import com.fengyu.system.model.BootPage;
 import com.fengyu.system.service.UserService;
-import com.fengyu.util.common.jsonutils.JsonUtils;
+import com.fengyu.util.common.dataUtils.JsonUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -14,9 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import javax.persistence.Entity;
 import java.util.Date;
-import java.util.Map;
 
 /**
  * 用户controller

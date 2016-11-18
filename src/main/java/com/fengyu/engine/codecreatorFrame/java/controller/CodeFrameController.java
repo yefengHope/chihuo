@@ -2,8 +2,7 @@ package com.fengyu.engine.codecreatorFrame.java.controller;
 
 import com.fengyu.system.service.SpringContextService;
 import com.fengyu.system.util.common.MessagePage;
-import com.fengyu.util.common.jsonutils.JsonUtils;
-import com.sun.org.apache.regexp.internal.RE;
+import com.fengyu.util.common.dataUtils.JsonUtils;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -59,31 +58,7 @@ public class CodeFrameController {
     @RequestMapping(value = "/select_bean_name/{type}",method = RequestMethod.GET)
     public String selectBeanName(@NotNull @PathVariable Integer type, @NotBlank String name, Model model){
         // springContextService.getBean(beanName); //查询不到entity,暂时放弃
-        //得到对象
-        Class aClass;
-        try {
-            aClass = Class.forName(name); //完整类名"com.fengyu.system.domain.User"
-            Field[] fields = aClass.getDeclaredFields();
-            for (Field field : fields) {
-                String fieldName = field.getName();    //字段名
-                Class<?> fieldType = field.getType();    //字段类型
-                String fieldTypeStr = fieldType.getName(); //字段类型
-                Annotation[] annotations = field.getAnnotations();  //字段上的注解
-                System.out.println(fieldTypeStr);
-            }
-            if (aClass != null) {
-                Object yourObj = aClass.newInstance();
-            }
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-            model.addAttribute("msg", JsonUtils.toJSONString(new MessagePage(MessagePage.ERROR,"没有找到类","",""))
-            );
-            return null;
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
+
         return null;
     }
 }

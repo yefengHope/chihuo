@@ -1,4 +1,4 @@
-package com.fengyu.util.common.jsonutils;
+package com.fengyu.util.common.dataUtils;
 
 import com.google.gson.ExclusionStrategy;
 import com.google.gson.FieldAttributes;
