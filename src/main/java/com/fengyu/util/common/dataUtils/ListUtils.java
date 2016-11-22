@@ -23,12 +23,11 @@ public class ListUtils {
      * @param beanName 完整类名"com.fengyu.system.domain.User"
      * @return  {List}
      */
-    public static <T> List getClassInfo (String beanName) {
+    public static List getClassInfo (String beanName) {
         List<Map> list = new ArrayList<>();
         try {
             //得到对象
             Class aClass = Class.forName(beanName);
-            T t = (T) aClass.newInstance();//获取运行时对象
             Field[] fields = aClass.getDeclaredFields();
             for (Field field : fields) {
                 Map<String,Object > map = new HashMap<>();
@@ -44,10 +43,6 @@ public class ListUtils {
             }
 
         } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
         return list;
