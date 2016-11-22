@@ -5,14 +5,8 @@ import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.scheduling.annotation.EnableAsync;
-
-import javax.persistence.Entity;
-import java.lang.reflect.AnnotatedType;
-import java.util.List;
-import java.util.Map;
 
 /**
  * spring boot启动类
@@ -70,7 +64,6 @@ public class ChihuoApplication {
 		// for (int i = 0; i < beanNameForEntity.length; i++) {
 		// 	System.out.println(beanNameForEntity[i]);
 		// }
-		
 
 	}
 }

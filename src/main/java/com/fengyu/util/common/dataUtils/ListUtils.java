@@ -1,9 +1,5 @@
 package com.fengyu.util.common.dataUtils;
 
-import com.fengyu.system.util.common.MessagePage;
-import com.sun.xml.internal.ws.util.StringUtils;
-import org.hibernate.validator.internal.util.privilegedactions.GetMethod;
-
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -12,8 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import static javafx.scene.input.KeyCode.T;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -29,12 +23,12 @@ public class ListUtils {
      * @param beanName 完整类名"com.fengyu.system.domain.User"
      * @return  {List}
      */
-    public static List getClassInfo (String beanName) {
+    public static <T> List getClassInfo (String beanName) {
         List<Map> list = new ArrayList<>();
         try {
             //得到对象
-            Class aClass;
-            aClass = Class.forName(beanName); //
+            Class aClass = Class.forName(beanName);
+            T t = (T) aClass.newInstance();//获取运行时对象
             Field[] fields = aClass.getDeclaredFields();
             for (Field field : fields) {
                 Map<String,Object > map = new HashMap<>();
@@ -46,11 +40,14 @@ public class ListUtils {
                 map.put("fieldName",fieldName);
                 map.put("fieldType",fieldTypeStr);
                 map.put("annotations",annotations);
-
                 list.add(map);
             }
 
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
         return list;
@@ -74,6 +71,7 @@ public class ListUtils {
 
         try {
             Class aClass = tClass.getClass();
+            aClass = aClass.getClass();//获取运行时对象
             Class<?> fieldType = aClass.getDeclaredField(key).getType();
 //            Class<?> fieldType = aClass.getField(key).getType();
             Method method =  aClass.getDeclaredMethod(methodName,fieldType);
@@ -118,7 +116,7 @@ public class ListUtils {
     }
 
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         getClassInfo("com.fengyu.system.domain.User");
-    }*/
+    }
 }
