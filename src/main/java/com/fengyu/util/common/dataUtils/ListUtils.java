@@ -35,7 +35,12 @@ public class ListUtils {
                 Class<?> fieldType = field.getType();    //字段类型
                 String fieldTypeStr = fieldType.getName(); //字段类型
                 Annotation[] annotations = field.getAnnotations();  //字段上的注解
-
+//                System.out.println(fieldName);
+//                for (Annotation annotation : annotations) {
+//                    System.out.print(annotation.annotationType().getCanonicalName() + "\t");
+//                    System.out.print(annotation.toString() + "\t");
+//                    System.out.println();
+//                }
                 map.put("fieldName",fieldName);
                 map.put("fieldType",fieldTypeStr);
                 map.put("annotations",annotations);

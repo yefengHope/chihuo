@@ -11,6 +11,8 @@ import javax.persistence.Entity;
 @Entity
 public class Menu extends BaseEnity{
 
+    private static final long serialVersionUID = 5557847780198678679L;
+
     /**
      * 父级id
      */

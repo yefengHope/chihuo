@@ -1,5 +1,6 @@
 package com.fengyu.system.domain;
 
+import com.fengyu.system.util.annotation.Note;
 import com.fengyu.util.base.BaseEnity;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -29,22 +30,25 @@ public class User extends BaseEnity{
     /**
      * 用户昵称
      */
-    @NotBlank
+    @NotBlank(message = "用户昵称不能为空")
     @Column(name = "name")
+    @Note(name = "用户昵称")
     private String name;
 
     /**
      * 登录账号
      */
-    @NotBlank
-    @Column(name = "login_num",nullable = false,unique = true)
+    @NotBlank(message = "登录账号不能为空")
+    @Column(name = "login_num" ,nullable = false,unique = true)
+    @Note(name = "登录账号")
     private String loginNum;
 
     /**
      * 登录密码
      */
-    @NotEmpty
+    @NotEmpty(message = "登录密码不能为空")
     @Column(name = "login_pwd")
+    @Note(name = "登录密码")
     private String loginPwd;
 
     /**
@@ -52,22 +56,26 @@ public class User extends BaseEnity{
      * {0:"锁定",1:"正常"}
      */
     @Column(name = "a_status")
+    @Note(name = "账号状态",defaultParam="1",paramsDes = "{0:\"锁定\",1:\"正常\"}")
     private Integer aStatus = 1;
 
     /**
      * 用户手机号
      */
-    @NotNull
+    @NotNull(message = "用户手机号不能为空")
+    @Note(name = "用户手机号")
     private Long phone;
     /**
      * 用户邮箱
      */
     @Email
+    @Note(name = "用户邮箱")
     private String email;
 
     /**
      * 用户头像
      */
+    @Note(name = "用户头像")
     @Column(name = "head_icon")
     private String headIcon;
 

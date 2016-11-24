@@ -1,6 +1,5 @@
 package com.fengyu.system.model;
 
-import com.fengyu.system.domain.User;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
