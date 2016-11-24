@@ -135,7 +135,7 @@ public class FreeMarkerUtil {
         //----------测试生成模板 start---------
         FreeMarkerUtil hf = new FreeMarkerUtil();
         hf.init();
-//      hf.process(hf);
+        hf.process(hf);
         //----------- 测试生成模板 end --------
 
         *//**

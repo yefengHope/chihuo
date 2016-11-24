@@ -5,13 +5,11 @@ import com.fengyu.engine.codecreatorFrame.java.service.FtlTemplatesService;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.stereotype.Service;
 import org.thymeleaf.util.StringUtils;
 
 import javax.validation.constraints.NotNull;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStreamWriter;
-import java.io.Writer;
+import java.io.*;
 import java.util.List;
 import java.util.Map;
 
@@ -21,6 +19,7 @@ import java.util.Map;
  * <p>@author hanfeng</p>
  * <p>@date 2016/11/23 17:14 创建日期</p>
  */
+@Service
 public class FtlTemplatesServiceImpl implements FtlTemplatesService {
 
     private Configuration cfg;  //freemarker配置类
@@ -48,13 +47,25 @@ public class FtlTemplatesServiceImpl implements FtlTemplatesService {
 
     @Override
     public Template getDirectoryForTemplate(@NotBlank String templateName) {
-        return null;
+        Template template = null;
+        try {
+            template = cfg.getTemplate(templateName);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return template;
     }
 
     @Override
     public Template getDirectoryForTemplate(@NotBlank String path, @NotBlank String templateName) {
-        this.Path = path;
-        return null;
+        Template template = null;
+        try {
+            template = cfg.getTemplate(templateName);
+            this.Path = path;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return template;
     }
 
     @Override
@@ -128,5 +139,7 @@ public class FtlTemplatesServiceImpl implements FtlTemplatesService {
         Writer out = new OutputStreamWriter(new FileOutputStream(realFileName), encode);
         template.process(configMap, out);
     }
+
+
 
 }
