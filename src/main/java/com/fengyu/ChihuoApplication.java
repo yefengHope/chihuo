@@ -1,6 +1,8 @@
 package com.fengyu;
 
+import com.fengyu.system.domain.User;
 import com.fengyu.system.domain.repository.base.BaseRepositoryFactoryBean;
+import com.fengyu.util.base.BaseEnity;
 import org.jboss.logging.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -66,4 +68,6 @@ public class ChihuoApplication {
 		// }
 
 	}
+
+
 }

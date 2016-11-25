@@ -1,5 +1,10 @@
 package com.fengyu;
 
+import com.fengyu.engine.codecreator.java.FreeMarkerUtil;
+import com.fengyu.engine.codecreatorFrame.java.service.FtlTemplatesService;
+import com.fengyu.system.domain.User;
+import com.fengyu.util.base.BaseEnity;
+import freemarker.template.Template;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,8 +12,11 @@ import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
+import javax.annotation.Resource;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 /*@RunWith 这是JUnit的注解，通过这个注解让SpringJUnit4ClassRunner这个类提供Spring测试上下文*/
@@ -20,6 +28,9 @@ import java.util.List;
 @WebAppConfiguration
 public class ChihuoApplicationTests {
 
+	@Resource
+	private FtlTemplatesService ftlTemplatesService;
+
 	Logger logger = Logger.getLogger(ChihuoApplicationTests.class);
 
 	@Test
@@ -27,7 +38,39 @@ public class ChihuoApplicationTests {
 
 	}
 
+	/**
+	 * 框架的模板生成器测试
+	 */
+	@Test
+	public void ftlTemplateTest() {
+		// String projectPath = "F://workSpace//GitWork//chihuo//src//main//java//com//fengyu//util//codecreator//testrusult//";  //通过测试的反斜杠
+		String projectPath = "F:\\workSpace\\GitWork\\chihuo\\src\\main\\java\\com\\fengyu\\engine\\codecreatorFrame\\templates\\";
+		String fileName = "areasql.txt";
+		String savePath = "area";
+		String templateName = null;
+		Map map = new HashMap();
+		ftlTemplatesService.setPath(projectPath);
+		Template template = ftlTemplatesService.getDirectoryForTemplate(templateName);
+		ftlTemplatesService.createTemplate(map,projectPath,savePath,fileName,template);
+	}
 
+	@Test
+	public void baseInherit() {
+		User user = new User();
+		user.setLoginNum("biubiubibu");
+		user.setEmail("111223@qq.com");
+		user.toString();
+		User user1 = (User) createBase(user);
+		user.toString();
+		BaseEnity baseEnity = createBase(user);
+		baseEnity.toString();
+	}
+
+
+
+	public BaseEnity createBase (BaseEnity entity) {
+		return entity;
+	}
 
 
 }

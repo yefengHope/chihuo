@@ -5,7 +5,9 @@ import com.fengyu.util.common.CommonUtils;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.lang.reflect.Field;
 import java.util.Date;
+import java.util.List;
 
 /**
  * 基本实体
@@ -85,6 +87,37 @@ public class BaseEnity implements Serializable {
         this.updateId = user.getId();
         this.updateName = user.getName();
         this.updateDate = new Date();
+    }
+
+    @Override
+    public String toString() {
+        Class aClass = this.getClass();
+//        aClass.newInstance();
+        Field [] decFields = aClass.getDeclaredFields();
+        Field [] fields = aClass.getFields();
+        StringBuffer sb = new StringBuffer(aClass.getSimpleName());
+        sb.append("{");
+        try {
+            for (Field  decField : decFields) {
+                decField.setAccessible(true);
+                sb.append(decField.getName() );
+                sb.append( "=" );
+                sb.append(decField.get(this));
+                sb.append( ", " );
+            }
+            for (Field  field : fields) {
+                field.setAccessible(true);
+                sb.append(field.getName() );
+                sb.append( "=" );
+                sb.append(field.get(this));
+                sb.append( ", " );
+            }
+            sb.append("}");
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        return sb.toString();
     }
 
     public void createDate(){
