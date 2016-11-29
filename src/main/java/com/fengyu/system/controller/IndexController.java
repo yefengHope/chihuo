@@ -1,9 +1,15 @@
 package com.fengyu.system.controller;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
+import java.util.TreeMap;
 
 /**
  * Created by Administrator on 2016/7/17.
@@ -38,7 +44,27 @@ public class IndexController {
     }
 
     @RequestMapping(value = "/api_access/forward")
-    public String forwardTest () {
-        return "forward:/user/all_page_list";
+    public void forwardTest (HttpServletRequest request, HttpServletResponse response, Model model) {
+        try {
+//            request.getRequestDispatcher("/user/all_page_list1111").forward(request, response);
+            request.getRequestDispatcher("/user/all_page_list1111").forward(request,response);
+//            System.out.println(String.valueOf(requestDispatcher));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 异常页面控制
+     * <p>说明:当这个Controller中任何一个方法发生异常，一定会被这个方法拦截到</p>
+     * @param exception
+     * @return
+     */
+    @ExceptionHandler(Exception.class)
+    @ResponseBody
+    public Map<String,Object> runtimeExceptionHandler(Exception exception) {
+        Map model = new TreeMap();
+        model.put("status", false);
+        return model;
     }
 }
