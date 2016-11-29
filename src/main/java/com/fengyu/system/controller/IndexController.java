@@ -31,4 +31,14 @@ public class IndexController {
     public String layouts(){
         return "layouts";
     }
+
+    @RequestMapping(value = "/api_access/redirect")
+    public String redirectTest(String name, String id) {
+        return "redirect:/user/all_page_list";
+    }
+
+    @RequestMapping(value = "/api_access/forward")
+    public String forwardTest () {
+        return "forward:/user/all_page_list";
+    }
 }

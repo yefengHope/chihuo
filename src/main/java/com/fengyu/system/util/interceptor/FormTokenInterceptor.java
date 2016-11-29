@@ -33,7 +33,7 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
             if (annotation != null) {
                 boolean needSaveSession = annotation.needSaveToken();
                 if (needSaveSession) {
-                    request.getSession(false).setAttribute("token", TokenProcessor.createToken(TokenProcessor.NANOTIME));
+                    request.getSession().setAttribute("token", TokenProcessor.createToken(TokenProcessor.NANOTIME));
                 }
 
                 boolean needRemoveSession = annotation.needRemoveToken();
@@ -43,7 +43,7 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
                                 + request.getServletPath() + "]");
                         return false;
                     }
-                    request.getSession(false).removeAttribute("token");
+                    request.getSession().removeAttribute("token");
                 }
             }
         }

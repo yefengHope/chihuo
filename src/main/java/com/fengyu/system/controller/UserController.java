@@ -3,6 +3,7 @@ package com.fengyu.system.controller;
 import com.fengyu.system.domain.User;
 import com.fengyu.system.model.BootPage;
 import com.fengyu.system.service.UserService;
+import com.fengyu.system.util.interceptor.annotation.FormToken;
 import com.fengyu.util.common.dataUtils.JsonUtils;
 import org.springframework.context.ApplicationContext;
 import org.springframework.data.domain.Page;
@@ -30,30 +31,30 @@ public class UserController {
     @Resource
     private ApplicationContext applicationContext;
 
-    /**
-     * 用户列表 list json到页面
-     * @return
-     */
-    @RequestMapping(value = "all_list")
-    public String toAllList(){
-        for (int i=0;i<=30;i++){
-            User user = new User();
-            user.setName("test"+i);
-            user.setStatus(1);
-            user.setEmail("213213213@qq.com");
-            user.setLoginNum("test"+i+i);
-            user.setLoginPwd("test");
-            user.setPhone(13438336891L);
-            user.setCreateId(1L);
-            user.setCreateName("超级管理员");
-            user.setCreateDate(new Date());
-            user.setUpdateDate(new Date());
-            user.setUpdateId(1L);
-            user.setUpdateName("超级管理员");
-            userService.save(user);
-        }
-        return "system/user/all_list";
-    }
+    // /**
+    //  * 用户列表 list json到页面
+    //  * @return
+    //  */
+    // @RequestMapping(value = "all_list")
+    // public String toAllList(){
+    //     for (int i=0;i<=30;i++){
+    //         User user = new User();
+    //         user.setName("test"+i);
+    //         user.setStatus(1);
+    //         user.setEmail("213213213@qq.com");
+    //         user.setLoginNum("test"+i+i);
+    //         user.setLoginPwd("test");
+    //         user.setPhone(13438336891L);
+    //         user.setCreateId(1L);
+    //         user.setCreateName("超级管理员");
+    //         user.setCreateDate(new Date());
+    //         user.setUpdateDate(new Date());
+    //         user.setUpdateId(1L);
+    //         user.setUpdateName("超级管理员");
+    //         userService.save(user);
+    //     }
+    //     return "system/user/all_list";
+    // }
 
     /**
      * 用户列表
@@ -61,8 +62,11 @@ public class UserController {
      *      bootstrap table调用toPageListJson生成json传回页面
      * @return
      */
+    @FormToken(needSaveToken = true)
     @RequestMapping(value = "all_page_list",method = RequestMethod.GET)
-    public String toPageList(){
+    public String toPageList(String name,String id){
+        System.out.println("name:" + name);
+        System.out.println("id:" + id);
         return "system/user/all_page";
     }
 
