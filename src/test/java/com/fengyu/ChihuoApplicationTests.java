@@ -4,6 +4,7 @@ import com.fengyu.engine.codecreator.java.FreeMarkerUtil;
 import com.fengyu.engine.codecreatorFrame.java.service.FtlTemplatesService;
 import com.fengyu.system.domain.User;
 import com.fengyu.util.base.BaseEnity;
+import com.fengyu.util.common.crypto.DesApp;
 import freemarker.template.Template;
 import org.apache.log4j.Logger;
 import org.junit.Test;
@@ -70,6 +71,36 @@ public class ChihuoApplicationTests {
 
 	public BaseEnity createBase (BaseEnity entity) {
 		return entity;
+	}
+
+	@Test
+	public void decryptDES(){
+		try {
+			String content = "/user/all_page_list";
+			String encryptResult = DesApp.encryptDESWrap(content);
+			System.out.println(encryptResult);
+			String decryptResult = DesApp.decryptDESWrap(encryptResult);
+			System.out.println(decryptResult);
+			return;
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Test
+	public void decryptDES1(){
+		try {
+			String content = "test";
+			String password = "12345678";
+			//加密
+			System.out.println("加密前：" + content);
+			String encryptResult = DesApp.encryptDES(content, password);
+			//解密
+			String decryptResult = DesApp.decryptDES(encryptResult,password);
+			System.out.println("解密后：" + new String(decryptResult));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
 
