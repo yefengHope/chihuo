@@ -1,9 +1,6 @@
 package com.fengyu.engine.codecreatorFrame.java.controller;
 
 import com.fengyu.system.service.SpringContextService;
-import com.fengyu.system.util.common.MessagePage;
-import com.fengyu.util.common.dataUtils.JsonUtils;
-import freemarker.template.Configuration;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,9 +10,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.constraints.NotNull;
-import java.io.File;
-import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
 
 /**
  * 代码生成controller

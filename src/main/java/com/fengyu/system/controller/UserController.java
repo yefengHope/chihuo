@@ -15,14 +15,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Date;
 
 /**
  * 用户controller
  * Created by 韩峰 on 2016/8/15.
  */
 @Controller
-@RequestMapping(value = "user")
+@RequestMapping(value = "/user")
 public class UserController {
 
     @Resource
@@ -63,7 +62,7 @@ public class UserController {
      * @return
      */
     @FormToken(needSaveToken = true)
-    @RequestMapping(value = "all_page_list",method = RequestMethod.GET)
+    @RequestMapping(value = "/all_page_list",method = RequestMethod.GET)
     public String toPageList(String name,String id){
         System.out.println("name:" + name);
         System.out.println("id:" + id);

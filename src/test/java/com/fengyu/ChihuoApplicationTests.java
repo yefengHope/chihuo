@@ -1,23 +1,29 @@
 package com.fengyu;
 
-import com.fengyu.engine.codecreator.java.FreeMarkerUtil;
 import com.fengyu.engine.codecreatorFrame.java.service.FtlTemplatesService;
 import com.fengyu.system.domain.User;
 import com.fengyu.util.base.BaseEnity;
 import com.fengyu.util.common.crypto.DesApp;
 import freemarker.template.Template;
 import org.apache.log4j.Logger;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.MockitoAnnotations;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+import org.springframework.web.context.WebApplicationContext;
 
 import javax.annotation.Resource;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
+
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 
 
 /*@RunWith 这是JUnit的注解，通过这个注解让SpringJUnit4ClassRunner这个类提供Spring测试上下文*/
@@ -28,16 +34,44 @@ import java.util.Map;
 @SpringApplicationConfiguration(classes = ChihuoApplication.class)
 @WebAppConfiguration
 public class ChihuoApplicationTests {
+	Logger logger = Logger.getLogger(ChihuoApplicationTests.class);
+
+	private MockMvc mockMvc;
 
 	@Resource
 	private FtlTemplatesService ftlTemplatesService;
 
-	Logger logger = Logger.getLogger(ChihuoApplicationTests.class);
+	@Autowired
+	private WebApplicationContext webApplicationContext;
+
+	@Before
+	public void setup() {
+		MockitoAnnotations.initMocks(this);
+//        this.mockMvc = MockMvcBuilders.standaloneSetup(loginController).build();
+		this.mockMvc = MockMvcBuilders.standaloneSetup(webApplicationContext).build();
+	}
+
+	@Test
+	public void login() throws Exception {
+
+        /*mockMvc.perform(post("/sys/login.do")
+                .param("username", "3031372")
+                .param("password", "test")
+                )
+                .andDo(print())
+                .andExpect(status().isOk()).andExpect(content().string(is("{\"status\":\"" + 11111 + "\"}")));*/
+
+		mockMvc.perform(post("/user/all_page_list")
+				.param("name", "峰哥哥")
+				.param("id", "hf_123321")
+		) .andDo(print()) ;
+	}
 
 	@Test
 	public void contextLoads() {
 
 	}
+
 
 	/**
 	 * 框架的模板生成器测试
