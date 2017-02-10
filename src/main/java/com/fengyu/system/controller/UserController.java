@@ -126,6 +126,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "update_user" , method = RequestMethod.POST)
+    @ResponseBody
     public String updateUser(User user) {
 
         return null;

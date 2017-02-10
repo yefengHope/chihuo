@@ -10,7 +10,7 @@
     <meta name="keywords" content=""/>
     <meta name="description" content=""/>
     <!--<th:block th:include="head ::head_css"></th:block>-->
-    <th:block th:include="head ::bootstrap_table_css"></th:block>
+    <th:block th:include="include.head :: bootstrap_table_css"/>
 </head>
 <body>
 
@@ -47,8 +47,8 @@
 
 </table>
 <!--<th:block th:include="head ::head_js"></th:block>-->
-<th:block th:include="head :: head_js"/>
-<th:block th:include="head :: bootstrap_table_js"/>
+<th:block th:include="include.foot :: head_js"/>
+<th:block th:include="include.foot :: bootstrap_table_js"/>
 
 
 <script>
@@ -78,6 +78,7 @@
             showRefresh: true,          //是否显示刷新按钮
             minimumCountColumns: 2,     //最少允许的列数
             clickToSelect: true,        //是否启用点击选中行
+            undefinedText : "--",
             columns: [{
                 idField: 'id',
                 checkbox: true,
@@ -99,12 +100,42 @@
                     field: 'email',
                     title: '用户邮箱',
                     align: 'center',
-                    editable : true,
+                    editable: {
+                        type: 'text',
+                        title: '用户邮箱',
+                        validate: function (value) {
+                            value = $.trim(value);
+                            if (!value) {
+                                return '必填项';
+                            }
+                            var data = $table.bootstrapTable('getData'),
+                                index = $(this).parents('tr').data('index');
+                            console.log(data[index]);
+                            return '';
+                        }
+                    },
                 }, {
                     field: 'headIcon',
                     title: '头像',
                     align: 'center',
-                    editable: true,
+
+                    editable: {
+                        type: 'text',
+                        title: '头像',
+                        validate: function (value) {
+                            value = $.trim(value);
+                            if (!value) {
+                                return '必填项';
+                            }
+                            var data = $table.bootstrapTable('getData'),
+                                index = $(this).parents('tr').data('index');
+                            console.log(data[index]);
+                            return '';
+                        },
+                        success: function(response, newValue) {
+                            alert("我改变了单元格内容! ");
+                        }
+                    },
                 }, {
                     field: 'aStatus',
                     title: '账号状态',
