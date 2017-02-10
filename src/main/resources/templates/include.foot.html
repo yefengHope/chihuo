@@ -25,13 +25,12 @@
 
 </th:block>
 
-<th:block th:fragment="form_componet_css">
-    <th:block th:include="head :: head_css"/>  <!--/*  引用上面  */-->
-    <link th:href="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css}" rel="stylesheet"/>
-    <!--/*  下拉框  */-->
-    <link th:href="@{/plugs/form/icheck-1.x/skins/flat/green.css}" rel="stylesheet"/>
-
+<th:block th:fragment="bootstrap_validate_js">
+    <script th:src="@{/plugs/bootstrap/bootstrapvalidator-master/src/js/bootstrapValidator.js}"></script>
+    <script th:src="@{/plugs/bootstrap/bootstrapvalidator-master/src/js/language/zh_CN.js}"></script>
 </th:block>
+
+
 <th:block th:fragment="form_componet_js">
     <th:block th:include="include.foot :: head_js"/>   <!--/*  引用上面  */-->
     <script th:src="@{/plugs/bootstrap/bootstrap-select-1.11.2/dist/js/bootstrap-select.min.js}"></script>
