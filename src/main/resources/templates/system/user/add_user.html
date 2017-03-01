@@ -94,7 +94,7 @@
 <script>
     $(document).ready(function () {
         $('#defaultForm').bootstrapValidator({
-            container: 'tooltip',
+//            container: 'tooltip',
 //        trigger: 'blur',
             feedbackIcons: {
                 valid: 'glyphicon glyphicon-ok',
@@ -107,15 +107,12 @@
                         stringLength: {
                             enabled: false,
                             min: 4,
-                            message: 'The first name must be more than 5 characters'
                         },
                         notEmpty: {
-                            message: 'The last name is required'
                         },
                         regexp: {
                             enabled: true,
                             regexp: /^[a-z]+$/i,
-                            message: 'The first name must consist of a-z, A-Z characters only'
                         }
                     }
                 },
@@ -123,10 +120,8 @@
                     validators: {
                         stringLength: {
                             min: 6,
-                            message: 'The last name must be more than 5 characters'
                         },
                         notEmpty: {
-                            message: 'The last name is required'
                         },
                         regexp: {
                             regexp: /^[a-zA-Z0-9]+$/i,
