@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.user;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -11,6 +11,6 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_ch_user_chihuo_personality")
-public class UserChiHuoPersonality extends BaseEnity{
+public class UserChiHuoPersonality extends BaseEntity {
 
 }

@@ -1,6 +1,6 @@
 package com.fengyu.util.common;
 
-import com.fengyu.system.domain.User;
+import com.fengyu.system.entity.User;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 

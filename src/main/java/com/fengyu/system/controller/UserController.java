@@ -1,20 +1,18 @@
 package com.fengyu.system.controller;
 
-import com.fengyu.system.domain.User;
-import com.fengyu.system.model.BootPage;
+import com.alibaba.fastjson.JSON;
+import com.fengyu.system.entity.User;
 import com.fengyu.system.service.UserService;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
-import com.fengyu.util.common.dataUtils.JsonUtils;
+import org.apache.log4j.Logger;
 import org.springframework.context.ApplicationContext;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 用户controller
@@ -23,6 +21,8 @@ import javax.annotation.Resource;
 @Controller
 @RequestMapping(value = "/user")
 public class UserController {
+
+    Logger logger = Logger.getLogger(UserController.class);
 
     @Resource
     private UserService userService;
@@ -81,14 +81,19 @@ public class UserController {
     @RequestMapping(value = "all_page_list",method = RequestMethod.POST)
     @ResponseBody
     public String toPageListJson(int limit,int pageNumber,String searchText,String sortOrder,String sortName){
-        Pageable pageable = new PageRequest(pageNumber,limit);
-        Page<User> page = userService.findAllPageList(pageable);
-        BootPage bootPage = new BootPage(limit,pageNumber,searchText,sortOrder,sortName,page);
+        // Pageable pageable = new PageRequest(pageNumber,limit);
+        // Page<User> page = userService.findAllPageList(pageable);
+        // BootPage bootPage = new BootPage(limit,pageNumber,searchText,sortOrder,sortName,page);
+
+        List<User> users = userService.findAllList();
+        logger.info(JSON.toJSON(users));
+
 
         //------------------ 测试代码 ------------------Object userName = applicationContext.getBean("user");
         // Map<String,Object> map = applicationContext.getBeansWithAnnotation(Entity.class);
         // System.out.println(map.toString());
-        return JsonUtils.toJSONStringConvertNull(bootPage);
+        // return JsonUtils.toJSONStringConvertNull(bootPage);
+        return null;
     }
 
     /**

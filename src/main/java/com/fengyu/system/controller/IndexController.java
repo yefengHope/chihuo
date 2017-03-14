@@ -2,13 +2,13 @@ package com.fengyu.system.controller;
 
 import com.fengyu.util.common.crypto.EncRequest;
 import com.fengyu.util.common.dataUtils.JsonUtils;
-import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.ResponseStatus;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -61,7 +61,7 @@ public class IndexController {
     String patternUrl = "^(/(?=\\w)\\w+)+.?\\w+$";
 
     @RequestMapping(value = "/api_access/forward")
-    public void forwardTest (@EncRequest String path , @EncRequest String name ,HttpServletRequest request, HttpServletResponse response, Model model) {
+    public void forwardTest (@EncRequest String path , @EncRequest String name , HttpServletRequest request, HttpServletResponse response, Model model) {
         String url = path;
         try {
             boolean is = regexString(patternUrl,url);
@@ -76,7 +76,8 @@ public class IndexController {
             e.printStackTrace();
         }
     }
-
+    // @ExceptionHandler(ChangeSetPersister.NotFoundException.class)
+    @ResponseStatus(value = HttpStatus.NOT_FOUND,reason = "你的页面找不到咯")
     @RequestMapping(value = "/api_access/forward1")
     public String forwardTest1 (String url ,HttpServletRequest request, HttpServletResponse response, Model model) {
         boolean is = regexString(patternUrl,url);
@@ -143,6 +144,7 @@ public class IndexController {
      */
     @ExceptionHandler(NullPointerException.class)
     @ResponseBody
+//    public Map<String,Object> NotsuchExceptionHandler(Exception exception) {
     public Map<String,Object> nullPointerExceptionHandler(NullPointerException exception) {
         Map model = new TreeMap();
         model.put("status", false);
@@ -150,4 +152,18 @@ public class IndexController {
         model.put("errorInfo",exception.getMessage());
         return model;
     }
+//    /**
+//     * 异常页面控制
+//     * <p>说明:当这个Controller中任何一个方法发生异常，一定会被这个方法拦截到</p>
+//     * @param exception
+//     * @return
+//     */
+//    @ExceptionHandler(Exception.class)
+//    @ResponseBody
+//    public Map<String,Object> runtimeExceptionHandler(Exception exception) {
+//        Map model = new TreeMap();
+//        model.put("status", false);
+//        return model;
+//    }
+
 }

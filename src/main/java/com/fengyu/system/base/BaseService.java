@@ -1,4 +1,4 @@
-package com.fengyu.util.base;
+package com.fengyu.system.base;
 
 /**
  * Created by 韩峰 on 2016/8/9.

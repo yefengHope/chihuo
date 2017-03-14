@@ -1,8 +1,11 @@
 package com.fengyu.chihuo.domain.snacks;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 /**
  * 菜单信息
@@ -11,7 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "t_ch_snack_menu")
-public class SnackMenu extends BaseEnity{
+public class SnackMenu extends BaseEntity {
 
 
     private static final long serialVersionUID = 8268802064066987460L;

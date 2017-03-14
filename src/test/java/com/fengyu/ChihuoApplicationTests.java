@@ -1,8 +1,8 @@
 package com.fengyu;
 
 import com.fengyu.engine.codecreatorFrame.java.service.FtlTemplatesService;
-import com.fengyu.system.domain.User;
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
+import com.fengyu.system.entity.User;
 import com.fengyu.util.common.crypto.DesApp;
 import freemarker.template.Template;
 import org.apache.log4j.Logger;
@@ -97,13 +97,13 @@ public class ChihuoApplicationTests {
 		user.toString();
 		User user1 = (User) createBase(user);
 		user.toString();
-		BaseEnity baseEnity = createBase(user);
-		baseEnity.toString();
+		BaseEntity BaseEntity = createBase(user);
+		BaseEntity.toString();
 	}
 
 
 
-	public BaseEnity createBase (BaseEnity entity) {
+	public BaseEntity createBase (BaseEntity entity) {
 		return entity;
 	}
 

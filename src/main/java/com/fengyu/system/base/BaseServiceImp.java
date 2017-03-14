@@ -1,4 +1,4 @@
-package com.fengyu.util.base;
+package com.fengyu.system.base;
 
 /**
  * 基本service

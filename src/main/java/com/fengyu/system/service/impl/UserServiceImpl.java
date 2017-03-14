@@ -1,14 +1,11 @@
 package com.fengyu.system.service.impl;
 
-import com.fengyu.system.domain.User;
-import com.fengyu.system.domain.repository.UserRepository;
+import com.fengyu.system.dao.UserMapper;
+import com.fengyu.system.entity.User;
 import com.fengyu.system.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -18,27 +15,27 @@ import java.util.List;
 @Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private UserRepository userRepository;
+    @Resource
+    private UserMapper userMapper;
 
 
     /**
-     * 查询所有用户 (此方法为异步)
+     * 查询所有用户
      * @return {List}
      */
-    @Async
-    @Override
     public List<User> findAllList() {
-        List<User> users = (List<User>) userRepository.findAll();
+        // List<User> users = (List<User>) userRepository.findAll();
+        List<User> users = userMapper.findAllPage();
         return users;
     }
 
-    @Override
-    public Page<User> findAllPageList(Pageable pageable) {
-        return userRepository.findAll(pageable);
-    }
+    // @Override
+    // public Page<User> findAllPageList(Pageable pageable) {
+    //     // return userRepository.findAll(pageable);
+    //     return null;
+    // }
 
     public void save(User user){
-        userRepository.save(user);
+        // userRepository.save(user);
     }
 }

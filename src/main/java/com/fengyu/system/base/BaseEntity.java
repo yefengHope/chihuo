@@ -1,20 +1,19 @@
-package com.fengyu.util.base;
+package com.fengyu.system.base;
 
-import com.fengyu.system.domain.User;
+import com.fengyu.system.entity.User;
 import com.fengyu.util.common.CommonUtils;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.util.Date;
-import java.util.List;
 
 /**
  * 基本实体
  * Created by 韩峰 on 2016/8/2.
  */
 @MappedSuperclass
-public class BaseEnity implements Serializable {
+public class BaseEntity implements Serializable {
 
 
     private static final long serialVersionUID = 887436082747947410L;

@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.snacks;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_ch_taste")
-public class Taste extends BaseEnity {
+public class Taste extends BaseEntity {
 
     private static final long serialVersionUID = 495225552200074477L;
 

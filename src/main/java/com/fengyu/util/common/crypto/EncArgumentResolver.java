@@ -1,7 +1,6 @@
 package com.fengyu.util.common.crypto;
 
 import org.jboss.logging.Logger;
-import org.jboss.logging.annotations.Param;
 import org.springframework.core.MethodParameter;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.support.WebDataBinderFactory;

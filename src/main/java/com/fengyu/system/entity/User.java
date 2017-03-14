@@ -1,7 +1,7 @@
-package com.fengyu.system.domain;
+package com.fengyu.system.entity;
 
+import com.fengyu.system.base.BaseEntity;
 import com.fengyu.system.util.annotation.Note;
-import com.fengyu.util.base.BaseEnity;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "ts_user")
-public class User extends BaseEnity{
+public class User extends BaseEntity {
 
     private static final long serialVersionUID = -4886379701339312835L;
 

@@ -1,6 +1,6 @@
 package com.fengyu.system.util.interceptor;
 
-import com.fengyu.system.domain.User;
+import com.fengyu.system.entity.User;
 import com.fengyu.system.util.common.TokenProcessor;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
 import org.apache.log4j.Logger;

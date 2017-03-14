@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.user;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -12,7 +12,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_ch_user_taste")
-public class UserTaste extends BaseEnity{
+public class UserTaste extends BaseEntity {
 
     /*用户口味校验:
     *   通过比较知名的小吃,或者商场里面的热卖商品,来确定用户口味

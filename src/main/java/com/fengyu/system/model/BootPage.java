@@ -1,7 +1,5 @@
 package com.fengyu.system.model;
 
-import org.springframework.data.domain.Page;
-
 import java.util.List;
 
 /**
@@ -49,7 +47,7 @@ public class BootPage<T> {
      */
     private String searchText;
 
-    /**
+    /*
      * 构造方法,装入分页结果集
      * @param limit         分页大小
      * @param pageNumber    当前页码
@@ -58,16 +56,16 @@ public class BootPage<T> {
      * @param sortName      排序列名
      * @param page          查询结果集(Pageable查询的结果)
      */
-    public BootPage (int limit,int pageNumber,String searchText,String sortOrder,String sortName
-        ,Page page) {
-        this.setTotal(page.getTotalElements());
-        this.setRows(page.getContent());
-        this.setSearchText(searchText);
-        this.setLimit(limit);
-        this.setPageNumber(pageNumber);
-        this.setSortOrder(sortOrder);
-        this.setSortName(sortName);
-    }
+    // public BootPage (int limit,int pageNumber,String searchText,String sortOrder,String sortName
+    //     ,Page page) {
+    //     this.setTotal(page.getTotalElements());
+    //     this.setRows(page.getContent());
+    //     this.setSearchText(searchText);
+    //     this.setLimit(limit);
+    //     this.setPageNumber(pageNumber);
+    //     this.setSortOrder(sortOrder);
+    //     this.setSortName(sortName);
+    // }
 
 
     public Integer getPageNumber() {

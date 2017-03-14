@@ -1,6 +1,6 @@
 package com.fengyu.chihuo.domain.snacks;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,7 +13,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name = "t_ch_snacks")
-public class Snacks extends BaseEnity{
+public class Snacks extends BaseEntity {
 
     /**
      * 小吃店名

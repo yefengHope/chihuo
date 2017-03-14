@@ -1,4 +1,4 @@
-package com.fengyu.area_json.java;
+package com.fengyu.util.customData.area_json.java;
 
 import java.util.Date;
 import java.util.List;

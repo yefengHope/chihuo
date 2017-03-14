@@ -1,6 +1,6 @@
-package com.fengyu.system.domain;
+package com.fengyu.system.entity;
 
-import com.fengyu.util.base.BaseEnity;
+import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Entity;
 
@@ -9,7 +9,7 @@ import javax.persistence.Entity;
  * Created by rain on 2016/11/7.
  */
 @Entity
-public class Menu extends BaseEnity{
+public class Menu extends BaseEntity {
 
     private static final long serialVersionUID = 5557847780198678679L;
 

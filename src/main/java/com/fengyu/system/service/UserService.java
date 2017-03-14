@@ -1,8 +1,6 @@
 package com.fengyu.system.service;
 
-import com.fengyu.system.domain.User;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
+import com.fengyu.system.entity.User;
 
 import java.util.List;
 
@@ -22,7 +20,7 @@ public interface UserService {
      * @param pageable  分页
      * @return  Page<User>
      */
-     Page<User> findAllPageList(Pageable pageable);
+     // Page<User> findAllPageList(Pageable pageable);
 
     /**
      * 保存
