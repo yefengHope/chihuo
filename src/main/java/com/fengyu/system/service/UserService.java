@@ -1,7 +1,9 @@
 package com.fengyu.system.service;
 
 import com.fengyu.system.entity.User;
+import com.github.pagehelper.PageInfo;
 
+import java.awt.print.Pageable;
 import java.util.List;
 
 /**
@@ -20,7 +22,7 @@ public interface UserService {
      * @param pageable  分页
      * @return  Page<User>
      */
-     // Page<User> findAllPageList(Pageable pageable);
+    PageInfo<User> findAllPageList(Integer page ,Integer pageSize);
 
     /**
      * 保存

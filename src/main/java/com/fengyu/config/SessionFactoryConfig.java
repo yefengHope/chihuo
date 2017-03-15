@@ -12,6 +12,7 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 /**
+ * mybatis 扫描路径设置
  * Created by rain on 2017/3/13.
  */
 
@@ -26,12 +27,12 @@ public class SessionFactoryConfig {
     /**
      * mybatis mapper resource 路径
      **/
-    private static String MAPPER_PATH = "/mapper/**.xml";
+    private static String MAPPER_PATH = "mybatis/mapper/**.xml";
 
     @Resource
     private DataSource dataSource;
 
-    private String typeAliasPackage = "com.aoshi.domain";
+    private String typeAliasPackage = "com.fengyu.system.entity";
 
     /**
      * 创建sqlSessionFactoryBean 实例
