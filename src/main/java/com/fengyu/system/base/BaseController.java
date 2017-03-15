@@ -1,5 +1,6 @@
 package com.fengyu.system.base;
 
+import com.alibaba.fastjson.JSON;
 import com.github.pagehelper.PageInfo;
 
 import java.util.HashMap;
@@ -43,13 +44,13 @@ public class BaseController {
      * @param total     一共多少条
      * @return
      */
-    public Map returnBootTable(boolean status, String info, List rows, int total) {
+    public String returnBootTable(boolean status, String info, List rows, int total) {
        Map<String ,Object> map = new HashMap<>();
         map.put("status",status);
         map.put("info",info);
         map.put("total",total);
         map.put("rows",rows);
-        return map;
+        return JSON.toJSONString(map);
     }
 
     /**
@@ -59,13 +60,13 @@ public class BaseController {
      * @param info      返回提示
      * @return
      */
-    public Map returnBootTable(boolean status, String info, PageInfo page) {
+    public String returnBootTable(boolean status, String info, PageInfo page) {
         Map<String ,Object> map = new HashMap<>();
         map.put("status",status);
         map.put("info",info);
         map.put("total",page.getTotal());
         map.put("rows",page.getList());
-        return map;
+        return JSON.toJSONString(map);
     }
 
 }
