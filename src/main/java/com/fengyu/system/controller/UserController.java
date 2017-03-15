@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Map;
 
 /**
  * 用户controller
@@ -78,9 +79,9 @@ public class UserController extends BaseController {
      * @param sortName      排序列名
      * @return
      */
-    @RequestMapping(value = "all_page_list",method = RequestMethod.POST)
+    @RequestMapping(value = "all_page_list.json",method = RequestMethod.POST)
     @ResponseBody
-    public String toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName){
+    public Map toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName){
         // Pageable pageable = new PageRequest(pageNumber,limit);
         PageInfo<User> page = userService.findAllPageList(pageNumber,limit);
         return returnBootTable(true,"查询成功",page);

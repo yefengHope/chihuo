@@ -25,6 +25,7 @@
 package com.fengyu.config;
 
 import com.fengyu.system.util.interceptor.FormTokenInterceptor;
+import org.apache.log4j.Logger;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -40,6 +41,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
+    Logger logger = Logger.getLogger(WebMvcConfig.class);
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -52,4 +54,5 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
+
 }
