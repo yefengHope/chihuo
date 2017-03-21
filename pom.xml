@@ -63,12 +63,12 @@
 			<!--<artifactId>mybatis-spring</artifactId>-->
 			<!--<version>1.2.3</version>-->
 		<!--</dependency>-->
-		<!--&lt;!&ndash; 分页插件 &ndash;&gt;-->
-		<!--<dependency>-->
-			<!--<groupId>com.github.pagehelper</groupId>-->
-			<!--<artifactId>pagehelper</artifactId>-->
-			<!--<version>4.1.1</version>-->
-		<!--</dependency>-->
+		<!-- 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>4.1.1</version>
+		</dependency>
 		<!--mybatis 手动配置版,必须注释自动配置  end -->
 		<!--通用Mapper插件-->
 		<dependency>
@@ -113,6 +113,14 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 		<!--<dependency>
 			<groupId>org.springframework.boot</groupId>
