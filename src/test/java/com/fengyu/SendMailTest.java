@@ -22,8 +22,10 @@ public class SendMailTest {
     @Test
     public void sendSimpleMail() throws Exception {
         SimpleMailMessage message = new SimpleMailMessage();
-        message.setFrom("15881253374@163.com");   // 发送者
-        message.setTo("15881253374@163.com");     // 接收者
+        message.setFrom("1825445185@qq.com");   // 发送者
+        message.setTo("1825445185@qq.com");     // 接收者
+        // message.setFrom("15881253374@163.com");   // 发送者
+        // message.setTo("1825445185@qq.com");     // 接收者
         message.setSubject("主题：简单邮件");      //邮件主题
         message.setText("测试邮件内容");          //邮件内容
         mailSender.send(message);               //发送邮件
