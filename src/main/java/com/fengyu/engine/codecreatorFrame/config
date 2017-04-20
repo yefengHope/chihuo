@@ -1,0 +1,12 @@
+# JDBC 驱动名及数据库 URL
+db.jdbcDriver = "com.mysql.jdbc.Driver";
+db.dbUrl = "jdbc:mysql:#localhost:3306/RUNOOB";
+
+# 数据库的用户名与密码，需要根据自己的设置
+db.user = "root";
+db.pass = "123456";
+
+# 数据库表名
+db.tablename = "123456";
+
+
