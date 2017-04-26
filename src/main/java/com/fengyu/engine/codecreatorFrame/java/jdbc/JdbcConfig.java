@@ -9,7 +9,7 @@ package com.fengyu.engine.codecreatorFrame.java.jdbc;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public abstract class AbstractJdbcConfig {
+public class JdbcConfig {
 
     // JDBC 驱动名及数据库 URL
     final String jdbcDriver = "com.mysql.jdbc.Driver";

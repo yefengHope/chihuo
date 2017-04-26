@@ -17,7 +17,7 @@ import java.util.Map;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public abstract class AbstractJdbcConnection extends AbstractJdbcConfig {
+public abstract class AbstractJdbcConnection extends JdbcConfig {
 
     private static Logger logger = Logger.getLogger(AbstractJdbcConnection.class);
 

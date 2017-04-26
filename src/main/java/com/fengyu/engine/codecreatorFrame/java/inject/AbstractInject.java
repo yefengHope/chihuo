@@ -1,5 +1,6 @@
 package com.fengyu.engine.codecreatorFrame.java.inject;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,6 +15,9 @@ import java.util.Map;
  */
 public abstract class AbstractInject {
 
+    public File getResource(String path) {
+        return new File(String.valueOf(this.getClass().getResource(path)));
+    }
 
     public Map<String,String> getMap() {
 
