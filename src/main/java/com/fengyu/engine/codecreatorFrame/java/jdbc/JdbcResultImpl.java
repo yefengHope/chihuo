@@ -38,7 +38,7 @@ public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult
     @Override
     public List<Map<String, String>> getTableStructureList() {
         try {
-            String sql = "select * from information_schema.columns where table_name='" + tableName + "' ";
+            String sql = "select * from information_schema.columns where table_name='" + JdbcConfig.getTableName() + "' ";
             getResultSet(sql);
             return parseResultSet();
         } catch (SQLException | ClassNotFoundException e) {

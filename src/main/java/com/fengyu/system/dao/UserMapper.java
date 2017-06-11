@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by rain on 2017/3/13.
  */
-public interface  UserMapper extends BaseMapper<User>{
+public interface UserMapper extends BaseMapper<User>{
 
     // @Select("SELECT * FROM USER WHERE NAME = #{name}")
     // User findByName(@Param("name") String name);
