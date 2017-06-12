@@ -1,6 +1,9 @@
 package com.fengyu.engine.codecreatorFrame.java.jdbc;
 
+import com.fengyu.util.common.ResourceUtils;
+
 import java.io.Serializable;
+import java.util.Map;
 
 /**
  * <p>@Title JDBC配置类 </p>
@@ -13,19 +16,20 @@ import java.io.Serializable;
  */
 public class JdbcConfig implements Serializable{
 
-    private static final long serialVersionUID = 4623479418515046747L;
+    private static final long serialVersionUID = 2540371774626282307L;
 
     // JDBC 驱动名及数据库 URL
     private static String jdbcDriver = "com.mysql.jdbc.Driver";
+
     private static String dbUrl = "jdbc:mysql://localhost:3306/chihuo";
 
     // 数据库的用户名与密码，需要根据自己的设置
     private static String user = "root";
+
     private static String pass = "hanfeng111222!@#";
 
     // 数据库表名
     private static String tableName = "ts_user";
-
 
     public static String getJdbcDriver() {
         return jdbcDriver;
@@ -65,5 +69,19 @@ public class JdbcConfig implements Serializable{
 
     public static void setTableName(String tableName) {
         JdbcConfig.tableName = tableName;
+    }
+
+    public static void main(String[] args) {
+        System.out.println();
+    }
+
+    // 只能放在这里
+    static {
+        Map<String, String> resourceMap = ResourceUtils.getResource("codeFactoryConfig").getMap();
+        JdbcConfig.setDbUrl(resourceMap.get("db.dbUrl"));
+        JdbcConfig.setJdbcDriver(resourceMap.get("db.jdbcDriver"));
+        JdbcConfig.setUser(resourceMap.get("db.user"));
+        JdbcConfig.setPass(resourceMap.get("db.pass"));
+        JdbcConfig.setTableName(resourceMap.get("db.tableName"));
     }
 }

@@ -1,6 +1,5 @@
 package com.fengyu.chihuo.controller;
 
-import com.fengyu.system.base.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -11,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 @RequestMapping(value = "/food")
-public class FoodController extends BaseController {
+public class FoodController  {
 
     @RequestMapping(value = "toAddForm.html")
     public ModelAndView toAddForm() {
