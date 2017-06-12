@@ -1,12 +1,8 @@
 package ${config.packagePath}
 
-public interface ${config.className} {
+public interface ${config.className}Mapper extends BaseMapper<${config.className}>{
 
-    <#list data.fieldMaps as fieldMap>
-        /**
-         * ${fieldMap.comment}
-         *
-         */
-    </#list>
+
+    List<${config.className}> findAllPage();
 
 }

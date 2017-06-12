@@ -36,11 +36,11 @@ public abstract class AbstractJdbcConnection extends JdbcConfig {
     public Connection getConnection() throws ClassNotFoundException, SQLException {
 
         // 注册 JDBC 驱动
-        Class.forName(jdbcDriver);
+        Class.forName(JdbcConfig.getJdbcDriver());
 
         // 打开链接
         logger.info("连接数据库...");
-        conn = DriverManager.getConnection(dbUrl, user, pass);
+        conn = DriverManager.getConnection(JdbcConfig.getDbUrl(), JdbcConfig.getUser(), JdbcConfig.getPass());
 
         return conn;
     }
