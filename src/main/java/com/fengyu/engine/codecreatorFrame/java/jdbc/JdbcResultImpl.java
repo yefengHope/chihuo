@@ -16,7 +16,7 @@ import java.util.Map;
 public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult {
 
     @Override
-    public List<Map<String, String>> getList(String sql) {
+    public List<Map<String, Object>> getList(String sql) {
         try {
             getResultSet(sql);
             return parseResultSet();
@@ -36,7 +36,7 @@ public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult
     }
 
     @Override
-    public List<Map<String, String>> getTableStructureList() {
+    public List<Map<String, Object>> getTableStructureList() {
         try {
             String sql = "select * from information_schema.columns where table_name='" + JdbcConfig.getTableName() + "' ";
             getResultSet(sql);

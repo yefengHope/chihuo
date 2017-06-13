@@ -12,16 +12,16 @@
         <!--<result property="age" column="age" />-->
     <!--</resultMap>-->
 
-    <select id="getById" resultType="com.fengyu.system.entity.User">
-        SELECT *
-        FROM ts_user
-        WHERE id = #{id}
-    </select>
+    <!--<select id="getById" resultType="com.fengyu.system.entity.User">-->
+        <!--SELECT *-->
+        <!--FROM ts_user-->
+        <!--WHERE id = #{id}-->
+    <!--</select>-->
 
-    <select id="findAllPage" resultType="com.fengyu.system.entity.User">
-      SELECT *
-      FROM ts_user
-    </select>
+    <!--<select id="findAllPage" resultType="com.fengyu.system.entity.User">-->
+      <!--SELECT *-->
+      <!--FROM ts_user-->
+    <!--</select>-->
 
 
 </mapper>

@@ -42,7 +42,7 @@ public class SqlMapJavaType implements Serializable {
     /**
      * 获取映射集合
      */
-    public Map<String,String> getInstance() {
+    public static Map<String,String> getInstance() {
         if (map.isEmpty()) {
             throw new NullPointerException("sql对应java类型集合不存在");
         }
@@ -54,7 +54,7 @@ public class SqlMapJavaType implements Serializable {
      * @param key {String}key
      * @return    {String}value
      */
-    public String getAsKey(String key) {
+    public static String getAsKey(String key) {
         if (map.isEmpty()) {
             throw new NullPointerException("sql对应java类型集合不存在");
         }

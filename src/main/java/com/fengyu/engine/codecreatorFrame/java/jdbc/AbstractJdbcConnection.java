@@ -82,15 +82,15 @@ public abstract class AbstractJdbcConnection extends JdbcConfig {
      * @return
      * @throws SQLException
      */
-    public List<Map<String, String>> parseResultSet() throws SQLException {
+    public List<Map<String, Object>> parseResultSet() throws SQLException {
         ResultSetMetaData m = rs.getMetaData(); //获取 列信息
         int columns = m.getColumnCount();
 
-        List<Map<String, String>> list = new ArrayList<>();
+        List<Map<String, Object>> list = new ArrayList<>();
         // 遍历表格内容
         while (rs.next()) {
             //显示列,表格的表头
-            Map<String, String> map = new HashMap<>();
+            Map<String, Object> map = new HashMap<>();
             for (int i = 1; i <= columns; i++) {
                 String key = m.getColumnName(i);
                 String value = rs.getString(i);

@@ -2,6 +2,7 @@ package com.fengyu.engine.codecreatorFrame.java.jdbc;
 
 import com.alibaba.fastjson.JSON;
 import com.fengyu.ChihuoApplication;
+import com.fengyu.engine.codecreatorFrame.java.model.FieldModel;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
@@ -29,9 +30,12 @@ public class JdbcResultTest {
     @Test
     public void getTableStructureList() throws Exception {
         JdbcResult jdbcResult = new JdbcResultImpl();
-        List<Map<String, String>> list = jdbcResult.getTableStructureList();
+        List<Map<String, Object>> list = jdbcResult.getTableStructureList();
         System.out.println(JSON.toJSONString(list));
+        List<FieldModel> fieldModels = JdbcResultConvert.formatColumn(list);
+        System.out.println(JSON.toJSONString(fieldModels));
 
     }
+
 
 }

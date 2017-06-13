@@ -19,17 +19,17 @@ public class JdbcConfig implements Serializable{
     private static final long serialVersionUID = 2540371774626282307L;
 
     // JDBC 驱动名及数据库 URL
-    private static String jdbcDriver = "com.mysql.jdbc.Driver";
+    private static String jdbcDriver = "";
 
-    private static String dbUrl = "jdbc:mysql://localhost:3306/chihuo";
+    private static String dbUrl = "";
 
     // 数据库的用户名与密码，需要根据自己的设置
-    private static String user = "root";
+    private static String user = "";
 
-    private static String pass = "hanfeng111222!@#";
+    private static String pass = "";
 
     // 数据库表名
-    private static String tableName = "ts_user";
+    private static String tableName = "";
 
     public static String getJdbcDriver() {
         return jdbcDriver;
