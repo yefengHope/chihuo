@@ -19,16 +19,18 @@ public class FileUtils {
      *              "/" : 得到的是当前的classpath的绝对URI路径
      * @return {URL}
      */
-    public URL getResource(String name) {
-        return this.getClass().getResource(name);
+    public static URL getResource(String name) {
+        return FileUtils.class.getResource(name);
     }
+
+
 
     /**
      * 获取文件
      * @param pathName  路径名
      * @return {File}如果文件不存在返回空
      */
-    public File getFile(String pathName) {
+    public static File getFile(String pathName) {
         File file = new File(pathName);
         if (!file.exists()) {
             return null;
@@ -41,7 +43,7 @@ public class FileUtils {
      * @param pathName  路径名
      * @return  {File}
      */
-    public File getFileOrCreate(String pathName) {
+    public static File getFileOrCreate(String pathName) {
         File file = new File(pathName);
         if (!file.exists()) {
             // 判断父级目录是否存在
