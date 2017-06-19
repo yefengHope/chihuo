@@ -28,6 +28,7 @@ public class JdbcResultConvert {
             }
             JSONObject sourceJm = new JSONObject(sourceMap);
             String unformatName = sourceJm.getString("COLUMN_NAME");
+            // TODO: 2017/6/13 还没有写入数据长度 
             String columnType = sourceJm.getString("COLUMN_TYPE");
             String columnDataType = sourceJm.getString("DATA_TYPE");
             String columnComment = sourceJm.getString("COLUMN_COMMENT");
@@ -53,7 +54,7 @@ public class JdbcResultConvert {
                     fieldModel.setLowerCamelCaseName(StringUtils.uncapitalize(capitalizeName));
                     fieldModel.setUpperCamelCaseName(capitalizeName);
                     fieldModel.setComment(columnComment);
-                    fieldModel.setNullableIs("NO".equals(isNullable)? false : true);
+                    fieldModel.setNullableIs(!"NO".equals(isNullable));
                     outList.add(fieldModel);
                 } catch (ClassNotFoundException e) {
                     e.printStackTrace();
