@@ -70,13 +70,7 @@ public class CreateGeneralTemplate extends AbstractTemplate {
             out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file), "UTF-8"));
             //step6 模板渲染出所要的内容
             template.process(map, out);
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (TemplateException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (TemplateException | IOException e) {
             e.printStackTrace();
         } finally {
             try {

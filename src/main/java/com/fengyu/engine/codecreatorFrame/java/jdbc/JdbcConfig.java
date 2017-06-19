@@ -1,6 +1,6 @@
 package com.fengyu.engine.codecreatorFrame.java.jdbc;
 
-import com.fengyu.util.common.ResourceUtils;
+import com.fengyu.engine.codecreatorFrame.java.config.CodeFactoryConfig;
 
 import java.io.Serializable;
 import java.util.Map;
@@ -77,7 +77,7 @@ public class JdbcConfig implements Serializable{
 
     // 只能放在这里
     static {
-        Map<String, String> resourceMap = ResourceUtils.getResource("codeFactoryConfig").getMap();
+        Map<String, String> resourceMap = CodeFactoryConfig.getConfig();
         JdbcConfig.setDbUrl(resourceMap.get("db.dbUrl"));
         JdbcConfig.setJdbcDriver(resourceMap.get("db.jdbcDriver"));
         JdbcConfig.setUser(resourceMap.get("db.user"));
