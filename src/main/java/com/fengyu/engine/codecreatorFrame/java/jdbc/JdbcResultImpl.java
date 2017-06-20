@@ -15,6 +15,8 @@ import java.util.Map;
  */
 public class JdbcResultImpl extends AbstractJdbcConnection implements JdbcResult {
 
+    private static final long serialVersionUID = 891400884649670626L;
+
     @Override
     public List<Map<String, Object>> getList(String sql) {
         try {
