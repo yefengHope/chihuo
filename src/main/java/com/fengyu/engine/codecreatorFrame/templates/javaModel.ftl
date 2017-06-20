@@ -13,45 +13,45 @@
  fildModels.Name 字段的java名称 大驼峰
 
  -->
-package ${config.packagePath}
+package ${config.packagePath};
 
-import java.lang.*
-import java.math.*
+import java.lang.*;
+import java.math.*;
 
-import com.fengyu.system.base.BaseModel
+import com.fengyu.system.base.BaseModel;
 
 /**
  * ${config.comment}        <#--类注释-->
  * @author ${config.author} <#--作者-->
  * @date ${.now}            <#--获取当前时间-->
  */
-public class ${config.className}Model extends BaseModel{
+public class ${config.className} extends BaseModel{
 
     <#--如果data.fields 存在,则循环写入变量-->
-    <#if data.fields??>
+    <#if data.fieldModels??>
         <#list data.fieldModels as fildModels>
-            /**
-             * ${fildModels.comment}
-             */
-            private ${fildModels.type} ${fildModels.name} ;
+        /**
+         * ${fildModels.comment}
+         */
+        private ${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName} ;
         </#list>
     </#if>
 
     <#--如果data.fields 存在,则循环写入GET/SET方法-->
-    <#if data.fields??>
+    <#if data.fieldModels??>
         <#list data.fieldModels as fildModels>
         /**
         * ${fildModels.comment}
         */
-        public ${fildModels.type} get${fildModels.Name} () {
-            return this.name;
+        public ${fildModels.simpleDataTypeName} get${fildModels.upperCamelCaseName} () {
+            return this.${fildModels.lowerCamelCaseName};
         }
 
         /**
         * ${fildModels.comment}
         */
-        public void set${fildModels.Name} (${fildModels.type} ${fildModels.name}) {
-            this.${fildModels.name} = ${fildModels.name};
+        public void set${fildModels.upperCamelCaseName} (${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName}) {
+            this.${fildModels.lowerCamelCaseName} = ${fildModels.lowerCamelCaseName};
         }
         </#list>
     </#if>

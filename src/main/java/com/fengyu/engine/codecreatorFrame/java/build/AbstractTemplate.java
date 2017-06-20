@@ -36,6 +36,9 @@ public abstract class AbstractTemplate {
         if (!templateFile.exists()) {
             throw new NullPointerException("模板文件夹路径无效");
         }
+        // cfg.setClassForTemplateLoading(getClass(), templateFile.getPath());
+        // cfg.setClassForTemplateLoading(getClass(), TemplateConfig.getDirPath());
+        cfg.setDirectoryForTemplateLoading(templateFile);
 
         //step3 设置freemarker模板编码
         cfg.setEncoding(Locale.getDefault(), "UTF-8");

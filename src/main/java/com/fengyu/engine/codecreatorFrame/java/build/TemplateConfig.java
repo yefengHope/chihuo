@@ -16,12 +16,12 @@ import java.util.Map;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public class TemplateConfig implements Serializable{
+public class TemplateConfig implements Serializable {
 
 
     private static final long serialVersionUID = 4347308140509715561L;
 
-    private static Map<String,String> config = CodeFactoryConfig.getConfig();
+    private static Map<String, String> config = CodeFactoryConfig.getConfig();
 
     private static String dirPath;
 
@@ -48,49 +48,49 @@ public class TemplateConfig implements Serializable{
     /**
      * 配置属性-前缀型
      */
-    private static String[] configPrefixAttrs= {"build"};
+    private static String[] configPrefixAttrs = {"build"};
     /**
      * 配置属性-后缀型
      */
-    private static String[] configSuffixAttrs= {"fileName","comment","packagePath"};
+    private static String[] configSuffixAttrs = {"fileName", "comment", "packagePath"};
 
     /**
      * 从配置文件获取构建模块配置属性
-     * @param name  预备项为: {"dao","service","service.impl","controller","mybatis","html.list","html.addOrEdit"}
-     * @return
-     * {
-     *     build : "构建类型",
-     *     fileName : "构建文件名",
-     *     comment : "构建注释",
-     *     package : "构建路径",
+     *
+     * @param name 预备项为: {"dao","service","service.impl","controller","mybatis","html.list","html.addOrEdit"}
+     * @return {
+     * build : "构建类型",
+     * fileName : "构建文件名",
+     * comment : "构建注释",
+     * package : "构建路径",
      * }
      */
-    private static Map<String,String> getBuildBlock (String name) {
+    private static Map<String, String> getBuildBlock(String name) {
 
-        Map<String,String> map = new HashMap<>();
-        for (int i=0,il=configPrefixAttrs.length;i<il;i++) {
-            map.put(configPrefixAttrs[i],config.get(configPrefixAttrs[i] + "." + name));
+        Map<String, String> map = new HashMap<>();
+        for (int i = 0, il = configPrefixAttrs.length; i < il; i++) {
+            map.put(configPrefixAttrs[i], config.get(configPrefixAttrs[i] + "." + name));
         }
 
-        for (int i=0,il=configSuffixAttrs.length;i<il;i++) {
-            map.put(configPrefixAttrs[i],config.get(name + "." + configSuffixAttrs[i]));
+        for (int i = 0, il = configSuffixAttrs.length; i < il; i++) {
+            map.put(configSuffixAttrs[i], config.get(name + "." + configSuffixAttrs[i]));
         }
         return map;
     }
 
     /**
      * 获取模块配置内容
+     *
      * @param name 预备项为: {"dao","service","service.impl","controller","mybatis","html.list","html.addOrEdit"}
-     * @return
-     * {
-     *     build : "构建类型",
-     *     fileName : "构建文件名",
-     *     comment : "构建注释",
-     *     package : "构建路径",
+     * @return {
+     * build : "构建类型",
+     * fileName : "构建文件名",
+     * comment : "构建注释",
+     * package : "构建路径",
      * }
      */
-    public static Map<String,String> getConfigType(String name) {
-        Map<String,String> map = getBuildBlock(name);
+    public static Map<String, String> getConfigType(String name) {
+        Map<String, String> map = getBuildBlock(name);
         return map;
     }
 
