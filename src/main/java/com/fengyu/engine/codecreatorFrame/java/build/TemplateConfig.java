@@ -52,7 +52,7 @@ public class TemplateConfig implements Serializable {
     /**
      * 配置属性-后缀型
      */
-    private static String[] configSuffixAttrs = {"fileName", "comment", "packagePath"};
+    private static String[] configSuffixAttrs = {"fileName","fileType", "comment", "packagePath"};
 
     /**
      * 从配置文件获取构建模块配置属性

@@ -33,9 +33,12 @@ public class SqlMapJavaType implements Serializable {
 
         map.put("YEAR",      "java.sql.Date");
         map.put("DATE",      "java.sql.Date");
-        map.put("TIME",      "java.sql.Time");
-        map.put("DATETIME",  "java.sql.Timestamp");
-        map.put("TIMESTAMP", "java.sql.Timestamp");
+        map.put("TIME",      "java.util.Date");
+        map.put("DATETIME",  "java.util.Date");
+        map.put("TIMESTAMP", "java.util.Date");
+        // map.put("TIME",      "java.sql.Time");
+        // map.put("DATETIME",  "java.sql.Timestamp");
+        // map.put("TIMESTAMP", "java.sql.Timestamp");
 
     }
 

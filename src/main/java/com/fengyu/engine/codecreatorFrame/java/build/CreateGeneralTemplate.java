@@ -4,8 +4,12 @@ import com.fengyu.util.common.FileUtils;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.*;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Map;
 
 /**
@@ -15,9 +19,10 @@ import java.util.Map;
  * <p>@author hanfeng</p>
  * <p>@date 2017/6/19 16:04 创建日期</p>
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
- * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
 public class CreateGeneralTemplate extends AbstractTemplate {
+
+    private static Logger logger = LoggerFactory.getLogger(CreateGeneralTemplate.class);
 
     /**
      * 模板处理之前
@@ -30,11 +35,11 @@ public class CreateGeneralTemplate extends AbstractTemplate {
 
     /**
      * 模板处理,模板生成
-     * @param map
-     * {
-     *     fileName : ftl文件名
-     *     filePath : 模板生成文件输出路径
-     * }
+     *
+     * @param map {
+     *            fileName : ftl文件名
+     *            filePath : 模板生成文件输出路径
+     *            }
      * @throws IOException
      */
     public void doHandle(Map<String, Object> map) {
@@ -63,6 +68,11 @@ public class CreateGeneralTemplate extends AbstractTemplate {
             throw new RuntimeException("文件名已存在");
         }
         file = FileUtils.getFileOrCreate(filePath);
+        logger.info("创建文件路径：" + file.getPath());
+
+        // 获取项目路径
+        // String
+        logger.info("类路径：" + map.get("packagePath"));
 
         //step5 初始化一个IO流
         BufferedWriter out = null;

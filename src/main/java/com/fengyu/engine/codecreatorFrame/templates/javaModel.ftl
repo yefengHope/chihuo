@@ -17,6 +17,7 @@ package ${config.packagePath};
 
 import java.lang.*;
 import java.math.*;
+import java.util.Date;
 
 import com.fengyu.system.base.BaseModel;
 
@@ -41,14 +42,14 @@ public class ${config.className} extends BaseModel{
     <#if data.fieldModels??>
         <#list data.fieldModels as fildModels>
         /**
-        * ${fildModels.comment}
+        * 获取${fildModels.comment}
         */
         public ${fildModels.simpleDataTypeName} get${fildModels.upperCamelCaseName} () {
             return this.${fildModels.lowerCamelCaseName};
         }
 
         /**
-        * ${fildModels.comment}
+        * 设置${fildModels.comment}
         */
         public void set${fildModels.upperCamelCaseName} (${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName}) {
             this.${fildModels.lowerCamelCaseName} = ${fildModels.lowerCamelCaseName};
