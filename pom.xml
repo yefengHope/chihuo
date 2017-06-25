@@ -206,6 +206,12 @@
 			<!--<scope>test</scope>-->
 		<!--</dependency>-->
 
+		<!--定时任务包-->
+		<dependency>
+			<groupId>org.quartz-scheduler</groupId>
+			<artifactId>quartz</artifactId>
+			<version>1.7.3</version>
+		</dependency>
 	</dependencies>
 	<build>
 		<plugins>

@@ -23,14 +23,20 @@ public abstract class AbstractInit {
 
     public abstract void init();
 
+    private static List<Map<String, Object>> dataStructureList ;
+    private static List<FieldModel> fieldModels;
+    static {
+        JdbcResult jdbcResult = new JdbcResultImpl();
+        dataStructureList = jdbcResult.getTableStructureList();
+        fieldModels = JdbcResultConvert.formatColumn(dataStructureList);
+    }
+
 
     /**
      * 根据配置内容获取数据表结构
      * @return {List<Map<String, Object>>}
      */
     public List<Map<String, Object>> selectDataStructureList() {
-        JdbcResult jdbcResult = new JdbcResultImpl();
-        List<Map<String, Object>> dataStructureList = jdbcResult.getTableStructureList();
         return dataStructureList;
     }
 
@@ -40,7 +46,6 @@ public abstract class AbstractInit {
      * @return {List<FieldModel>}
      */
     public List<FieldModel> selectFieldModels (List<Map<String, Object>> list){
-        List<FieldModel> fieldModels = JdbcResultConvert.formatColumn(list);
         return fieldModels;
     }
 

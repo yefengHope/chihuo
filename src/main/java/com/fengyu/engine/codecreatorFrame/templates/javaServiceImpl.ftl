@@ -1,22 +1,39 @@
 package ${config.packagePath};
 
+import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
 import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import java.util.List;
 import java.util.Map;
 
-@Service("${config.classLowerName}")
-public class ${config.className}  extends ${config.serviceClassName}{ <#--extends BaseMapper<${config.className}>-->
+@Service("${config.className?uncap_first}")
+public class ${config.className}  <#if config.serviceClassName??> extends ${config.serviceClassName}</#if>{ <#--extends BaseMapper<${config.className}>-->
+
+    <#assign modelName>
+        <#if config.modelName??>${modelName?trim}<#else>Object</#if>
+    </#assign>
+    <#assign modelLowerName>
+        <#if config.modelName??>${config.modelName?uncap_first}<#else>map</#if>
+    </#assign>
+
+    <#assign mapperClassName>
+        <#if config.mapperClassName??>${config.mapperClassName?uncap_first}<#else>// todo \n Object</#if>
+    </#assign>
+    <#assign mapperClassLowerName>
+        <#if config.mapperClassName??>${config.mapperClassName?uncap_first}<#else>map</#if>
+    </#assign>
 
     @Resource
-    private ${config.mapperClassName} ${config.mapperClassLowerName};
+    private ${mapperClassName?trim} ${mapperClassLowerName?trim};
 
     /**
     * 分页查询
     * @param map 自定义参数
     */
-    PageInfo<${config.modelName}> findPageByParams(Map<String,Object> map){
-
+    PageInfo<${modelName?trim}> findPageByParams(Map<String,Object> map){
+        return null;
     }
 
     /**
@@ -24,8 +41,8 @@ public class ${config.className}  extends ${config.serviceClassName}{ <#--extend
     * @param map 自定义参数
     * @return {List}
     */
-    List<${config.modelName}> findListByParams(Map<String, Object> map){
-
+    List<${modelName?trim}> findListByParams(Map<String, Object> map){
+        return null;
     }
 
     /**
@@ -33,8 +50,8 @@ public class ${config.className}  extends ${config.serviceClassName}{ <#--extend
     * @param map 自定义参数
     * @return
     */
-    ${config.modelName} findById(Map<String, Object> map){
-
+    ${modelName?trim} findById(Map<String, Object> map){
+        return null;
     }
 
     /**
@@ -42,33 +59,33 @@ public class ${config.className}  extends ${config.serviceClassName}{ <#--extend
     * @param map 自定义参数
     * @return
     */
-    ${config.modelName} findByIds(Map<String,Object> map){
-
+    ${modelName?trim} findByIds(Map<String,Object> map){
+        return null;
     }
 
     /**
     * 插入对象
-    * @param ${config.modelLowerName} 自定义参数
+    * @param ${modelLowerName?trim} 自定义参数
     * @return
     */
-    ${config.modelName} insert(${config.modelName} ${config.modelLowerName}){
-
+    ${modelName?trim} insert(${modelName?trim} ${modelLowerName?trim}){
+        return null;
     }
 
     /**
     * 插入批量
-    * @param ${config.modelLowerName} 自定义参数
+    * @param ${modelLowerName?trim} 自定义参数
     */
-    void insertBatch(List<${config.modelName}> ${config.modelLowerName}){
-
+    void insertBatch(List<${modelName?trim}> ${modelLowerName?trim}){
+        return;
     }
 
     /**
     * 更新
-    * @param ${config.modelLowerName} 自定义参数
+    * @param ${modelLowerName?trim} 自定义参数
     */
-    void update(${config.modelName} ${config.modelLowerName}){
-
+    void update(${modelName?trim} ${modelLowerName?trim}){
+        return;
     }
 
     /**
@@ -76,7 +93,7 @@ public class ${config.className}  extends ${config.serviceClassName}{ <#--extend
     * @param map 自定义参数
     */
     void updateStatus(Map<String,Object> map){
-
+        return;
     }
 
 }
