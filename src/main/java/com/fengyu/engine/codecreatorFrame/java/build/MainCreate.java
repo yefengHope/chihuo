@@ -1,18 +1,10 @@
 package com.fengyu.engine.codecreatorFrame.java.build;
 
-import com.fengyu.engine.codecreatorFrame.java.config.CodeFactoryConfig;
 import com.fengyu.engine.codecreatorFrame.java.init.*;
-import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResult;
-import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResultConvert;
-import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResultImpl;
-import com.fengyu.engine.codecreatorFrame.java.model.FieldModel;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 创建
@@ -49,6 +41,38 @@ public class MainCreate {
         init.init();
 
 
+    }
+
+    /**
+     * 包路径转换成文件夹路径
+     * @param packagePath
+     * @return
+     */
+    public String packageToDir(String packagePath) {
+        if (StringUtils.isBlank(packagePath)) {
+            return null;
+        }
+        String[] packagePaths = packagePath.split(".");
+        if (packagePaths.length <= 0){
+            return null;
+        }
+        return StringUtils.join(packagePaths,File.separator);
+    }
+
+    /**
+     * 文件夹路径转换成包路径
+     * @param dirPath
+     * @return
+     */
+    public String dirToPackagePath(String dirPath) {
+        if (StringUtils.isBlank(dirPath)) {
+            return null;
+        }
+        String[] dirPaths = dirPath.split(".");
+        if (dirPaths.length <= 0){
+            return null;
+        }
+        return StringUtils.join(dirPaths,".");
     }
 
     public static void main(String[] args) {
