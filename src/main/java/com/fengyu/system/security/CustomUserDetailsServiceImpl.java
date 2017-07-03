@@ -25,7 +25,7 @@ import java.util.Set;
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
 @Component
-public class CustomUserDetailsService implements UserDetailsService {
+public class CustomUserDetailsServiceImpl implements UserDetailsService {
 
     @Resource(name = "loginService")
     private LoginService loginService;
