@@ -44,7 +44,7 @@
 
     <!-- 如果没有mappers org.apache.ibatis.binding.BindingException: Invalid bound statement (not found) -->
     <mappers>
-        <mapper resource="mybatis/mapper/UserMapper.xml"/>
+        <!--<mapper resource="mybatis/mapper/UserMapper.xml"/>-->
     </mappers>
 
 </configuration>

@@ -1,6 +1,7 @@
 package com.fengyu;
 
 import org.jboss.logging.Logger;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,6 +11,7 @@ import org.springframework.scheduling.annotation.EnableAsync;
  * spring boot启动类
  */
 @SpringBootApplication
+@MapperScan("com.fengyu.system.dao")
 @EnableAsync	//开启异步支持,并在非static方法上配置@Async
 public class ChihuoApplication {
 

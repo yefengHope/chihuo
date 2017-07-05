@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.fengyu.ChihuoApplication;
 import com.fengyu.system.entity.User;
 import com.fengyu.system.service.UserService;
+import com.github.pagehelper.PageInfo;
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,6 +29,11 @@ public class UserControllerTest {
     @Test
     public void toPageListJson() throws Exception {
         List<User> users = userService.findAllList();
+        logger.info(JSON.toJSON(users));
+    }
+    @Test
+    public void findAllPageList() throws Exception {
+        PageInfo<User> users = userService.findAllPageList(1,10);
         logger.info(JSON.toJSON(users));
     }
 

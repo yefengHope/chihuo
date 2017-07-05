@@ -4,11 +4,13 @@ import com.fengyu.system.dao.UserMapper;
 import com.fengyu.system.entity.User;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.awt.print.Pageable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,6 +32,7 @@ public class UserServiceImpl implements UserService{
         // List<User> users = (List<User>) userRepository.findAll();
         List<User> users = userMapper.selectAll();
         return users;
+        // return null;
     }
 
     @Override
@@ -49,13 +52,12 @@ public class UserServiceImpl implements UserService{
      */
     @Override
     public PageInfo<User> findAllPageList(Integer page, Integer pageSize) {
-        // if( page!= null && pageSize!= null){
-        //     PageHelper.startPage(page, pageSize);
-        // }
-        // List<User> users = userMapper.findAllPage();
-        // return new PageInfo(users);
-
-        return null;
+        if( page!= null && pageSize!= null){
+            PageHelper.startPage(page, pageSize);
+        }
+        List<User> users = userMapper.selectAll();
+        // List<User> users = new ArrayList<>();
+        return new PageInfo<>(users);
     }
 
     public void save(User user){

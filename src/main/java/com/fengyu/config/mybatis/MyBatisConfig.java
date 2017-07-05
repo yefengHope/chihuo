@@ -1,4 +1,4 @@
-package com.fengyu.config;
+package com.fengyu.config.mybatis;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
