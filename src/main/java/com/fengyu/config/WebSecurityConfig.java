@@ -45,7 +45,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // /和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证
         // defaultSuccessUrl 登录成功页
         http.authorizeRequests()
-                .antMatchers("/", "/home").permitAll().anyRequest().authenticated()
+                .antMatchers("/", "/home","/demo/**").permitAll().anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
                 .and()
