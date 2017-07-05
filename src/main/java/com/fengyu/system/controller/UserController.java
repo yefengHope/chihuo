@@ -59,13 +59,15 @@ public class UserController extends BaseController {
 
     /**
      * 用户列表
-     *  bootstrap table server方式
-     *      bootstrap table调用toPageListJson生成json传回页面
+     * bootstrap table server方式
+     * bootstrap table调用toPageListJson生成json传回页面
+     *
      * @return
      */
     @FormToken(needSaveToken = true)
-    @RequestMapping(value = "/all_page_list",method = RequestMethod.GET)
-    public String toPageList(String name,String id){
+    @RequestMapping(value = "/all_page_list", method = RequestMethod.GET)
+    // @PreAuthorize("hasAnyRole('admin', 'user')")
+    public String toPageList(String name, String id) {
         System.out.println("name:" + name);
         System.out.println("id:" + id);
         return "system/user/all_page";
@@ -73,19 +75,20 @@ public class UserController extends BaseController {
 
     /**
      * 用户列表,返回json(包含分页查询)
-     * @param limit         分页大小
-     * @param pageNumber    当前页码
-     * @param searchText    搜索文本
-     * @param sortOrder     排序方式
-     * @param sortName      排序列名
+     *
+     * @param limit      分页大小
+     * @param pageNumber 当前页码
+     * @param searchText 搜索文本
+     * @param sortOrder  排序方式
+     * @param sortName   排序列名
      * @return
      */
-    @RequestMapping(value = "all_page_list.json",method = RequestMethod.POST)
+    @RequestMapping(value = "all_page_list.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName){
+    public Map toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName) {
         // Pageable pageable = new PageRequest(pageNumber,limit);
-        PageInfo<User> page = userService.findAllPageList(pageNumber,limit);
-        return returnBootTable(true,"查询成功",page);
+        PageInfo<User> page = userService.findAllPageList(pageNumber, limit);
+        return returnBootTable(true, "查询成功", page);
         // BootPage bootPage = new BootPage(limit,pageNumber,searchText,sortOrder,sortName,page);
 
         //------------------ 测试代码 ------------------
@@ -97,28 +100,31 @@ public class UserController extends BaseController {
 
     /**
      * 跳转到添加页
+     *
      * @return
      */
-    @RequestMapping(value = "add_user" ,method = RequestMethod.GET)
+    @RequestMapping(value = "add_user", method = RequestMethod.GET)
     public String toAddUser() {
         return "system/user/add_user";
     }
 
     /**
      * 添加
-     * @param user  用户实体
+     *
+     * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "add_user" ,method = RequestMethod.POST)
+    @RequestMapping(value = "add_user", method = RequestMethod.POST)
     public String addUser(User user) {
         return null;
     }
 
     /**
      * 跳转到更新页
+     *
      * @return
      */
-    @RequestMapping(value = "update_user" , method = RequestMethod.GET)
+    @RequestMapping(value = "update_user", method = RequestMethod.GET)
     public String toUpdateUser() {
 
         return null;
@@ -126,10 +132,11 @@ public class UserController extends BaseController {
 
     /**
      * 更新
-     * @param user  用户实体
+     *
+     * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "update_user" , method = RequestMethod.POST)
+    @RequestMapping(value = "update_user", method = RequestMethod.POST)
     @ResponseBody
     public String updateUser(User user) {
 
@@ -138,10 +145,11 @@ public class UserController extends BaseController {
 
     /**
      * 删除
+     *
      * @param id id
      * @return
      */
-    public String delUser(  Long id) {
+    public String delUser(Long id) {
 
         return null;
     }
