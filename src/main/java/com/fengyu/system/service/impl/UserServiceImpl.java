@@ -28,7 +28,7 @@ public class UserServiceImpl implements UserService{
      */
     public List<User> findAllList() {
         // List<User> users = (List<User>) userRepository.findAll();
-        List<User> users = userMapper.findAllPage();
+        List<User> users = userMapper.selectAll();
         return users;
     }
 
