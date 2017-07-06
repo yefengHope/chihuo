@@ -3,14 +3,11 @@ package com.fengyu.system.service.impl;
 import com.fengyu.system.dao.UserMapper;
 import com.fengyu.system.entity.User;
 import com.fengyu.system.service.UserService;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.awt.print.Pageable;
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -29,19 +26,9 @@ public class UserServiceImpl implements UserService{
      * @return {List}
      */
     public List<User> findAllList() {
-        // List<User> users = (List<User>) userRepository.findAll();
         List<User> users = userMapper.selectAll();
         return users;
-        // return null;
     }
-
-    @Override
-    public Page<User> findAllPageList(Pageable pageable) {
-        // return userRepository.findAll(pageable);
-        return null;
-    }
-
-
 
     /**
      * 查询所有
@@ -56,11 +43,10 @@ public class UserServiceImpl implements UserService{
             PageHelper.startPage(page, pageSize);
         }
         List<User> users = userMapper.selectAll();
-        // List<User> users = new ArrayList<>();
         return new PageInfo<>(users);
     }
 
     public void save(User user){
-        // userRepository.save(user);
+        userMapper.insert(user);
     }
 }

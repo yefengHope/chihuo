@@ -1,10 +1,8 @@
 package com.fengyu.system.service;
 
 import com.fengyu.system.entity.User;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 
-import java.awt.print.Pageable;
 import java.util.List;
 
 /**
@@ -17,13 +15,6 @@ public interface UserService {
      * @return List<User>
      */
     List<User> findAllList();
-
-    /**
-     * 查询所有
-     * @param pageable  分页
-     * @return  Page<User>
-     */
-     Page<User> findAllPageList(Pageable pageable);
 
     /**
      * 查询所有

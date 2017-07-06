@@ -5,6 +5,7 @@ import com.fengyu.system.entity.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
+import org.apache.ibatis.annotations.Mapper;
  * Created by rain on 2017/3/13.
  */
 @Mapper
