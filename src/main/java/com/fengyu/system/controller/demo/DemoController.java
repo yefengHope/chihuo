@@ -1,4 +1,4 @@
-package com.fengyu.system.controller;
+package com.fengyu.system.controller.demo;
 
 import com.alibaba.fastjson.JSON;
 import com.fengyu.system.entity.User;
