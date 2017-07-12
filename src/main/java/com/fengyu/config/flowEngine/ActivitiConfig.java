@@ -48,6 +48,9 @@ public class ActivitiConfig extends AbstractProcessEngineAutoConfiguration {
         SpringProcessEngineConfiguration engineConfiguration = new SpringProcessEngineConfiguration();
         engineConfiguration.setDataSource(dataSource);
         engineConfiguration.setTransactionManager(transactionManager);
+        // <!-- 设置建表策略，如果没有表，自动创建表 -->
+        engineConfiguration.setDatabaseSchema("ACT");
+        engineConfiguration.setDatabaseSchemaUpdate("true");
         return engineConfiguration;
     }
 
