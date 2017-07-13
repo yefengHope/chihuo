@@ -14,8 +14,8 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * <p>@Title 类标题描述 </p>
- * <p>@Description 类功能描述（功能，作用）,描述过多时可以换行</p>
+ * <p>@Title Look for Spring access url and method mapping  </p>
+ * <p>@Description 获取spring的访问url和方法映射</p>
  * <p>@Version 1.0.0 版本号</p>
  * <p>@author hanfeng</p>
  * <p>@date 2017/7/13 9:33 创建日期</p>
@@ -28,9 +28,12 @@ public class GetRequestMappingController {
     // @RequestMapping(value = "getUrlMapping")
     public ModelAndView getUrlMapping(HttpServletRequest request) {
         WebApplicationContext wc = getWebApplicationContext(request.getSession().getServletContext());
-        RequestMappingHandlerMapping rmhp = (RequestMappingHandlerMapping)wc.getBean("org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0");
-        Map<RequestMappingInfo, HandlerMethod> map = rmhp.getHandlerMethods(); for (Iterator<RequestMappingInfo> iterator = map.keySet().iterator(); iterator
-                .hasNext();) {
+        RequestMappingHandlerMapping rmhp = (RequestMappingHandlerMapping)wc
+                .getBean("org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0");
+        Map<RequestMappingInfo, HandlerMethod> map = rmhp.getHandlerMethods();
+        for (Iterator<RequestMappingInfo> iterator = map.keySet().iterator();
+             iterator.hasNext();
+             ) {
             RequestMappingInfo info = iterator.next();
             System.out.print(info.getConsumesCondition());
             System.out.print(info.getCustomCondition());
@@ -46,8 +49,10 @@ public class GetRequestMappingController {
             System.out.print(method.getMethod().getName() + "--");
             System.out.print(method.getMethodAnnotation(RequestMapping.class).params()[0]);
             System.out.println();
-        } return null;
+        }
+        return null;
     }
+
 
     public WebApplicationContext getWebApplicationContext(ServletContext sc) {
         return WebApplicationContextUtils.getRequiredWebApplicationContext(sc);
