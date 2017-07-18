@@ -11,7 +11,9 @@
 <table border=1>
 <#list animals as animal>
     <tr>
+        <#if (animal.name)??>
         <td>${animal.name}</td>
+        </#if>
         <td>${animal.price} Euros</td>
     </tr>
 </#list>

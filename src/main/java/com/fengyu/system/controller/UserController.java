@@ -83,7 +83,7 @@ public class UserController extends BaseController {
      * @param sortName   排序列名
      * @return
      */
-    @RequestMapping(value = "all_page_list.json", method = RequestMethod.POST)
+    @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
     public Map toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName) {
         // Pageable pageable = new PageRequest(pageNumber,limit);

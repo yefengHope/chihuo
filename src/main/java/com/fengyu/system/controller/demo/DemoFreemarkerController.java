@@ -38,7 +38,7 @@ public class DemoFreemarkerController {
         List<JSONObject> list = new ArrayList<>();
 
         JSONObject json1 = new JSONObject();
-        json1.put("name","余萍");
+        // json1.put("name","余萍");
         json1.put("price","￥2.0");
         list.add(json1);
 
