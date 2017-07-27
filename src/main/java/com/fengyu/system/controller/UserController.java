@@ -1,13 +1,14 @@
 package com.fengyu.system.controller;
 
 import com.fengyu.system.base.BaseController;
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.UserService;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -64,19 +65,19 @@ public class UserController extends BaseController {
      *
      * @return
      */
-    @FormToken(needSaveToken = true)
-    @RequestMapping(value = "/all_page_list", method = RequestMethod.GET)
+    // @FormToken(needSaveToken = true)
+    @RequestMapping(value = "/page.htm", method = RequestMethod.GET)
     // @PreAuthorize("hasAnyRole('admin', 'user')")
     public String toPageList(String name, String id) {
-        System.out.println("name:" + name);
-        System.out.println("id:" + id);
-        return "system/user/all_page";
+        logger.debug("访问列表参数输出： id:" + id + "   ,name:" + name);
+        return "system/user/list_bootstrap";
+        // return "system/user/list";
     }
 
     /**
      * 用户列表,返回json(包含分页查询)
      *
-     * @param limit      分页大小
+     * @param pageSize   分页大小
      * @param pageNumber 当前页码
      * @param searchText 搜索文本
      * @param sortOrder  排序方式
@@ -85,9 +86,9 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map toPageListJson(int limit, int pageNumber, String searchText, String sortOrder, String sortName) {
+    public Map toPageListJson(int pageSize, int pageNumber, String searchText, String sortOrder, String sortName) {
         // Pageable pageable = new PageRequest(pageNumber,limit);
-        PageInfo<User> page = userService.findAllPageList(pageNumber, limit);
+        PageInfo<UserEntity> page = userService.findAllPageList(pageNumber, pageSize);
         return returnBootTable(true, "查询成功", page);
         // BootPage bootPage = new BootPage(limit,pageNumber,searchText,sortOrder,sortName,page);
 
@@ -103,7 +104,7 @@ public class UserController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "add_user", method = RequestMethod.GET)
+    @RequestMapping(value = "to_add_user.htm", method = RequestMethod.GET)
     public String toAddUser() {
         return "system/user/add_user";
     }
@@ -114,8 +115,8 @@ public class UserController extends BaseController {
      * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "add_user", method = RequestMethod.POST)
-    public String addUser(User user) {
+    @RequestMapping(value = "add_user.htm", method = RequestMethod.POST)
+    public String addUser(UserEntity user) {
         return null;
     }
 
@@ -124,7 +125,7 @@ public class UserController extends BaseController {
      *
      * @return
      */
-    @RequestMapping(value = "update_user", method = RequestMethod.GET)
+    @RequestMapping(value = "to_update_user.htm", method = RequestMethod.GET)
     public String toUpdateUser() {
 
         return null;
@@ -136,20 +137,21 @@ public class UserController extends BaseController {
      * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "update_user", method = RequestMethod.POST)
+    @RequestMapping(value = "update_user.htm", method = RequestMethod.POST)
     @ResponseBody
-    public String updateUser(User user) {
+    public String updateUser(UserEntity user) {
 
         return null;
     }
 
     /**
      * 删除
-     *
-     * @param id id
+     * @param ids ids
      * @return
      */
-    public String delUser(Long id) {
+    @RequestMapping(value = "del_rows.htm", method = RequestMethod.POST)
+    @ResponseBody
+    public String delUser(String ids) {
 
         return null;
     }

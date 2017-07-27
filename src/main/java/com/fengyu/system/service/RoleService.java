@@ -1,6 +1,7 @@
 package com.fengyu.system.service;
 
-import com.fengyu.system.entity.Role;
+
+import com.fengyu.system.entity.RoleEntity;
 
 import java.util.List;
 
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public interface RoleService {
 
-    List<Role> getRoles(Long userId);
+    List<RoleEntity> getRoles(String userId);
 
     /**
      * 实现spring security 认证方法
@@ -24,5 +25,5 @@ public interface RoleService {
      * @param permissionStr security permission
      * @return boolean
      */
-    boolean authorized(Long loginId,String domainStr,String permissionStr);
+    boolean authorized(String loginId,String domainStr,String permissionStr);
 }

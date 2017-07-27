@@ -1,6 +1,6 @@
 package com.fengyu.system.util.interceptor;
 
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.util.common.TokenProcessor;
 import com.fengyu.system.util.interceptor.annotation.FormToken;
 import org.apache.log4j.Logger;
@@ -24,7 +24,7 @@ public class FormTokenInterceptor extends HandlerInterceptorAdapter {
                              HttpServletResponse response, Object handler) throws Exception {
 
         // User user = UserUtil.getUser();
-        User user = new User();
+        UserEntity user = new UserEntity();
         if (user != null) {
             HandlerMethod handlerMethod = (HandlerMethod) handler;
             Method method = handlerMethod.getMethod();

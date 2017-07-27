@@ -1,8 +1,12 @@
 package com.fengyu.system.service.impl;
 
-import com.fengyu.system.entity.Login;
+import com.fengyu.system.entity.LoginEntity;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.LoginService;
+import com.fengyu.system.service.UserService;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -16,8 +20,14 @@ import org.springframework.stereotype.Service;
 @Service("loginService")
 public class LoginServiceImpl implements LoginService {
 
+    @Resource
+    private UserService userService;
+
     @Override
-    public Login findByUsername(String username) {
-        return null;
+    public LoginEntity findByUsername(String username) {
+        UserEntity user = new UserEntity();
+        user.setLoginNum(username);
+        user = userService.findOne(user);
+        return new LoginEntity(user.getId(),user.getLoginPwd());
     }
 }

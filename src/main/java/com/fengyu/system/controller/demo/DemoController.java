@@ -1,7 +1,7 @@
 package com.fengyu.system.controller.demo;
 
 import com.alibaba.fastjson.JSON;
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import org.apache.commons.lang.math.RandomUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -42,7 +42,7 @@ public class DemoController {
      * @param user
      */
     @RequestMapping(value = "beanValidated")
-    public void beanValidated(@Validated User user) {
+    public void beanValidated(@Validated UserEntity user) {
         System.out.println(JSON.toJSONString(user));
     }
 
@@ -51,7 +51,7 @@ public class DemoController {
      * @param user
      */
     @RequestMapping(value = "beanValid")
-    public void beanValid(@Valid User user) {
+    public void beanValid(@Valid UserEntity user) {
         System.out.println(JSON.toJSONString(user));
     }
 
@@ -61,14 +61,14 @@ public class DemoController {
      * @param bindingResult
      */
     @RequestMapping(value = "beanValidAndResult")
-    public void beanValid(@Valid User user, BindingResult bindingResult) {
+    public void beanValid(@Valid UserEntity user, BindingResult bindingResult) {
         // bindingResult 错误结果集输出方法
         System.out.println(JSON.toJSONString(bindingResult.getAllErrors()));
         System.out.println(JSON.toJSONString(user));
     }
 
     @RequestMapping(value = "beanNotValid")
-    public void beanNotValid(User user) {
+    public void beanNotValid(UserEntity user) {
         System.out.println(JSON.toJSONString(user));
     }
 

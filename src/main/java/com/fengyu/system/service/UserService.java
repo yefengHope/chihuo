@@ -1,6 +1,6 @@
 package com.fengyu.system.service;
 
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -10,23 +10,25 @@ import java.util.List;
  */
 public interface UserService {
 
+    UserEntity findOne(UserEntity user);
+
     /**
      * 查询所有
-     * @return List<User>
+     * @return List<UserEntity>
      */
-    List<User> findAllList();
+    List<UserEntity> findAllList();
 
     /**
      * 查询所有
      * @param page
      * @param page
-     * @return  Page<User>
+     * @return  Page<UserEntity>
      */
-    PageInfo<User> findAllPageList(Integer page , Integer pageSize);
+    PageInfo<UserEntity> findAllPageList(Integer page , Integer pageSize);
 
     /**
      * 保存
      * @param user
      */
-    void save(User user);
+    void save(UserEntity user);
 }

@@ -2,7 +2,7 @@ package com.fengyu.system.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.fengyu.ChihuoApplication;
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.apache.log4j.Logger;
@@ -28,12 +28,12 @@ public class UserControllerTest {
 
     @Test
     public void toPageListJson() throws Exception {
-        List<User> users = userService.findAllList();
+        List<UserEntity> users = userService.findAllList();
         logger.info(JSON.toJSON(users));
     }
     @Test
     public void findAllPageList() throws Exception {
-        PageInfo<User> users = userService.findAllPageList(1,10);
+        PageInfo<UserEntity> users = userService.findAllPageList(1,10);
         logger.info(JSON.toJSON(users));
     }
 

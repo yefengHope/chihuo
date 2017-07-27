@@ -9,17 +9,22 @@ package com.fengyu.system.entity;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public class Login {
+public class LoginEntity {
 
-    private Long id;
+    private String id;
 
     private String password;
 
-    public Long getId() {
+    public LoginEntity(String id, String password) {
+        this.id = id;
+        this.password = password;
+    }
+
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

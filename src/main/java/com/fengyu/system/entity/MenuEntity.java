@@ -3,13 +3,15 @@ package com.fengyu.system.entity;
 import com.fengyu.system.base.BaseEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.Table;
 
 /**
  * 菜单类
  * Created by rain on 2016/11/7.
  */
 @Entity
-public class Menu extends BaseEntity {
+// @Table()
+public class MenuEntity extends BaseEntity {
 
     private static final long serialVersionUID = 5557847780198678679L;
 

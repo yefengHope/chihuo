@@ -1,6 +1,6 @@
 package com.fengyu.system.service;
 
-import com.fengyu.system.entity.Login;
+import com.fengyu.system.entity.LoginEntity;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -18,5 +18,5 @@ public interface LoginService {
      * @param username  登录账号，邮箱，手机号
      * @return  User
      */
-    Login findByUsername(String username);
+    LoginEntity findByUsername(String username);
 }

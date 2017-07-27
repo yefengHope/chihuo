@@ -1,6 +1,6 @@
 package com.fengyu.system.entity;
 
-import com.fengyu.system.base.BaseEntity;
+import com.fengyu.system.base.BaseNoIdEntity;
 import com.fengyu.system.util.annotation.Note;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
@@ -17,7 +17,7 @@ import javax.validation.constraints.NotNull;
  */
 @Entity
 @Table(name = "ts_user")
-public class User extends BaseEntity {
+public class UserEntity extends BaseNoIdEntity{
 
     private static final long serialVersionUID = -4886379701339312835L;
 
@@ -26,6 +26,8 @@ public class User extends BaseEntity {
         安全:
             安全问题;
     */
+
+    private String id;
 
     /**
      * 用户昵称
@@ -82,6 +84,14 @@ public class User extends BaseEntity {
 
     public static long getSerialVersionUID() {
         return serialVersionUID;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getLoginNum() {

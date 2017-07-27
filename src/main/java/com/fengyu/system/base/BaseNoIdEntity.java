@@ -13,13 +13,10 @@ import java.util.Date;
  * Created by 韩峰 on 2016/8/2.
  */
 @MappedSuperclass
-public class BaseEntity implements Serializable {
+public class BaseNoIdEntity implements Serializable {
 
+    private static final long serialVersionUID = 2435304512595002549L;
 
-    private static final long serialVersionUID = 887436082747947410L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     /**
      * 创建人id
      */
@@ -125,14 +122,6 @@ public class BaseEntity implements Serializable {
 
     public void updateDate(){
         this.updateDate = new Date();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getCreateId() {

@@ -1,7 +1,7 @@
 package com.fengyu.system.service.impl;
 
 import com.fengyu.system.dao.UserMapper;
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -20,13 +20,16 @@ public class UserServiceImpl implements UserService{
     @Resource
     private UserMapper userMapper;
 
+    public UserEntity findOne(UserEntity user){
+        return userMapper.selectOne(user);
+    }
 
     /**
      * 查询所有用户
      * @return {List}
      */
-    public List<User> findAllList() {
-        List<User> users = userMapper.selectAll();
+    public List<UserEntity> findAllList() {
+        List<UserEntity> users = userMapper.selectAll();
         return users;
     }
 
@@ -38,15 +41,15 @@ public class UserServiceImpl implements UserService{
      * @return Page<User>
      */
     @Override
-    public PageInfo<User> findAllPageList(Integer page, Integer pageSize) {
+    public PageInfo<UserEntity> findAllPageList(Integer page, Integer pageSize) {
         if( page!= null && pageSize!= null){
             PageHelper.startPage(page, pageSize);
         }
-        List<User> users = userMapper.selectAll();
+        List<UserEntity> users = userMapper.selectAll();
         return new PageInfo<>(users);
     }
 
-    public void save(User user){
+    public void save(UserEntity user){
         userMapper.insert(user);
     }
 }

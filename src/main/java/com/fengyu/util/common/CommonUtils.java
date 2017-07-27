@@ -1,6 +1,6 @@
 package com.fengyu.util.common;
 
-import com.fengyu.system.entity.User;
+import com.fengyu.system.entity.UserEntity;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
@@ -16,9 +16,9 @@ public class CommonUtils {
      * 获取用户session
      * @return
      */
-    public static User getUserSession(){
+    public static UserEntity getUserSession(){
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
-        User user = (User) request.getSession().getAttribute(CommonKey.USER_SESSION);
+        UserEntity user = (UserEntity) request.getSession().getAttribute(CommonKey.USER_SESSION);
         return user;
     }
 }

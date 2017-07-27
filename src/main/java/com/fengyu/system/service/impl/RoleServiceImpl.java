@@ -1,10 +1,20 @@
 package com.fengyu.system.service.impl;
 
-import com.fengyu.system.entity.Role;
+import com.fengyu.system.dao.RoleMapper;
+import com.fengyu.system.dao.UserAndRoleMapper;
+import com.fengyu.system.entity.RoleEntity;
+import com.fengyu.system.entity.UserAndRoleEntity;
 import com.fengyu.system.service.RoleService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -18,13 +28,33 @@ import java.util.List;
 @Service("roleService")
 public class RoleServiceImpl implements RoleService {
 
+    private static Logger logger;
+    static {
+        logger = LoggerFactory.getLogger(RoleServiceImpl.class);
+    }
+
+    @Resource
+    private RoleMapper roleMapper;
+
+    @Resource
+    private UserAndRoleMapper userAndRoleMapper;
+
     @Override
-    public List<Role> getRoles(Long userId) {
-        return null;
+    public List<RoleEntity> getRoles(String userId) {
+        UserAndRoleEntity userAndRole = new UserAndRoleEntity();
+        userAndRole.setUserId(userId);
+        List<UserAndRoleEntity> userAndRoleEntityList = userAndRoleMapper.select(userAndRole);
+        if (userAndRoleEntityList.size() <= 0) {
+            logger.error("数据表UserAndRoleEntity为空，无对应数据");
+            return null;
+        }
+        Set<Long> roleSet = new HashSet<>();
+        userAndRoleEntityList.forEach( n -> { roleSet.add(n.getRoleId()); } );
+        return roleMapper.findByRoleList(new ArrayList<>(roleSet));
     }
 
     @Override
-    public boolean authorized(Long loginId, String domainStr, String permissionStr) {
+    public boolean authorized(String loginId, String domainStr, String permissionStr) {
         return false;
     }
 }

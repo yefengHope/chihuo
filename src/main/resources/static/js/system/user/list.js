@@ -3,7 +3,7 @@
  */
 "use strict";
 
-var bootTableSelector = "#bootTableSearch";
+var bootTableSelector = "#bootTable";
 var bootTableSearchSelector = "#bootTableSearch";
 var bootTable = {};
 //table init
@@ -19,7 +19,8 @@ bootTable.init = function () {
          返回false将会终止请求
          */
         striped : true, /*设置为 true 会有隔行变色效果*/
-        contentType : "application/json",
+        // contentType : "application/json",
+        contentType:'application/x-www-form-urlencoded',
         dataType : "json",
         method: "post",
         queryParamsType : "limit",
@@ -33,8 +34,15 @@ bootTable.init = function () {
         searchTimeOut : 500, /*设置搜索超时时间*/
         singleSelect : true,/*禁止多选*/
         url : basePath + "/user/page_data.json",
-        queryParams : function() {
+        queryParams : function(params) {
             /*重写自定义参数*/
+             var retObj = {
+                pageSize : params.limit,
+                pageNumber :params.offset/10 + 1,
+
+            };
+             retObj[$("#csrfToken").attr("name")] =  $("#csrfToken").val();
+            return retObj;
         },
         responseHandler : function(res) {
             /*加载服务器数据之前的处理程序，可以用来格式化数据。
@@ -42,22 +50,69 @@ bootTable.init = function () {
             return res;
         },
         toolbar : bootTableSearchSelector, /*自定义的toolbar*/
-        idField : "id",/* 主键列*/
         columns : [
             {
-                field : "id",
-                checkbox : true,
-                title : "标识",
-                clickToSelect : true,/*点击选中行*/
+                idField: 'id',
+                checkbox: true,
+                // clickToSelect : true,/*点击选中行*/
                 // formatter : function(value,row,index){},
                 // events : function(event,value,row,index){/*the jQuery event. */},
+                align: 'center'
             },
             {
-                field : "id",
-                checkbox : true,
-                title : "标识",
-                clickToSelect : true,/*点击选中行*/
+                field : "loginNum",
+                title : "登录账号",
+                align: 'center'
+            },
+            {
+                field : "loginPwd",
+                title : "登录密码",
+                align: 'center'
+            },
+            {
+                field : "name",
+                title : "账号昵称",
+                align: 'center'
+            },
+            {
+                field : "phone",
+                title : "手机号码",
+                align: 'center'
+            },
+            {
+                field : "email",
+                title : "email",
+                align: 'center'
+            },
+            {
+                field : "status",
+                title : "账号状态",
+                align: 'center'
+            },
+            {
+                field : "headIcon",
+                title : "账号头像",
+                align: 'center'
+            },
+            {
+                field : "updateId",
+                title : "更新id",
+                align: 'center'
+            },
+            {
+                field : "updateName",
+                title : "更新人名称",
+                align: 'center'
+            },
+            {
+                field : "updateDate",
+                title : "更新时间",
+                align: 'center'
             }
         ],
     });
 };
+
+$(function () {
+    bootTable.init();
+});
