@@ -5,16 +5,15 @@ import com.fengyu.system.dao.UserAndRoleMapper;
 import com.fengyu.system.entity.RoleEntity;
 import com.fengyu.system.entity.UserAndRoleEntity;
 import com.fengyu.system.service.RoleService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -56,5 +55,29 @@ public class RoleServiceImpl implements RoleService {
     @Override
     public boolean authorized(String loginId, String domainStr, String permissionStr) {
         return false;
+    }
+
+    @Override
+    public RoleEntity findOne(RoleEntity role) {
+        return roleMapper.selectOne(role);
+    }
+
+    @Override
+    public List<RoleEntity> findAllList(RoleEntity role) {
+        return roleMapper.select(role);
+    }
+
+    @Override
+    public PageInfo<RoleEntity> findAllPageList(Integer pageNumber, Integer pageSize, RoleEntity role) {
+        if( pageNumber!= null && pageSize!= null){
+            PageHelper.startPage(pageNumber, pageSize);
+        }
+        List<RoleEntity> list = roleMapper.select(role);
+        return new PageInfo<RoleEntity> (list);
+    }
+
+    @Override
+    public void save(RoleEntity role) {
+        roleMapper.insert(role);
     }
 }

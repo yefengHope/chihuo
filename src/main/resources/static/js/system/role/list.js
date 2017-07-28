@@ -7,7 +7,7 @@ var bootTableSelector = "#bootTable";
 var bootTableSearchSelector = "#bootTableSearch";
 var bootTable = {};
 bootTable.option = {
-    url : basePath + "/admin/user/page_data.json",
+    url : basePath + "/admin/role/page_data.json",
     toolbar : bootTableSearchSelector, /*自定义的toolbar*/
     columns : [
         {
@@ -19,38 +19,43 @@ bootTable.option = {
             align: 'center'
         },
         {
-            field : "loginNum",
-            title : "登录账号",
-            align: 'center'
-        },
-        {
-            field : "loginPwd",
-            title : "登录密码",
+            field : "systemId",
+            title : "业务系统编号",
             align: 'center'
         },
         {
             field : "name",
-            title : "账号昵称",
+            title : "角色名称",
             align: 'center'
         },
         {
-            field : "phone",
-            title : "手机号码",
+            field : "nameKey",
+            title : "角色键名",
             align: 'center'
         },
         {
-            field : "email",
-            title : "email",
+            field : "validity",
+            title : "角色有效期",
+            align: 'center'
+        },
+        {
+            field : "arights",
+            title : "菜单访问权限",
+            align: 'center'
+        },
+        {
+            field : "hrights",
+            title : "菜单操作权限",
+            align: 'center'
+        },
+        {
+            field : "sort",
+            title : "序号",
             align: 'center'
         },
         {
             field : "status",
-            title : "账号状态",
-            align: 'center'
-        },
-        {
-            field : "headIcon",
-            title : "账号头像",
+            title : "状态",
             align: 'center'
         },
         {

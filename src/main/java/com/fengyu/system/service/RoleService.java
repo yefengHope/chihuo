@@ -2,8 +2,11 @@ package com.fengyu.system.service;
 
 
 import com.fengyu.system.entity.RoleEntity;
+import com.fengyu.system.entity.UserEntity;
+import com.github.pagehelper.PageInfo;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -26,4 +29,27 @@ public interface RoleService {
      * @return boolean
      */
     boolean authorized(String loginId,String domainStr,String permissionStr);
+
+
+    RoleEntity findOne(RoleEntity role);
+
+    /**
+     * 查询所有
+     * @return List<UserEntity>
+     */
+    List<RoleEntity> findAllList(RoleEntity role);
+
+    /**
+     * 查询所有
+     * @param pageNumber    页码
+     * @param pageSize      分页大小
+     * @return  Page<UserEntity>
+     */
+    PageInfo<RoleEntity> findAllPageList(Integer pageNumber , Integer pageSize, RoleEntity role);
+
+    /**
+     * 保存
+     * @param role
+     */
+    void save(RoleEntity role);
 }

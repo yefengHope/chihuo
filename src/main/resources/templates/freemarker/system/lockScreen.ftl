@@ -11,9 +11,9 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     
-    <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html" />
-    <![endif]-->
+    <#--<!--[if lt IE 8]>-->
+    <#--<meta http-equiv="refresh" content="0;ie.html" />-->
+    <#--<![endif]&ndash;&gt;-->
     
     <link rel="shortcut icon" href="favicon.ico" > <link href="css/bootstrap.min.css-v=3.3.5.css"  rel="stylesheet">
     <link href="css/font-awesome.min.css-v=4.4.0.css"  rel="stylesheet">

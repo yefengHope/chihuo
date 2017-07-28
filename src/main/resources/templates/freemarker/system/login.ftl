@@ -10,14 +10,11 @@
     <meta name="description" content="">
     <link href="/html_model/hplus/css/login.min.css" rel="stylesheet">
     <#include "../commom/include.hplus.css.ftl" />
-    <!--[if lt IE 8]>
-    <meta http-equiv="refresh" content="0;ie.html"/>
-    <![endif]-->
     <script>
-        if (window.top !== window.self) {
+        /*if (window.top !== window.self) {
             window.top.location = window.location
         }
-        ;
+        ;*/
     </script>
 
 </head>

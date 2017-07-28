@@ -1,14 +1,11 @@
 package com.fengyu.system.entity;
 
-import java.lang.*;
-import java.math.*;
-import java.util.Date;
-
 import com.fengyu.system.base.BaseEntity;
-import com.fengyu.system.base.BaseModel;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
+import java.util.Date;
 
 /**
  * 角色实体
@@ -20,66 +17,48 @@ import javax.persistence.Table;
 @Table(name = "ts_role")
 public class RoleEntity extends BaseEntity {
 
-    private static final long serialVersionUID = 3997327696037092185L;
+
+    private static final long serialVersionUID = -546090219986304873L;
     /**
      * 业务系统编号
      */
+    @Column(name = "SYSTEM_ID")
     private String systemId;
     /**
      * 角色名称
      */
+    @Column(name = "NAME")
     private String name;
     /**
      * 角色唯一字符串
      */
-    private String key;
+    @Column(name = "NAME_KEY")
+    private String nameKey;
     /**
      * 角色有效期
      */
+    @Column(name = "VALIDITY")
     private Date validity;
-    /**
-     * 状态,1正常,0禁用,默认为1
-     */
-    private Integer state;
     /**
      * 排序序号,默认为1
      */
+    @Column(name = "SORT")
     private Integer sort;
     /**
      * 菜单访问权限
      */
+    @Column(name = "ARIGHTS")
     private String arights;
     /**
      * 菜单操作权限
      */
+    @Column(name = "HRIGHTS")
     private String hrights;
-    /**
-     * 创建人
-     */
-    private String aa01;
-    /**
-     * 创建时间
-     */
-    private Date aa02;
-    /**
-     * 修改人
-     */
-    private String ab01;
-    /**
-     * 修改时间
-     */
-    private Date ab02;
 
-    /**
-     * 获取业务系统编号
-     */
     public String getSystemId() {
-        return this.systemId;
+        return systemId;
     }
 
-    /**
-     * 设置业务系统编号
-     */
     public void setSystemId(String systemId) {
         this.systemId = systemId;
     }
@@ -98,12 +77,12 @@ public class RoleEntity extends BaseEntity {
         this.name = name;
     }
 
-    public String getKey() {
-        return key;
+    public String getNameKey() {
+        return nameKey;
     }
 
-    public void setKey(String key) {
-        this.key = key;
+    public void setNameKey(String nameKey) {
+        this.nameKey = nameKey;
     }
 
     /**
@@ -120,19 +99,6 @@ public class RoleEntity extends BaseEntity {
         this.validity = validity;
     }
 
-    /**
-     * 获取状态,1正常,0禁用,默认为1
-     */
-    public Integer getState() {
-        return this.state;
-    }
-
-    /**
-     * 设置状态,1正常,0禁用,默认为1
-     */
-    public void setState(Integer state) {
-        this.state = state;
-    }
 
     /**
      * 获取排序序号,默认为1
@@ -176,60 +142,5 @@ public class RoleEntity extends BaseEntity {
         this.hrights = hrights;
     }
 
-    /**
-     * 获取创建人
-     */
-    public String getAa01() {
-        return this.aa01;
-    }
-
-    /**
-     * 设置创建人
-     */
-    public void setAa01(String aa01) {
-        this.aa01 = aa01;
-    }
-
-    /**
-     * 获取创建时间
-     */
-    public Date getAa02() {
-        return this.aa02;
-    }
-
-    /**
-     * 设置创建时间
-     */
-    public void setAa02(Date aa02) {
-        this.aa02 = aa02;
-    }
-
-    /**
-     * 获取修改人
-     */
-    public String getAb01() {
-        return this.ab01;
-    }
-
-    /**
-     * 设置修改人
-     */
-    public void setAb01(String ab01) {
-        this.ab01 = ab01;
-    }
-
-    /**
-     * 获取修改时间
-     */
-    public Date getAb02() {
-        return this.ab02;
-    }
-
-    /**
-     * 设置修改时间
-     */
-    public void setAb02(Date ab02) {
-        this.ab02 = ab02;
-    }
 }
 

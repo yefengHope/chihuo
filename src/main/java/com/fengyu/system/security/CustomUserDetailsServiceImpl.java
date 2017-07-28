@@ -1,6 +1,7 @@
 package com.fengyu.system.security;
 
-import com.fengyu.system.entity.LoginEntity;
+import com.fengyu.system.entity.UserEntity;
+import com.fengyu.system.entity.UserExtendSecurity;
 import com.fengyu.system.service.LoginService;
 import com.fengyu.system.service.RoleService;
 import org.apache.commons.lang.StringUtils;
@@ -39,22 +40,26 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
             throw new UsernameNotFoundException("用户名为空");
         }
 
-        LoginEntity login = loginService.findByUsername(username);
+        UserEntity login = loginService.findByUsername(username);
         if (login == null) {
             throw new UsernameNotFoundException("not found");
         }
 
         Set<GrantedAuthority> authorities = new HashSet<>();
         roleService.getRoles(login.getId())
-                .forEach(r -> authorities.add(new SimpleGrantedAuthority(r.getKey()))
+                .forEach(r -> {
+                    authorities.add(new SimpleGrantedAuthority(r.getNameKey()));
+                }
                 );
-        org.springframework.security.core.userdetails.User user = new org.springframework.security.core.userdetails.User(
-                username, login.getPassword(),
+        UserExtendSecurity user = new UserExtendSecurity(
+                login.getId(), login.getLoginPwd(),
                 true,               //是否可用
                 true,       //是否过期
                 true,   //证书不过期为true
                 true,       //账户未锁定为true
-                authorities);
+                authorities
+                ,login.getName()
+                ,login.getLoginNum());
 
         return user;
     }

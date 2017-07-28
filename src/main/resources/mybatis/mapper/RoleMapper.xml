@@ -2,10 +2,24 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.fengyu.system.dao.RoleMapper">
 
+    <resultMap id="roleEntity" type="com.fengyu.system.entity.RoleEntity">
+        <result column="SYSTEM_ID" property="systemId"/>
+        <result column="NAME_KEY" property="nameKey"/>
+        <result column="CREATE_ID" property="createId"/>
+        <result column="CREATE_NAME" property="createName"/>
+        <result column="CREATE_DATE" property="createDate"/>
+        <result column="UPDATE_ID" property="updateId"/>
+        <result column="UPDATE_NAME" property="updateName"/>
+        <result column="UPDATE_DATE" property="updateDate"/>
 
-    <select id="findByRoleList" resultType="com.fengyu.system.entity.RoleEntity">
+    </resultMap>
 
-        SELECT * FROM ts_role r
+
+    <select id="findByRoleList" resultMap="roleEntity">
+
+        SELECT
+          r.*
+        FROM ts_role r
         <where>
             <if test="roles != null">
                 r.ID IN

@@ -42,7 +42,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
      */
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-
+        /*Spring Boot不允许加载iframe问题解决*/
+        http.headers().frameOptions().disable();
         // authorizeRequests()定义哪些URL需要被保护、哪些不需要被保护
         // /和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证
         // defaultSuccessUrl 登录成功页
@@ -54,7 +55,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .loginProcessingUrl("/login.htm")
                 .usernameParameter("userName")
                 .passwordParameter("userPwd")
-                .defaultSuccessUrl("/user/page.htm")//登陆成功路径
+                // .defaultSuccessUrl("/user/page.htm")//登陆成功路径
+                .defaultSuccessUrl("/admin/index.htm")//登陆成功路径
                 .failureUrl("/login/failure")//登陆失败路径
                 .and().csrf()
                 .and()

@@ -33,17 +33,11 @@ public class UserServiceImpl implements UserService{
         return users;
     }
 
-    /**
-     * 查询所有
-     *
-     * @param page
-     * @param pageSize
-     * @return Page<User>
-     */
+
     @Override
-    public PageInfo<UserEntity> findAllPageList(Integer page, Integer pageSize) {
-        if( page!= null && pageSize!= null){
-            PageHelper.startPage(page, pageSize);
+    public PageInfo<UserEntity> findAllPageList(Integer pageNumber, Integer pageSize) {
+        if( pageNumber!= null && pageSize!= null){
+            PageHelper.startPage(pageNumber, pageSize);
         }
         List<UserEntity> users = userMapper.selectAll();
         return new PageInfo<>(users);

@@ -1,6 +1,5 @@
 package com.fengyu.system.service.impl;
 
-import com.fengyu.system.entity.LoginEntity;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.LoginService;
 import com.fengyu.system.service.UserService;
@@ -24,10 +23,10 @@ public class LoginServiceImpl implements LoginService {
     private UserService userService;
 
     @Override
-    public LoginEntity findByUsername(String username) {
+    public UserEntity findByUsername(String username) {
         UserEntity user = new UserEntity();
         user.setLoginNum(username);
-        user = userService.findOne(user);
-        return new LoginEntity(user.getId(),user.getLoginPwd());
+
+        return  userService.findOne(user);
     }
 }
