@@ -25,11 +25,11 @@
                 <div class="btn-group hidden-xs" id="bootTableSearch" role="group">
                     <button type="button" class="btn btn-outline btn-default">
                         <i class="glyphicon glyphicon-plus" aria-hidden="true"
-                           onclick="BootstrapTableFunc.toAddForm('/admin/user/to_add.htm','','新增用户',null)">新增</i>
+                           onclick="BootstrapTableFunc.toAddForm('/admin/user/to_add.htm','user_1','新增用户',null)">新增</i>
                     </button>
                     <button type="button" class="btn btn-outline btn-default">
                         <i class="glyphicon glyphicon-edit" aria-hidden="true"
-                           onclick="BootstrapTableFunc.toEditForm('#bootTable','/admin/user/to_update.htm','','编辑用户')">编辑</i>
+                           onclick="BootstrapTableFunc.toEditForm('#bootTable','/admin/user/to_update.htm','user_2','编辑用户')">编辑</i>
                     </button>
                     <div class="btn-group">
                         <button data-toggle="dropdown" class="btn btn-outline btn-default dropdown-toggle" aria-expanded="false">

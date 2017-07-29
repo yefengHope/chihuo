@@ -5,6 +5,9 @@ import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,6 +19,11 @@ import java.util.List;
  */
 @Service("userServiceImpl")
 public class UserServiceImpl implements UserService{
+
+    private static Logger logger;
+    static {
+        logger = LoggerFactory.getLogger(UserServiceImpl.class);
+    }
 
     @Resource
     private UserMapper userMapper;
@@ -44,6 +52,14 @@ public class UserServiceImpl implements UserService{
     }
 
     public void save(UserEntity user){
-        userMapper.insert(user);
+        if (user != null) {
+            if (StringUtils.isNotBlank(user.getId())) {
+                userMapper.insert(user);
+            } else {
+                userMapper.updateByPrimaryKey(user);
+            }
+        } else {
+            logger.error("保存或更新数据，但是数据不存在");
+        }
     }
 }

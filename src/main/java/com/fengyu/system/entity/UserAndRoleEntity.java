@@ -2,9 +2,9 @@ package com.fengyu.system.entity;
 
 import com.fengyu.system.base.BaseEntity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
-import java.util.Date;
 
 /**
  * 角色实体
@@ -21,15 +21,18 @@ public class UserAndRoleEntity extends BaseEntity {
     /**
      * 用户编号
      */
+    @Column(name = "USER_ID")
     private String userId;
     /**
      * 业务系统编号
      */
+    @Column(name = "SYSTEM_ID")
     private String systemId;
 
     /**
      * 角色编号
      */
+    @Column(name = "ROLE_ID")
     private Long roleId;
 
     /**

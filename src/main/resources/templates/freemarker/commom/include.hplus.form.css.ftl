@@ -1,0 +1,1 @@
+<link href="/plugs/bootstrap/bootstrapvalidator-master/dist/css/bootstrapValidator.min.css"  rel="stylesheet" type="text/css" />

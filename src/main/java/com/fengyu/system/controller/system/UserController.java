@@ -1,22 +1,25 @@
 package com.fengyu.system.controller.system;
 
+import com.alibaba.fastjson.JSON;
 import com.fengyu.system.base.BaseController;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.entity.UserExtendSecurity;
+import com.fengyu.system.service.UserDetailsExtend;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -110,7 +113,7 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "to_add.htm", method = RequestMethod.GET)
     public String toAddUser() {
-        return "system/user/add_user";
+        return "system/user/form";
     }
 
     /**
@@ -119,12 +122,30 @@ public class UserController extends BaseController {
      * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "add.htm", method = RequestMethod.POST)
-    public String addUser(UserEntity user) {
-        UserDetails userDetails
-                = (UserDetails) SecurityContextHolder.getContext()
+    @RequestMapping(value = "add.do", method = RequestMethod.POST)
+    @ResponseBody
+    public Map addUser(UserEntity user) {
+        UserDetailsExtend userDetails
+                = (UserDetailsExtend) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
-        return null;
+        if (user != null && StringUtils.isBlank(user.getId())){
+            try {
+                user.setCreateId(userDetails.getUsername());
+                user.setCreateName(userDetails.getLoginNum());
+                user.setCreateDate(new Date());
+                user.setUpdateId(userDetails.getUsername());
+                user.setUpdateName(userDetails.getLoginNum());
+                user.setUpdateDate(new Date());
+                userService.save(user);
+            } catch (Exception e) {
+                logger.error("注册用户异常",e);
+                return returnAjax(false,e.getMessage(),null,null);
+            }
+            return returnAjax(true,"保存成功",null,null);
+        } else {
+            logger.error("注册用户，参数不存在或者参数存在id");
+            return returnAjax(false,"参数异常",null,null);
+        }
     }
 
     /**
@@ -133,9 +154,10 @@ public class UserController extends BaseController {
      * @return
      */
     @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
-    public String toUpdateUser() {
-
-        return null;
+    public String toUpdateUser(UserEntity user,Model model) {
+        UserEntity userEntity = userService.findOne(user);
+        model.addAttribute("dataEntity", JSON.toJSONString(userEntity));
+        return "system/user/form";
     }
 
     /**
@@ -144,11 +166,30 @@ public class UserController extends BaseController {
      * @param user 用户实体
      * @return
      */
-    @RequestMapping(value = "update.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "update.do", method = RequestMethod.POST)
     @ResponseBody
-    public String updateUser(UserEntity user) {
+    public Map updateUser(UserEntity user) {
 
-        return null;
+        UserExtendSecurity userDetails
+                = (UserExtendSecurity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user != null && StringUtils.isBlank(user.getId())){
+            try {
+                user.setCreateId(userDetails.getUsername());
+                user.setCreateName(userDetails.getLoginNum());
+                user.setCreateDate(new Date());
+                user.setUpdateId(userDetails.getUsername());
+                user.setUpdateName(userDetails.getLoginNum());
+                user.setUpdateDate(new Date());
+                userService.save(user);
+            } catch (Exception e) {
+                logger.error("修改用户基础数据异常",e);
+                return returnAjax(false,e.getMessage(),null,null);
+            }
+            return returnAjax(true,"保存成功",null,null);
+        } else {
+            logger.error("修改用户基础数据，参数不存在或者参数存在id");
+            return returnAjax(false,"参数异常",null,null);
+        }
     }
 
     /**
