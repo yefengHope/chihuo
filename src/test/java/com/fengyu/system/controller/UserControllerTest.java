@@ -28,13 +28,21 @@ public class UserControllerTest {
 
     @Test
     public void toPageListJson() throws Exception {
-        List<UserEntity> users = userService.findAllList();
+        UserEntity userEntity = null;
+        List<UserEntity> users = userService.findAllList(userEntity);
         logger.info(JSON.toJSON(users));
     }
     @Test
     public void findAllPageList() throws Exception {
-        PageInfo<UserEntity> users = userService.findAllPageList(1,10);
+        PageInfo<UserEntity> users = userService.findAllPageList(1,10,new UserEntity());
         logger.info(JSON.toJSON(users));
     }
 
+    // public static void main(String[] args) {
+    //     // Pattern pattern = Pattern.compile("^((create)|(update))[A-Z]\\s*");
+    //     Pattern pattern = Pattern.compile("^((create)|(update))[A-Z][^\\f\\n\\r\\t\\v]*");
+    //     Matcher matcher = pattern.matcher("createName");
+    //     System.out.println(matcher.find());
+    //     System.out.println(matcher.matches());
+    // }
 }

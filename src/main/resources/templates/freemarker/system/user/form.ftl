@@ -7,6 +7,13 @@
     <meta name="keywords" content=""/>
 <#include "../../commom/include.hplus.css.ftl" />
 <#include "../../commom/include.hplus.form.css.ftl" />
+    <style>
+        .demo--label{margin:20px 20px 0 0;display:inline-block}
+        .demo--radio{display:none}
+        .demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
+        .demo--radio:checked + .demo--radioInput:after{background-color:#57ad68;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
+        .demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
+    </style>
     <title>用户表单</title>
 </head>
 <body>
@@ -64,11 +71,45 @@
                     </div>
                 </div>
 
+            <#--<div class="form-group">-->
+            <#--<label class="col-sm-3 control-label">序号</label>-->
+            <#--<div class="col-sm-5">-->
+            <#--<input type="number" class="form-control" name="sort" v-model="sort"/>-->
+            <#--</div>-->
+            <#--</div>-->
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">状态</label>
+                    <div class="col-sm-5">
+                    <#--<select name="status" placeholder="状态" class="form-control" v-model="status">-->
+                    <#--<option value="1">启用</option>-->
+                    <#--<option value="2">禁用</option>-->
+                    <#--</select>-->
+                        <div class="radio">
+                            <label class="radio-inline">
+                                <input name="status" v-model="status" type="radio" value="1"><i></i>启用</label>
+                            <label class="radio-inline">
+                                <input name="status" v-model="status" type="radio" value="2"><i></i>禁用</label>
+                        </div>
+                    </div>
+
+                </div>
+                <#--<div class="form-group">
+                    <label class="col-sm-3 control-label">测试</label>
+                    <div class="col-sm-5">
+                        <div class="input-group">
+                            <div class="input-group-addon">$</div>
+                            <input type="text" class="form-control" name="amount" placeholder="Amount">
+                            <div class="input-group-addon">.00</div>
+                        </div>
+                    </div>
+                </div>-->
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
                         <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
                         <button name="submitTo" type="submit" class="btn btn-default" v-if="!id">注 册</button>
+                        <button name="submitTo" type="submit" class="btn btn-default" data-type="saveAndClose" v-if="!id">注册并关闭</button>
                         <button name="submitTo" type="submit" class="btn btn-default" v-if="id">修 改</button>
+                        <button name="submitTo" type="submit" class="btn btn-default" data-type="saveAndClose" v-if="id">修改并关闭</button>
                     </div>
                 </div>
             </form>
@@ -78,153 +119,22 @@
 
 <#include "../../commom/include.hplus.js.ftl" />
 <#include "../../commom/include.hplus.form.js.ftl" />
-
 <script>
     var formSelect = "#registrationForm";
     var dataEntity = ${dataEntity!'{}'};
-
-    $(document).ready(function() {
-        $(formSelect).bootstrapValidator({
-            // To use feedback icons, ensure that you use Bootstrap v3.1.0 or later
-            feedbackIcons: {
-                valid: 'glyphicon glyphicon-ok',
-                invalid: 'glyphicon glyphicon-remove',
-                validating: 'glyphicon glyphicon-refresh',
-
-            },
-//            group : "from-group-body",
-            message: 'This value is not valid',
-            submitButtons: 'button[name="submitTo"]',
-            fields: {
-                name: {
-                    message: '昵称无效',
-                    validators: {
-                        notEmpty: {
-                            message: '请填写昵称'
-                        },
-                        stringLength: {
-                            min: 2,
-                            max: 10,
-                            message: '昵称在2-10字'
-                        },
-//                        regexp: {
-//                            regexp: /^[a-zA-Z0-9]+$/,
-//                            message: 'The username can only consist of alphabetical and number'
-//                        },
-
-                    }
-                },
-                loginNum: {
-                    validators: {
-                        notEmpty: {
-                            message: '请填写帐号'
-                        },
-                        stringLength: {
-                            min: 2,
-                            max: 10,
-                            message: '帐号在2-10字'
-                        },
-                        different: {
-                            field: 'loginPwd',
-                            message: '帐号和密码不能相同'
-                        }
-                    }
-                },
-                loginPwd: {
-                    validators: {
-                        notEmpty: {
-                            message: '请填写密码'
-                        },
-                        different: {
-                            field: 'loginNum',
-                            message: '密码和帐号不能相同'
-                        },
-                        stringLength: {
-                            min: 6,
-                            message: '密码最少6个字母'
-                        },
-                        identical: {
-                            field: 'confirm_loginPwd',
-                            message: '密码和确认密码不一致'
-                        }
-                    }
-                },
-                confirm_loginPwd: {
-                    validators: {
-                        notEmpty: {
-                            message: '请填写密码'
-                        },
-                        different: {
-                            field: 'loginNum',
-                            message: '密码和帐号不能相同'
-                        },
-                        stringLength: {
-                            min: 6,
-                            message: '密码最少6个字母'
-                        },
-                        identical: {
-                            field: 'loginPwd',
-                            message: '密码和确认密码不一致'
-                        }
-                    }
-                },
-                email: {
-                    validators: {
-                        notEmpty: {
-                            message: '请填写邮箱地址'
-                        },
-                        emailAddress: {
-                            message: '邮箱地址无效'
-                        }
-                    }
-                },
-                phone: {
-                    validators: {
-                        notEmpty: {
-                            message: '请输入手机号'
-                        },
-                        phone : {
-                            country : "CN",
-                            message : "手机号无效"
-                        }
-                    }
-                }
-            }
-        });
-    }).on('success.form.bv', function(e) {
-
-        alert("success.form.bv");
-
-        // Prevent form submission
-        e.preventDefault();
-
-        // Get the form instance
-        var $form = $(e.target);
-
-        // Get the BootstrapValidator instance
-        var bv = $form.data('bootstrapValidator');
-
-        // Use Ajax to submit form data
-        var url ;
-        var data;
-        if (dataEntity.hasOwnProperty("id") && dataEntity.id) {
-            url = $form.attr('data-update-action');
-            data = dataEntity;
-            data[$("#csrfToken").attr("name")]=$("#csrfToken").val();
-            data = JSON.stringify(data);
-        } else {
-            url = $form.attr('data-add-action');
-            data = $form.serialize();
+    $(function () {
+        if (dataEntity.hasOwnProperty("createDate")){
+            delete dataEntity.createDate
         }
-        $.post(url, data, function(result) {
-            alert(result.status + ":" + result.info);
-        }, 'json');
+        if (dataEntity.hasOwnProperty("updateDate")){
+            delete dataEntity.updateDate
+        }
     });
-
     var formVue = new Vue({
         el: "#formWrapDiv",
         data: dataEntity,
     });
 </script>
+<script src="/js/system/user/form.js"></script>
 </body>
 </html>

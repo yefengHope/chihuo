@@ -9,6 +9,7 @@ import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -32,34 +33,44 @@ public class UserServiceImpl implements UserService{
         return userMapper.selectOne(user);
     }
 
-    /**
-     * 查询所有用户
-     * @return {List}
-     */
-    public List<UserEntity> findAllList() {
-        List<UserEntity> users = userMapper.selectAll();
-        return users;
+    public List<UserEntity> findAllList(UserEntity role) {
+        return userMapper.select(role);
     }
 
-
-    @Override
-    public PageInfo<UserEntity> findAllPageList(Integer pageNumber, Integer pageSize) {
+    public PageInfo<UserEntity> findAllPageList(Integer pageNumber, Integer pageSize,UserEntity userEntity) {
         if( pageNumber!= null && pageSize!= null){
             PageHelper.startPage(pageNumber, pageSize);
         }
-        List<UserEntity> users = userMapper.selectAll();
+        List<UserEntity> users = userMapper.select(userEntity);
         return new PageInfo<>(users);
     }
 
     public void save(UserEntity user){
         if (user != null) {
-            if (StringUtils.isNotBlank(user.getId())) {
+            if (StringUtils.isBlank(user.getId())) {
                 userMapper.insert(user);
-            } else {
-                userMapper.updateByPrimaryKey(user);
             }
         } else {
-            logger.error("保存或更新数据，但是数据不存在");
+            logger.error("保存数据，但是数据不存在");
+        }
+    }
+
+    public void update(UserEntity user) {
+        if (user != null && StringUtils.isNotBlank(user.getId())) {
+            Example example = new Example(UserEntity.class);
+            example.createCriteria().andEqualTo("id", user.getId());
+            userMapper.updateByExampleSelective(user, example);
+        } else {
+            logger.error("更新数据，但是数据不存在");
+        }
+    }
+
+    public void batchUpdateState(String ids,String status) {
+        if (StringUtils.isNotBlank(ids)) {
+            String[] idArr = ids.split(",");
+            if (idArr != null && idArr.length > 0 && StringUtils.isNotBlank(status)){
+                userMapper.batchUpdateState(status,idArr);
+            }
         }
     }
 }

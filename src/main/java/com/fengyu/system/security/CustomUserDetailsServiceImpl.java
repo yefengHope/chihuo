@@ -52,15 +52,17 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
                 }
                 );
         UserExtendSecurity user = new UserExtendSecurity(
-                login.getId(), login.getLoginPwd(),
+                login.getId(),
+                login.getLoginPwd(),
                 true,               //是否可用
                 true,       //是否过期
                 true,   //证书不过期为true
                 true,       //账户未锁定为true
-                authorities
-                ,login.getName()
-                ,login.getLoginNum());
-
+                authorities,
+                login.getId(),
+                login.getName(),
+                login.getLoginNum()
+        );
         return user;
     }
 }

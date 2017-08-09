@@ -13,20 +13,21 @@
  fildModels.Name 字段的java名称 大驼峰
 
  -->
-
+<#assign configTableName>
+    <#if fullConfig["db.tableName"]?? >
+        ${fullConfig["db.tableName"]}
+    </#if>
+</#assign>
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="${config.packagePath}${config.className}">
-
-    <select id="getById" resultType="${config.packagePath}${config.className}">
-        SELECT *
-        FROM ${config.tableName}
-        WHERE id = #{id}
-    </select>
-
-    <select id="findAllPage" resultType="${config.packagePath}${config.className}">
-        SELECT *
-        FROM ${config.tableName}
-    </select>
+<mapper namespace="${config.packagePath}.${config.className}">
+    <update id="batchUpdateState">
+        UPDATE ${configTableName?trim} SET status = ${r'#{status}'}
+        WHERE
+        id in
+        <foreach collection="ids" item="id" open="(" close=")" separator=",">
+            ${r'#{id}'}
+        </foreach>
+    </update>
 </mapper>

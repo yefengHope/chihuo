@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,8 +19,8 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "ts_user")
 public class UserEntity extends BaseNoIdEntity{
+    private static final long serialVersionUID = -6507742513591751624L;
 
-    private static final long serialVersionUID = -4886379701339312835L;
 
     /*  登录说明:
             可用账号,手机号和邮箱登录
@@ -27,6 +28,7 @@ public class UserEntity extends BaseNoIdEntity{
             安全问题;
     */
 
+    @Id
     private String id;
 
     /**
@@ -59,7 +61,7 @@ public class UserEntity extends BaseNoIdEntity{
      */
     @Column(name = "a_status")
     @Note(name = "账号状态",defaultParam="1",paramsDes = "{0:\"锁定\",1:\"正常\"}")
-    private Integer aStatus = 1;
+    private Integer aStatus;
 
     /**
      * 用户手机号

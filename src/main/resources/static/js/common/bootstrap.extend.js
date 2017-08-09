@@ -25,11 +25,12 @@ var defualtOpt = {
     pageList : [10, 25, 50],/*如果设置了分页，设置可供选择的页面数据条数。设置为All 则显示所有记录。*/
     escape : false, /*默认 ： false， 转义HTML字符串，替换 &, <, >, ", `, 和 ' 字符.*/
     searchTimeOut : 500, /*设置搜索超时时间*/
-    singleSelect : true,/*禁止多选*/
+    singleSelect : false,/*禁止多选*/
+    clickToSelect : true, /*点击行选择复选框或单选框*/
     showRefresh : true, /*是否显示刷新按钮*/
     showToggle:true,/*是否显示切换视图按钮*/
     showColumns : true,/*是否显示内容列*/
-    search : true, /*是否启用搜索框*/
+    search : false, /*是否启用搜索框*/
     url : basePath ,
     queryParams : function(params) {
         /*重写自定义参数*/

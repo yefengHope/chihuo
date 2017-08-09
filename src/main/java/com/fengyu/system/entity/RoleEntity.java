@@ -1,6 +1,8 @@
 package com.fengyu.system.entity;
 
-import com.fengyu.system.base.BaseEntity;
+import com.alibaba.fastjson.annotation.JSONField;
+import com.fengyu.system.base.BaseIdEntity;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,10 +17,9 @@ import java.util.Date;
  */
 @Entity
 @Table(name = "ts_role")
-public class RoleEntity extends BaseEntity {
+public class RoleEntity extends BaseIdEntity {
 
-
-    private static final long serialVersionUID = -546090219986304873L;
+    private static final long serialVersionUID = 4292158331522374673L;
     /**
      * 业务系统编号
      */
@@ -37,6 +38,8 @@ public class RoleEntity extends BaseEntity {
     /**
      * 角色有效期
      */
+    @JSONField(format = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     @Column(name = "VALIDITY")
     private Date validity;
     /**

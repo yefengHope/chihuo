@@ -6,6 +6,7 @@ import org.apache.commons.lang.StringUtils;
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * <p>@Title 模板配置 </p>
@@ -46,34 +47,19 @@ public class TemplateConfig implements Serializable {
     }
 
     /**
-     * 配置属性-前缀型
-     */
-    private static String[] configPrefixAttrs = {"build"};
-    /**
-     * 配置属性-后缀型
-     */
-    private static String[] configSuffixAttrs = {"fileName","fileType", "comment", "packagePath"};
-
-    /**
      * 从配置文件获取构建模块配置属性
      *
-     * @param name 预备项为: {"dao","service","service.impl","controller","mybatis","html.list","html.addOrEdit"}
-     * @return {
-     * build : "构建类型",
-     * fileName : "构建文件名",
-     * comment : "构建注释",
-     * package : "构建路径",
-     * }
+     * @param name
+     * @return {Map}
      */
     private static Map<String, String> getBuildBlock(String name) {
 
         Map<String, String> map = new HashMap<>();
-        for (int i = 0, il = configPrefixAttrs.length; i < il; i++) {
-            map.put(configPrefixAttrs[i], config.get(configPrefixAttrs[i] + "." + name));
-        }
-
-        for (int i = 0, il = configSuffixAttrs.length; i < il; i++) {
-            map.put(configSuffixAttrs[i], config.get(name + "." + configSuffixAttrs[i]));
+        Set<String> keys = config.keySet();
+        for (String keyStr : keys){
+            if (keyStr.contains(name)){
+                map.put(keyStr,config.get(keyStr));
+            }
         }
         return map;
     }
@@ -103,4 +89,7 @@ public class TemplateConfig implements Serializable {
         TemplateConfig.dirPath = dirPath;
     }
 
+    public static Map<String, String> getConfig() {
+        return config;
+    }
 }

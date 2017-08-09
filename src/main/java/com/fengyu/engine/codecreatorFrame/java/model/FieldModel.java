@@ -9,6 +9,8 @@ import java.io.Serializable;
 public class FieldModel implements Serializable{
 
     private static final long serialVersionUID = 5172330478728751670L;
+
+    private String dbColumName;
     /**
      * 大驼峰命名
      */
@@ -46,6 +48,14 @@ public class FieldModel implements Serializable{
      * 是否允许空
      */
     private boolean nullableIs;
+
+    public String getDbColumName() {
+        return dbColumName;
+    }
+
+    public void setDbColumName(String dbColumName) {
+        this.dbColumName = dbColumName;
+    }
 
     public String getUpperCamelCaseName() {
         return upperCamelCaseName;

@@ -14,4 +14,6 @@ import java.util.List;
 public interface RoleMapper extends BaseMapper<RoleEntity>{
 
     List<RoleEntity> findByRoleList(@Param("roles") List<Object> roles);
+
+    void batchUpdateState(@Param("status") String status, @Param("ids") String [] ids);
 }

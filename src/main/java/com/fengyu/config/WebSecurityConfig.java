@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 
 import javax.annotation.Resource;
 
@@ -48,7 +47,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         // /和/home不需要任何认证就可以访问，其他的路径都必须通过身份验证
         // defaultSuccessUrl 登录成功页
         http.authorizeRequests()
-                .antMatchers("/", "/login*", "/home", "/demo/**").permitAll().anyRequest().authenticated()
+                .antMatchers("/", "/login*", "/home", "/demo/**")
+                .permitAll().anyRequest().authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/toLogin.htm").permitAll()
@@ -61,6 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and().csrf()
                 .and()
                 .logout().permitAll();
+        http.sessionManagement().sessionFixation();
 
         /*
 
@@ -86,7 +87,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
 
-        web.ignoring().antMatchers("/plugs/**", "/html_model/hplus/**", "/js/**", "/css/**", "/font/**", "/images/**", "/**/favicon.ico");
+        web.ignoring().antMatchers("/plugs/**", "/html_model/hplus/**"
+                , "/js/**", "/css/**", "/font/**", "/images/**"
+                , "/**/favicon.ico");
     }
 
     /**

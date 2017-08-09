@@ -7,13 +7,13 @@ import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResult;
 import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResultConvert;
 import com.fengyu.engine.codecreatorFrame.java.jdbc.JdbcResultImpl;
 import com.fengyu.engine.codecreatorFrame.java.model.FieldModel;
-import com.sun.org.apache.regexp.internal.RE;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by HanFeng on 2017/6/24.
@@ -90,7 +90,12 @@ public abstract class AbstractInit {
             case "html.addOrEdit" : {
                 matchStr = "htmlAddOrEditForm.ftl";
             } break;
-
+            case "js.list" : {
+                matchStr = "jsList.ftl";
+            } break;
+            case "js.addOrEdit" : {
+                matchStr = "jsForm.ftl";
+            } break;
             default: {
                 throw new RuntimeException("未找到对应的模板");
             }
@@ -105,11 +110,29 @@ public abstract class AbstractInit {
     public void defaultInit(String name){
         Map<String, String> configModulAttr = TemplateConfig.getConfigType(name);
 
-        String build = configModulAttr.get("build");
-        String fileName = configModulAttr.get("fileName");
-        String comment = configModulAttr.get("comment");
-        String packagePath = configModulAttr.get("packagePath");
-
+        String build = null;
+        String fileName = null;
+        String comment = null;
+        String packagePath = null;
+        String fileType = null;
+        Set<String> attrKeys = configModulAttr.keySet();
+        for (String keyName : attrKeys){
+            if (keyName.contains("build")){
+                build = configModulAttr.get(keyName);
+            }
+            if (keyName.contains("fileName")){
+                fileName = configModulAttr.get(keyName);
+            }
+            if (keyName.contains("comment")){
+                comment = configModulAttr.get(keyName);
+            }
+            if (keyName.contains("packagePath")){
+                packagePath = configModulAttr.get(keyName);
+            }
+            if (keyName.contains("fileType")){
+                fileType = configModulAttr.get(keyName);
+            }
+        }
         // 如果配置为true且包路径不为空，则生成模块内容
         if ("true".equals(build) && StringUtils.isNotBlank(packagePath)) {
             CreateGeneralTemplate createTemplate = new CreateGeneralTemplate();
@@ -121,24 +144,33 @@ public abstract class AbstractInit {
             }
             configMap.put("fileName", fileName);
             configMap.put("className", fileName);
-            configMap.put("author", "hanfeng");
+            configMap.put("author", "HF");
             configMap.put("comment", comment);
             configMap.put("packagePath", packagePath);
             dataMap.put("fieldModels", selectFieldModels());
             // ftl的数据表内容结构
-            fileMap.put("data", dataMap);
+            fileMap.put("data", dataMap);                           /*数据库字段配置*/
             // ftl的配置的文件数据
-            fileMap.put("config", configMap);
-            fileMap.put("fileName", matchFtl(name));
+            fileMap.put("fullConfig", TemplateConfig.getConfig());  /*当前文件中所有配置*/
+            fileMap.put("config", configMap);                       /*当前方法中处理过的数据*/
+            fileMap.put("fileName", matchFtl(name));                /*匹配模版文件名*/
             // 配置文件
             Map<String, String> config = CodeFactoryConfig.getConfig();
             String templatePackagePath = config.get("template.package.path");
 
-            //  获取配置模块内容
+            // 获取配置模块内容
             // String[] configModules = TemplateConfig.getTemplateModule();
 
             fileMap.put("templatePackagePath", templatePackagePath);
-            fileMap.put("filePath", System.getProperty("user.dir") + File.separator + "src" + File.separator + "main" + File.separator + "java" + File.separator + packagePath.replace(".",File.separator) + File.separator + fileName + configModulAttr.get("fileType"));
+            fileMap.put("filePath", System.getProperty("user.dir")
+                    + File.separator + "src"
+                    + File.separator + "main"
+                    + File.separator + "java"
+                    + File.separator
+                    + packagePath.replace(".",File.separator)
+                    + File.separator + fileName
+                    + fileType
+            );
 
             createTemplate.doHandle(fileMap);
         } else {

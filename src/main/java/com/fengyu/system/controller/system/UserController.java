@@ -1,10 +1,11 @@
 package com.fengyu.system.controller.system;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fengyu.system.base.BaseController;
+import com.fengyu.system.base.BaseEntity;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.entity.UserExtendSecurity;
-import com.fengyu.system.service.UserDetailsExtend;
 import com.fengyu.system.service.UserService;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
@@ -19,7 +20,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.Date;
 import java.util.Map;
 
 /**
@@ -68,15 +68,14 @@ public class UserController extends BaseController {
      * bootstrap table server方式
      * bootstrap table调用toPageListJson生成json传回页面
      *
-     * @return
+     * @return {String} 页面路径
      */
     // @FormToken(needSaveToken = true)
     @RequestMapping(value = "/page.htm", method = RequestMethod.GET)
     // @PreAuthorize("hasAnyRole('admin', 'user')")
     public String toPageList(String name, String id) {
         logger.debug("访问列表参数输出： id:" + id + "   ,name:" + name);
-        return "system/user/list_bootstrap";
-        // return "system/user/list";
+        return "system/user/list";
     }
 
     /**
@@ -84,19 +83,17 @@ public class UserController extends BaseController {
      *
      * @param pageSize   分页大小
      * @param pageNumber 当前页码
-     * @param searchText 搜索文本
-     * @param sortOrder  排序方式
-     * @param sortName   排序列名
-     * @return
+     * @param userEntity 查询参数
+     * @return {Map} 返回Map结果
      */
     @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map toPageListJson(int pageSize, int pageNumber, String searchText, String sortOrder, String sortName) {
+    public Map toPageListJson(int pageSize, int pageNumber, UserEntity userEntity) {
 
-        UserExtendSecurity userDetails
-                = (UserExtendSecurity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        // UserExtendSecurity userDetails
+        //         = (UserExtendSecurity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
-        PageInfo<UserEntity> page = userService.findAllPageList(pageNumber, pageSize);
+        PageInfo<UserEntity> page = userService.findAllPageList(pageNumber, pageSize,userEntity);
         return returnBootTable(true, "查询成功", page);
 
         //------------------ 测试代码 ------------------
@@ -109,33 +106,31 @@ public class UserController extends BaseController {
     /**
      * 跳转到添加页
      *
-     * @return
+     * @return {String} 页面路径
      */
     @RequestMapping(value = "to_add.htm", method = RequestMethod.GET)
-    public String toAddUser() {
+    public String toAddUser(Model model) {
+        UserEntity user = (UserEntity) createObjFromClass(UserEntity.class);
+        model.addAttribute("dataEntity",JSON.toJSONString(user, SerializerFeature.WriteMapNullValue));
         return "system/user/form";
     }
+
 
     /**
      * 添加
      *
      * @param user 用户实体
-     * @return
+     * @return {Map} 返回Map结果
      */
     @RequestMapping(value = "add.do", method = RequestMethod.POST)
     @ResponseBody
     public Map addUser(UserEntity user) {
-        UserDetailsExtend userDetails
-                = (UserDetailsExtend) SecurityContextHolder.getContext()
+        UserExtendSecurity userDetails
+                = (UserExtendSecurity) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
         if (user != null && StringUtils.isBlank(user.getId())){
             try {
-                user.setCreateId(userDetails.getUsername());
-                user.setCreateName(userDetails.getLoginNum());
-                user.setCreateDate(new Date());
-                user.setUpdateId(userDetails.getUsername());
-                user.setUpdateName(userDetails.getLoginNum());
-                user.setUpdateDate(new Date());
+                BaseEntity.setCreateAndUpdateUser(user);
                 userService.save(user);
             } catch (Exception e) {
                 logger.error("注册用户异常",e);
@@ -151,7 +146,7 @@ public class UserController extends BaseController {
     /**
      * 跳转到更新页
      *
-     * @return
+     * @return {String} 页面路径
      */
     @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
     public String toUpdateUser(UserEntity user,Model model) {
@@ -164,26 +159,19 @@ public class UserController extends BaseController {
      * 更新
      *
      * @param user 用户实体
-     * @return
+     * @return {Map} 返回Map结果
      */
     @RequestMapping(value = "update.do", method = RequestMethod.POST)
     @ResponseBody
     public Map updateUser(UserEntity user) {
 
-        UserExtendSecurity userDetails
-                = (UserExtendSecurity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (user != null && StringUtils.isBlank(user.getId())){
+        if (user != null && StringUtils.isNotBlank(user.getId())){
             try {
-                user.setCreateId(userDetails.getUsername());
-                user.setCreateName(userDetails.getLoginNum());
-                user.setCreateDate(new Date());
-                user.setUpdateId(userDetails.getUsername());
-                user.setUpdateName(userDetails.getLoginNum());
-                user.setUpdateDate(new Date());
-                userService.save(user);
+                BaseEntity.setUpdateUser(user);
+                userService.update(user);
             } catch (Exception e) {
                 logger.error("修改用户基础数据异常",e);
-                return returnAjax(false,e.getMessage(),null,null);
+                return returnAjax(false,"修改用户基础数据异常",null,null);
             }
             return returnAjax(true,"保存成功",null,null);
         } else {
@@ -193,15 +181,20 @@ public class UserController extends BaseController {
     }
 
     /**
-     * 删除
+     * 批量状态更新
      * @param ids ids
-     * @return
+     * @return {Map} 返回Map结果
      */
-    @RequestMapping(value = "del_rows.htm", method = RequestMethod.POST)
+    @RequestMapping(value = "batch_update_state.do", method = RequestMethod.POST)
     @ResponseBody
-    public String delUser(String ids) {
-
-        return null;
+    public Map delUser(String ids,String status) {
+        try {
+            userService.batchUpdateState(ids,status);
+            return returnAjax(true,"更新成功",null,null);
+        } catch (Exception e) {
+            logger.error("批量更新异常",e);
+        }
+        return returnAjax(false,"批量更新异常",null,null);
     }
 
 }

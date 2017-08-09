@@ -48,6 +48,7 @@ public class JdbcResultConvert {
                 try {
                     FieldModel fieldModel = new FieldModel();
                     Class classType = Class.forName(dataTypeClassName);
+                    fieldModel.setDbColumName(unformatName);
                     fieldModel.setSimpleDataTypeName(classType.getSimpleName());
                     fieldModel.setDataTypeName(classType.getName());
                     String capitalizeName = sb.toString();

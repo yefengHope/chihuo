@@ -11,40 +11,70 @@ public class UserExtendSecurity extends org.springframework.security.core.userde
 
     private static final long serialVersionUID = -5458107170396472077L;
 
-    private String loginName;
+    /**
+     * 用户id
+     */
+    private String userId;
+    /**
+     * 用户昵称
+     */
+    private String userName;
 
+    /**
+     * 用户帐号
+     */
     private String loginNum;
 
-    public UserExtendSecurity(String username, String password, Collection<? extends GrantedAuthority> authorities, String loginName, String loginNum) {
+    public UserExtendSecurity(String username, String password, Collection<? extends GrantedAuthority> authorities,
+                              String userId, String userName, String loginNum) {
         super(username, password, authorities);
-        this.loginName = loginName;
+        this.userId = userId;
+        this.userName = userName;
         this.loginNum = loginNum;
     }
 
-    public UserExtendSecurity(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities, String loginName, String loginNum) {
+    public UserExtendSecurity(String username, String password, boolean enabled, boolean accountNonExpired
+            , boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities
+            , String userId, String userName, String loginNum) {
         super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
-        this.loginName = loginName;
+        this.userId = userId;
+        this.userName = userName;
         this.loginNum = loginNum;
     }
 
-    // 父类构造方法
-    private UserExtendSecurity(String username, String password, Collection<? extends GrantedAuthority> authorities) {
+    public UserExtendSecurity(String username, String password, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, authorities);
     }
-    // 父类构造方法
-    private UserExtendSecurity(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
+
+    public UserExtendSecurity(String username, String password, boolean enabled, boolean accountNonExpired, boolean credentialsNonExpired, boolean accountNonLocked, Collection<? extends GrantedAuthority> authorities) {
         super(username, password, enabled, accountNonExpired, credentialsNonExpired, accountNonLocked, authorities);
     }
 
 
-    public String getLoginName() {
-        return loginName;
+    /**
+     * 用户id
+     */
+    public String getUserId() {
+        return userId;
+    }
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setLoginName(String loginName) {
-        this.loginName = loginName;
+    /**
+     * 用户昵称
+     */
+    public String getUserName() {
+        return userName;
     }
 
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /**
+     * 用户帐号
+     */
     public String getLoginNum() {
         return loginNum;
     }

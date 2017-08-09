@@ -53,6 +53,8 @@
                         <ul class="nav nav-second-level">
                             <li><a class="J_menuItem" href="/admin/user/page.htm" >用户管理</a>
                             <li><a class="J_menuItem" href="/admin/role/page.htm" >角色管理</a>
+                            <li><a class="J_menuItem" href="/admin/system/setting/page.htm" >系统设置管理</a>
+                            <li><a class="J_menuItem" href="/admin/system/menu/page.htm" >菜单管理</a>
                             </li>
                         </ul>
                     </li>

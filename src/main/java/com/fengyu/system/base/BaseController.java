@@ -2,6 +2,7 @@ package com.fengyu.system.base;
 
 import com.github.pagehelper.PageInfo;
 
+import java.lang.reflect.Field;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -66,6 +67,28 @@ public class BaseController {
         map.put("total",page.getTotal());
         map.put("rows",page.getList());
         return map;
+    }
+
+    /**
+     * 根据类型创建每个字段为null的对象
+     * @param clazz
+     * @param <T>
+     * @return
+     */
+    public <T> Object createObjFromClass(Class<T> clazz) {
+        T temp = null;
+        try {
+            temp = clazz.newInstance();
+            Field[] fields = clazz.getFields();
+            for (Field field : fields) {
+                field.set(temp,null);
+            }
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        return temp;
     }
 
 }

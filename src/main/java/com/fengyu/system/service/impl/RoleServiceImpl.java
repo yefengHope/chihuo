@@ -4,16 +4,21 @@ import com.fengyu.system.dao.RoleMapper;
 import com.fengyu.system.dao.UserAndRoleMapper;
 import com.fengyu.system.entity.RoleEntity;
 import com.fengyu.system.entity.UserAndRoleEntity;
+import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.RoleService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.stereotype.Service;
+import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -78,6 +83,30 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     public void save(RoleEntity role) {
-        roleMapper.insert(role);
+        if (role != null) {
+            roleMapper.insert(role);
+        } else {
+            logger.error("保存数据，但是数据不存在");
+        }
+    }
+    @Override
+    public void update(RoleEntity role) {
+        if (role != null && null != role.getId()) {
+            Example example = new Example(UserEntity.class);
+            example.createCriteria().andEqualTo("id", role.getId());
+            roleMapper.updateByExampleSelective(role, example);
+        } else {
+            logger.error("更新数据，但是数据不存在");
+        }
+    }
+
+    @Override
+    public void batchUpdateState(String ids,String status) {
+        if (StringUtils.isNotBlank(ids)) {
+            String[] idArr = ids.split(",");
+            if (idArr != null && idArr.length > 0 && StringUtils.isNotBlank(status)){
+                roleMapper.batchUpdateState(status,idArr);
+            }
+        }
     }
 }

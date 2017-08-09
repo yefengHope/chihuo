@@ -5,10 +5,11 @@
 
 var bootTableSelector = "#bootTable";
 var bootTableSearchSelector = "#bootTableSearch";
+var bootTableToolSelector = "#bootTableTool";
 var bootTable = {};
 bootTable.option = {
     url : basePath + "/admin/role/page_data.json",
-    toolbar : bootTableSearchSelector, /*自定义的toolbar*/
+    toolbar : bootTableToolSelector, /*自定义的toolbar*/
     columns : [
         {
             idField: 'id',
@@ -55,12 +56,8 @@ bootTable.option = {
         },
         {
             field : "status",
-            title : "状态",
-            align: 'center'
-        },
-        {
-            field : "updateId",
-            title : "更新id",
+            title : "账号状态",
+            formatter : BSTStatusformatter ,
             align: 'center'
         },
         {
@@ -83,3 +80,9 @@ bootTable.init = function () {
 $(function () {
     bootTable.init();
 });
+
+function searchCondition() {
+    $(bootTableSelector).bootstrapTable("refresh",{
+        query: $(bootTableSearchSelector).getBSTSearchParams(),
+    });
+}

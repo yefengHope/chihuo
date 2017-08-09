@@ -24,4 +24,12 @@
     <!--</select>-->
 
 
+    <update id="batchUpdateState">
+        UPDATE ts_user SET status = #{status}
+        WHERE
+          id in
+          <foreach collection="ids" item="id" open="(" close=")" separator=",">
+              #{id}
+          </foreach>
+    </update>
 </mapper>

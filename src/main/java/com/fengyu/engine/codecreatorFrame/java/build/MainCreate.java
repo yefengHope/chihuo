@@ -40,7 +40,11 @@ public class MainCreate {
         init = new InitHtmlForm();
         init.init();
 
+        init = new InitJsList();
+        init.init();
 
+        init = new InitJsForm();
+        init.init();
     }
 
     /**

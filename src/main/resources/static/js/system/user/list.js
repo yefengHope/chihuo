@@ -5,10 +5,11 @@
 
 var bootTableSelector = "#bootTable";
 var bootTableSearchSelector = "#bootTableSearch";
+var bootTableToolSelector = "#bootTableTool";
 var bootTable = {};
 bootTable.option = {
     url : basePath + "/admin/user/page_data.json",
-    toolbar : bootTableSearchSelector, /*自定义的toolbar*/
+    toolbar : bootTableToolSelector, /*自定义的toolbar*/
     columns : [
         {
             idField: 'id',
@@ -23,11 +24,12 @@ bootTable.option = {
             title : "登录账号",
             align: 'center'
         },
-        {
-            field : "loginPwd",
-            title : "登录密码",
-            align: 'center'
-        },
+        // {
+        //     field : "loginPwd",
+        //     title : "登录密码",
+        //     width : "15",
+        //     align: 'center'
+        // },
         {
             field : "name",
             title : "账号昵称",
@@ -46,6 +48,7 @@ bootTable.option = {
         {
             field : "status",
             title : "账号状态",
+            formatter : BSTStatusformatter ,
             align: 'center'
         },
         {
@@ -53,11 +56,11 @@ bootTable.option = {
             title : "账号头像",
             align: 'center'
         },
-        {
-            field : "updateId",
-            title : "更新id",
-            align: 'center'
-        },
+        // {
+        //     field : "updateId",
+        //     title : "更新id",
+        //     align: 'center'
+        // },
         {
             field : "updateName",
             title : "更新人名称",
@@ -78,3 +81,9 @@ bootTable.init = function () {
 $(function () {
     bootTable.init();
 });
+
+function searchCondition() {
+    $(bootTableSelector).bootstrapTable("refresh",{
+        query: $(bootTableSearchSelector).getBSTSearchParams(),
+    });
+}

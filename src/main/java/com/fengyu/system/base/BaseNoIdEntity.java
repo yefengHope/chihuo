@@ -1,10 +1,12 @@
 package com.fengyu.system.base;
 
+import com.alibaba.fastjson.annotation.JSONField;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.util.common.CommonUtils;
 
-import javax.persistence.*;
-import java.io.Serializable;
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+import javax.persistence.Version;
 import java.lang.reflect.Field;
 import java.util.Date;
 
@@ -13,10 +15,8 @@ import java.util.Date;
  * Created by 韩峰 on 2016/8/2.
  */
 @MappedSuperclass
-public class BaseNoIdEntity implements Serializable {
-
-    private static final long serialVersionUID = 2435304512595002549L;
-
+public class BaseNoIdEntity extends BaseEntity {
+    private static final long serialVersionUID = 4123620900938069418L;
     /**
      * 创建人id
      */
@@ -30,6 +30,7 @@ public class BaseNoIdEntity implements Serializable {
     /**
      * 创建人date
      */
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     @Column(name = "create_date")
     private Date createDate;
     /**
@@ -45,6 +46,7 @@ public class BaseNoIdEntity implements Serializable {
     /**
      * 更新date
      */
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     @Column(name = "update_date")
     private Date updateDate;
 
@@ -59,7 +61,7 @@ public class BaseNoIdEntity implements Serializable {
      *  0 = 删除, 1= 正常
      *  默认 : 1;
      */
-    private Integer status = 1;
+    private Integer status;
 
     /**
      * 执行插入数据之后回调

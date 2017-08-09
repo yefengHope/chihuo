@@ -14,6 +14,7 @@ public class IndexAdminController extends BaseController {
     @RequestMapping(value = "/index.htm")
     public String index(){
         return "index.admin";
+        // return "test.index.admin";
     }
 
 }

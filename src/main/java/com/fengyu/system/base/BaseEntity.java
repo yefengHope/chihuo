@@ -1,6 +1,6 @@
 package com.fengyu.system.base;
 
-import com.fengyu.system.entity.UserEntity;
+import com.fengyu.system.entity.UserExtendSecurity;
 import com.fengyu.util.common.CommonUtils;
 
 import javax.persistence.*;
@@ -14,12 +14,7 @@ import java.util.Date;
  */
 @MappedSuperclass
 public class BaseEntity implements Serializable {
-
-
-    private static final long serialVersionUID = 887436082747947410L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private static final long serialVersionUID = 2381788624242688944L;
     /**
      * 创建人id
      */
@@ -59,10 +54,34 @@ public class BaseEntity implements Serializable {
 
     /**
      * 状态
-     *  0 = 删除, 1= 正常
+     *  0 = 删除, 1= 正常 , 2= 禁用
      *  默认 : 1;
      */
-    private Integer status = 1;
+    private Integer status;
+
+    public static <T extends BaseEntity> void setCreateUser(T t){
+        UserExtendSecurity userCache = CommonUtils.getUserSeesionBySecurity();
+        t.setCreateId(userCache.getUserId());
+        t.setCreateName(userCache.getUserName());
+        t.setCreateDate (new Date());
+    }
+
+    public static <T extends BaseEntity> void setUpdateUser(T t){
+        UserExtendSecurity userCache = CommonUtils.getUserSeesionBySecurity();
+        t.setUpdateId(userCache.getUserId());
+        t.setUpdateName(userCache.getUserName());
+        t.setUpdateDate( new Date());
+    }
+
+    public static <T extends BaseEntity> void setCreateAndUpdateUser(T t){
+        UserExtendSecurity userCache = CommonUtils.getUserSeesionBySecurity();
+        t.setCreateId(userCache.getUserId());
+        t.setCreateName(userCache.getUserName());
+        t.setCreateDate (new Date());
+        t.setUpdateId(userCache.getUserId());
+        t.setUpdateName(userCache.getUserName());
+        t.setUpdateDate( new Date());
+    }
 
     /**
      * 执行插入数据之后回调
@@ -70,9 +89,9 @@ public class BaseEntity implements Serializable {
      */
     /*@PostPersist*/
     public void setCreateUser(){
-        UserEntity user = CommonUtils.getUserSession();
-        this.createId = user.getId();
-        this.createName = user.getName();
+        UserExtendSecurity user = CommonUtils.getUserSeesionBySecurity();
+        this.createId = user.getUserId();
+        this.createName = user.getUserName();
         this.createDate = new Date();
     }
 
@@ -82,9 +101,9 @@ public class BaseEntity implements Serializable {
      */
     /*@PostUpdate*/
     public void seUpdateUser(){
-        UserEntity user = CommonUtils.getUserSession();
-        this.updateId = user.getId();
-        this.updateName = user.getName();
+        UserExtendSecurity user = CommonUtils.getUserSeesionBySecurity();
+        this.updateId = user.getUserId();
+        this.updateName = user.getUserName();
         this.updateDate = new Date();
     }
 
@@ -125,14 +144,6 @@ public class BaseEntity implements Serializable {
 
     public void updateDate(){
         this.updateDate = new Date();
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getCreateId() {
