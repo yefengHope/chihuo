@@ -18,7 +18,7 @@ public class BaseIdEntity extends BaseEntity {
     private static final long serialVersionUID = 4469037430125758442L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @JSONField()
+    // @JSONField(serializeUsing  = LongConvertStringSerializer.class)
     private Long id;
 
     /**
@@ -34,6 +34,7 @@ public class BaseIdEntity extends BaseEntity {
     /**
      * 创建人date
      */
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     @Column(name = "create_date")
     private Date createDate;
     /**
@@ -49,6 +50,7 @@ public class BaseIdEntity extends BaseEntity {
     /**
      * 更新date
      */
+    @JSONField(format="yyyy-MM-dd HH:mm:ss")
     @Column(name = "update_date")
     private Date updateDate;
 

@@ -1,6 +1,6 @@
 package com.fengyu.system.entity;
 
-import com.fengyu.system.base.BaseEntity;
+import com.fengyu.system.base.BaseIdEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +14,7 @@ import javax.persistence.Table;
  */
 @Entity
 @Table(name ="ts_user_role")
-public class UserAndRoleEntity extends BaseEntity {
-
-
+public class UserAndRoleEntity extends BaseIdEntity {
     private static final long serialVersionUID = 3663056250043943633L;
     /**
      * 用户编号

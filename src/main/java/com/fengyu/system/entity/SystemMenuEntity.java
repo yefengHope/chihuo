@@ -50,6 +50,22 @@ public class SystemMenuEntity extends BaseIdEntity {
         @Column(name = "SORT")
         private String sort ;
 
+        public SystemMenuEntity() {
+        }
+
+        public SystemMenuEntity(Long proMenuId) {
+                this.proMenuId = proMenuId;
+        }
+
+        public SystemMenuEntity(Long menuType, Long proMenuId, String menuLevels, String menuName, String menuAddress, String sort) {
+                this.menuType = menuType;
+                this.proMenuId = proMenuId;
+                this.menuLevels = menuLevels;
+                this.menuName = menuName;
+                this.menuAddress = menuAddress;
+                this.sort = sort;
+        }
+
         public Long getMenuType() {
                 return menuType;
         }

@@ -6,6 +6,7 @@ import com.fengyu.system.base.BaseController;
 import com.fengyu.system.base.BaseEntity;
 import com.fengyu.system.entity.RoleEntity;
 import com.fengyu.system.service.RoleService;
+import com.fengyu.util.BaseException;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +58,7 @@ public class RoleController extends BaseController {
      */
     @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map pageJson(Integer pageNumber , Integer pageSize, RoleEntity roleEntity) {
+    public Map pageJson(Integer pageNumber , Integer pageSize, RoleEntity roleEntity) throws BaseException {
         PageInfo<RoleEntity> pageInfo = roleService.findAllPageList(pageNumber,pageSize,roleEntity);
         return returnBootTable(true,"查询成功",pageInfo);
     }
@@ -81,8 +82,9 @@ public class RoleController extends BaseController {
      * @return {Map} 返回Map结果
      */
     @RequestMapping(value = "add.do", method = RequestMethod.POST)
+    @ResponseBody
     public Map add(RoleEntity roleEntity) {
-        if (roleEntity != null && null != roleEntity.getId() ){
+        if (roleEntity != null && null == roleEntity.getId() ){
             try {
                 BaseEntity.setCreateAndUpdateUser(roleEntity);
                 roleService.save(roleEntity);
@@ -98,12 +100,24 @@ public class RoleController extends BaseController {
     }
 
     /**
+     * 获取单条数据
+     *
+     * @return {String} 页面路径
+     */
+    @RequestMapping(value = "getSingleRole.do", method = RequestMethod.POST)
+    @ResponseBody
+    public Map getSingleDate(RoleEntity roleEntity) throws BaseException {
+        RoleEntity roleServiceOne = roleService.findOne(roleEntity);
+        return returnAjax(true,"查询成功",roleServiceOne,null);
+    }
+
+    /**
      * 跳转到更新页
      *
      * @return {String} 页面路径
      */
     @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
-    public String toUpdate(Model model,RoleEntity roleEntity) {
+    public String toUpdate(Model model,RoleEntity roleEntity) throws BaseException {
         RoleEntity roleServiceOne = roleService.findOne(roleEntity);
         model.addAttribute("dataEntity", JSON.toJSONString(roleServiceOne));
         return "system/role/form";

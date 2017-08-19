@@ -6,7 +6,7 @@ var buttonWatch = null;
 
 $(document).ready(function() {
     /*加载时间插件*/
-    $(".plug_datetime").datetimepicker({language:"zh-CN"})
+    $(".plug_datetime").datetimepicker({language:"zh-CN",format : "yyyy-mm-dd hh:ii:ss"})
     // 选择时间被改变   changeDate
     // 时间选择器被隐藏 hide
         .on('hide', function(ev){
@@ -56,6 +56,18 @@ $(document).ready(function() {
                 validators: {
                     notEmpty: {
                         message: '请填写角色有效期'
+                    }
+                }
+            },
+            sort : {
+                validators : {
+                    notEmpty: {
+                        message: '请填写序号'
+                    },
+                    between : {
+                        min : 1,
+                        max : 200,
+                        message: '序号范围 1- 200'
                     }
                 }
             },

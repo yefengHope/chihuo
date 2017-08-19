@@ -1,6 +1,7 @@
 package com.fengyu.system.service;
 
 import com.fengyu.system.entity.UserEntity;
+import com.fengyu.util.BaseException;
 
 /**
  * <p>@Title 类标题描述 </p>
@@ -18,5 +19,5 @@ public interface LoginService {
      * @param username  登录账号，邮箱，手机号
      * @return  User
      */
-    UserEntity findByUsername(String username);
+    UserEntity findByUsername(String username) throws BaseException;
 }

@@ -9,7 +9,7 @@ var BV = {};
 BV.ide = "curClick"; // 标志位
 /**
  * 设置当前表单点击的按钮 ，data-curClick = true
-  * @param selectForm
+ * @param selectForm
  * @param btnName
  */
 BV.setBtnClickIde = function (selectForm,btnName) {
@@ -40,7 +40,7 @@ BV.isCloseFrame = function ($selectForm) {
     if ("saveAndClose" === btnDataType || "close"=== btnDataType ) {
         return true;
     } else {
-      return false;
+        return false;
     }
 };
 
@@ -109,6 +109,7 @@ function ajaxWarp(option) {
         //"application/json; charset=utf-8"
         dataType: 'json',
         method: 'post',
+        // processData : true, //布尔值，规定通过请求发送的数据是否转换为查询字符串。默认是 true。
         beforeSend: function () {
             //loading层
             loading = layer.load(1, {
@@ -119,18 +120,47 @@ function ajaxWarp(option) {
         headers : {
             "X-CSRF-TOKEN" : $("#csrfToken").val()
         },
-        success: function () {
-
+        success: function (data,status,xhr) {
+            if (data.status === true) {
+                Toast.showSuccess(data.info)
+            } else {
+                Toast.showError(data.info)
+            }
         },
-        error: function (data) {
+        error: function (data,status,error) {
             var info = data.info;
-            alert("错误 : " + info);
+            if (info) {
+                Toast.showError(info);
+            }
         },
-        complete: function () {
+        complete: function (data,status) {
+            if (data.hasOwnProperty("responseText") && data.responseText && $.trim(data.responseText)) {
+                data = JSON.parse(data.responseText);
+            }
+            switch (data.status) {
+                case 401 : {
+                    Toast.showError("会话已过期，请刷新页面");
+                } break;
+                case 403 : {
+                    if ("Forbidden" == data.error) {
+                        Toast.showError("会话Token已过期，请刷新页面");
+                    }
+                }break;
+            }
             layer.close(loading);
         }
     };
     defualtOtion = $.extend(defualtOtion, option);
+    if (defualtOtion.data) {
+        if (defualtOtion.data.hasOwnProperty("createDate") || defualtOtion.data.hasOwnProperty("createDate")) {
+            delete defualtOtion.data.createId;
+            delete defualtOtion.data.createName;
+            delete defualtOtion.data.createDate;
+            delete defualtOtion.data.updateId;
+            delete defualtOtion.data.updateName;
+            delete defualtOtion.data.updateDate;
+        }
+    }
     $.ajax(defualtOtion);
 
 }
@@ -159,7 +189,37 @@ Layer.iframeOpen = function (opt,cancelCallback) {
     // parent.layer.open(o); //相当于顶级窗口打开
     window.layer.open(o);
 };
-
+/**
+ * alert 替代，异步
+ * @param text
+ * @param successCall
+ * @param errorCall
+ * @param opt
+ */
+Layer.msg = function (text,successCall,errorCall,opt) {
+    if (!text || !$.trim(text)) {
+        alert("少年，想什么呢！想弹出什么都不告诉我！");
+        return;
+    }
+    var o = {
+        time: 0 //不自动关闭
+        ,btn: ['确认', '取消']
+        ,yes: function(index) {
+            if (typeof successCall === "function") {
+                successCall();
+            }
+            layer.close(index);
+        }
+        ,btn2: function(index, layero){
+            //按钮【按钮二】的回调
+            if (typeof errorCall === "function"){
+                errorCall();
+            }
+        }
+    };
+    o = $.extend(o,opt);
+    layer.msg(text, o);
+};
 //----- layer date start -----
 var LayerDate = {};
 LayerDate.opt = {

@@ -49,12 +49,15 @@ public class SystemMenuServiceImpl implements SystemMenuService {
     }
 
     @Override
-    public void save(SystemMenuEntity systemMenuEntity) {
+    public int save(SystemMenuEntity systemMenuEntity) {
+        int num = 0;
         if (systemMenuEntity != null) {
-            systemMenuMapper.insert(systemMenuEntity);
+            num = systemMenuMapper.insertUseGeneratedKeys(systemMenuEntity);
+            // num = systemMenuMapper.insert(systemMenuEntity);
         } else {
             logger.error("保存数据，但是数据不存在");
         }
+        return num;
     }
 
     @Override
@@ -75,6 +78,15 @@ public class SystemMenuServiceImpl implements SystemMenuService {
             if (idArr != null && idArr.length > 0 && StringUtils.isNotBlank(status)){
                 systemMenuMapper.batchUpdateState(status,idArr);
             }
+        }
+    }
+
+    @Override
+    public List<SystemMenuEntity> selectByIds(String ids) {
+        if (StringUtils.isNotBlank(ids)) {
+            return systemMenuMapper.selectByIds(ids);
+        }else {
+            return null;
         }
     }
 }

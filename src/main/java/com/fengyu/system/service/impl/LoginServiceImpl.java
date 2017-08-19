@@ -3,6 +3,7 @@ package com.fengyu.system.service.impl;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.LoginService;
 import com.fengyu.system.service.UserService;
+import com.fengyu.util.BaseException;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -23,7 +24,7 @@ public class LoginServiceImpl implements LoginService {
     private UserService userService;
 
     @Override
-    public UserEntity findByUsername(String username) {
+    public UserEntity findByUsername(String username) throws BaseException {
         UserEntity user = new UserEntity();
         user.setLoginNum(username);
 

@@ -2,6 +2,7 @@ package com.fengyu.util.common;
 
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.entity.UserExtendSecurity;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -26,11 +27,21 @@ public class CommonUtils {
 
     /**
      * 获取spring security登录缓存中用户对象
-     * @return {userId : 用户id, userName : 用户name, loginNum ： 登录帐号}
+     * @return {UserExtendSecurity}
      */
     public static UserExtendSecurity getUserSeesionBySecurity() {
         UserExtendSecurity userDetails = (UserExtendSecurity) SecurityContextHolder.getContext()
                 .getAuthentication().getPrincipal();
         return userDetails;
+    }
+
+    /**
+     * 获取spring security登录缓存中用户对象
+     * @return {UserExtendSecurity}
+     */
+    public static Authentication getAuthenticationBySecurity() {
+        Authentication authentication = SecurityContextHolder.getContext()
+                .getAuthentication();
+        return authentication;
     }
 }

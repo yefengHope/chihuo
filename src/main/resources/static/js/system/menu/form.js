@@ -31,11 +31,6 @@ $(document).ready(function() {
                     notEmpty: {
                         message: '请填写菜单类型'
                     },
-                    stringLength: {
-                        min: 2,
-                        max: 40,
-                        message: '菜单类型在1-40字'
-                    },
                 }
             },
             proMenuId : {
@@ -44,7 +39,7 @@ $(document).ready(function() {
                         message: '请填写父级菜单'
                     },
                     stringLength: {
-                        min: 2,
+                        min: 1,
                         max: 40,
                         message: '父级菜单在1-40字'
                     },
@@ -56,9 +51,9 @@ $(document).ready(function() {
                         message: '请填写菜单层级'
                     },
                     stringLength: {
-                        min: 2,
+                        min: 1,
                         max: 40,
-                        message: '菜单层级在2-40字'
+                        message: '菜单层级在1-40字'
                     },
                 }
             },
@@ -74,18 +69,18 @@ $(document).ready(function() {
                     },
                 }
             },
-            menuAddress : {
-                validators: {
-                    notEmpty: {
-                        message: '请填写菜单地址'
-                    },
-                    stringLength: {
-                        min: 2,
-                        max: 40,
-                        message: '菜单地址在2-40字'
-                    },
-                }
-            },
+            // menuAddress : {
+            //     validators: {
+            //         notEmpty: {
+            //             message: '请填写菜单地址'
+            //         },
+            //         stringLength: {
+            //             min: 2,
+            //             max: 40,
+            //             message: '菜单地址在2-40字'
+            //         },
+            //     }
+            // },
             sort : {
                 validators: {
                     notEmpty: {
@@ -135,14 +130,26 @@ $(document).ready(function() {
         success: function (result) {
             if (result.status) {
                 Toast.showSuccess(result.info,"成功");
-                parentRefreshBST();
-                setTimeout(function() {
-                    // 如果是 *并关闭 按钮 ，当前js有一个事件点击监控事件
-                    var isClose = BV.isCloseFrame($form);
-                    if (isClose) {
-                        closeCurIframe();
-                    }
-                },200);
+                // 列表页面的处理方法
+                // parentRefreshBST();
+                // setTimeout(function() {
+                //     // 如果是 *并关闭 按钮 ，当前js有一个事件点击监控事件
+                //     var isClose = BV.isCloseFrame($form);
+                //     if (isClose) {
+                //         closeCurIframe();
+                //     }
+                // },200);
+
+                // 树页面的处理方法
+                if (dataEntity.hasOwnProperty("id") && dataEntity.id) {
+                    // 编辑节点
+                    var node = treeObj.getNodeByParam("id", formVue.$data.id, null);
+                    node.menuName = formVue.$data.menuName;
+                    treeObj.updateNode(node);
+                } else {
+                    // 添加节点
+                    addNodeWrap(treeSelectName,$(formSelect).data("treeNode"),result.data.id);
+                }
             } else{
                 Toast.showError(result.info,"失败");
             }

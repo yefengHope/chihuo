@@ -1,9 +1,12 @@
 package com.fengyu.system.security;
 
+import com.fengyu.system.entity.SystemMenuEntity;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.entity.UserExtendSecurity;
 import com.fengyu.system.service.LoginService;
 import com.fengyu.system.service.RoleService;
+import com.fengyu.system.service.SystemMenuService;
+import com.fengyu.util.BaseException;
 import org.apache.commons.lang.StringUtils;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -13,7 +16,9 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -34,35 +39,86 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
     @Resource(name = "roleService")
     private RoleService roleService;
 
+    @Resource
+    private SystemMenuService systemMenuService;
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if (StringUtils.isBlank(username)) {
             throw new UsernameNotFoundException("用户名为空");
         }
 
-        UserEntity login = loginService.findByUsername(username);
-        if (login == null) {
-            throw new UsernameNotFoundException("not found");
+        UserEntity login = null;
+        try {
+            login = loginService.findByUsername(username);
+        } catch (BaseException e) {
+            e.printStackTrace();
+        }
+        UserExtendSecurity user;
+        boolean isEnabled = true;               //是否可用
+        boolean isAccountNonExpired = true;     //是否过期
+        boolean isCredentialsNonExpired = true; //证书不过期为true
+        boolean isAccountNonLocked = true;      //账户未锁定为true
+
+        if (login != null) {
+            // 查询有此用户
+            Set<GrantedAuthority> authorities = new HashSet<>();
+            List<String> accessMenuIds = new ArrayList<>();
+            roleService.getRoles(login.getId())
+                    .forEach(r -> {
+                                authorities.add(new SimpleGrantedAuthority(r.getNameKey()));
+                                String arigth = r.getArights();
+                                if (StringUtils.isNotBlank(arigth)) {
+                                accessMenuIds.add(arigth);
+                                }
+                            }
+                    );
+            // TODO: 2017/8/14 用户有效性判断
+            String accessMenuIdStr = StringUtils.join(accessMenuIds,",");
+            List<SystemMenuEntity> systemMenuEntities = systemMenuService.selectByIds(accessMenuIdStr);
+
+            List<String> accessUrlIds = new ArrayList<>();
+            List<SystemMenuEntity> systemMenuCache = new ArrayList<>();
+            systemMenuEntities.forEach(r -> {
+                if (1 == r.getStatus()){
+                    accessUrlIds.add(r.getMenuAddress());
+                    systemMenuCache.add(r);
+                }
+            });
+
+            user = new UserExtendSecurity(
+                    login.getId(),
+                    login.getLoginPwd(),
+                    isEnabled,               //是否可用
+                    isAccountNonExpired,       //是否过期
+                    isCredentialsNonExpired,   //证书不过期为true
+                    isAccountNonLocked,       //账户未锁定为true
+                    authorities,
+                    login.getId(),
+                    login.getName(),
+                    login.getLoginNum(),
+                    systemMenuCache,
+                    accessUrlIds
+            );
+        } else {
+            // 用户不可用
+            isEnabled = false;
+            user = new UserExtendSecurity(
+                    login.getId(),
+                    login.getLoginPwd(),
+                    isEnabled,               //是否可用
+                    isAccountNonExpired,       //是否过期
+                    isCredentialsNonExpired,   //证书不过期为true
+                    isAccountNonLocked,       //账户未锁定为true
+                    null,
+                    login.getId(),
+                    login.getName(),
+                    login.getLoginNum(),
+                    null,
+                    null
+            );
         }
 
-        Set<GrantedAuthority> authorities = new HashSet<>();
-        roleService.getRoles(login.getId())
-                .forEach(r -> {
-                    authorities.add(new SimpleGrantedAuthority(r.getNameKey()));
-                }
-                );
-        UserExtendSecurity user = new UserExtendSecurity(
-                login.getId(),
-                login.getLoginPwd(),
-                true,               //是否可用
-                true,       //是否过期
-                true,   //证书不过期为true
-                true,       //账户未锁定为true
-                authorities,
-                login.getId(),
-                login.getName(),
-                login.getLoginNum()
-        );
         return user;
     }
 }

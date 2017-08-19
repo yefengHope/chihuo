@@ -1,9 +1,9 @@
 package com.fengyu.system.security;
 
-import com.fengyu.system.entity.LoginEntity;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.LoginService;
 import com.fengyu.system.service.RoleService;
+import com.fengyu.util.BaseException;
 import org.springframework.security.access.PermissionEvaluator;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
@@ -32,7 +32,12 @@ public class CustomPermissionEvaluator implements PermissionEvaluator {
     @Override
     public boolean hasPermission(Authentication authentication, Object targetDomainObject, Object permission) {
         String username = authentication.getName();
-        UserEntity login = loginService.findByUsername(username);
+        UserEntity login = null;
+        try {
+            login = loginService.findByUsername(username);
+        } catch (BaseException e) {
+            e.printStackTrace();
+        }
         return roleService.authorized(login.getId(), targetDomainObject.toString(), permission.toString());
     }
 

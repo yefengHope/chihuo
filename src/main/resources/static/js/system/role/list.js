@@ -56,7 +56,7 @@ bootTable.option = {
         },
         {
             field : "status",
-            title : "账号状态",
+            title : "状态",
             formatter : BSTStatusformatter ,
             align: 'center'
         },

@@ -1,5 +1,6 @@
 package com.fengyu.system.base;
 
+import com.fengyu.util.BaseException;
 import com.github.pagehelper.PageInfo;
 
 import java.util.List;
@@ -14,13 +15,13 @@ public interface BaseService<T> {
      * @param t
      * @return
      */
-    T findOne(T t);
+    T findOne(T t) throws BaseException;
 
     /**
      * 查询所有
      * @return List<UserEntity>
      */
-    List<T> findAllList(T role);
+    List<T> findAllList(T role) throws BaseException;
 
     /**
      * 查询所有
@@ -29,24 +30,24 @@ public interface BaseService<T> {
      * @param t             泛型实体
      * @return  Page<UserEntity>
      */
-    PageInfo<T> findAllPageList(Integer pageNumber , Integer pageSize, T t);
+    PageInfo<T> findAllPageList(Integer pageNumber , Integer pageSize, T t) throws BaseException;
 
     /**
      * 保存
      * @param t             泛型实体
      */
-    void save(T t);
+    int save(T t);
 
     /**
      * 更新
      * @param t             泛型实体
      */
-    void update(T t);
+    void update(T t) throws BaseException ;
 
     /**
      * 批量更新状态
      * @param ids       id数组
      * @param status    更新状态值
      */
-    void batchUpdateState(String ids,String status);
+    void batchUpdateState(String ids,String status) throws BaseException;
 }

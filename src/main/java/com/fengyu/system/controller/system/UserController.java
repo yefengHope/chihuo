@@ -5,14 +5,14 @@ import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.fengyu.system.base.BaseController;
 import com.fengyu.system.base.BaseEntity;
 import com.fengyu.system.entity.UserEntity;
-import com.fengyu.system.entity.UserExtendSecurity;
 import com.fengyu.system.service.UserService;
+import com.fengyu.util.BaseException;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
-import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -88,7 +88,7 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map toPageListJson(int pageSize, int pageNumber, UserEntity userEntity) {
+    public Map toPageListJson(int pageSize, int pageNumber, UserEntity userEntity) throws BaseException {
 
         // UserExtendSecurity userDetails
         //         = (UserExtendSecurity) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -125,11 +125,14 @@ public class UserController extends BaseController {
     @RequestMapping(value = "add.do", method = RequestMethod.POST)
     @ResponseBody
     public Map addUser(UserEntity user) {
-        UserExtendSecurity userDetails
-                = (UserExtendSecurity) SecurityContextHolder.getContext()
-                .getAuthentication().getPrincipal();
         if (user != null && StringUtils.isBlank(user.getId())){
             try {
+                // 加密密码
+                String textPwd = user.getLoginPwd();
+                BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+                String hashedPassword = passwordEncoder.encode(textPwd);
+                user.setLoginPwd(hashedPassword);
+
                 BaseEntity.setCreateAndUpdateUser(user);
                 userService.save(user);
             } catch (Exception e) {
@@ -149,7 +152,7 @@ public class UserController extends BaseController {
      * @return {String} 页面路径
      */
     @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
-    public String toUpdateUser(UserEntity user,Model model) {
+    public String toUpdateUser(UserEntity user,Model model) throws BaseException {
         UserEntity userEntity = userService.findOne(user);
         model.addAttribute("dataEntity", JSON.toJSONString(userEntity));
         return "system/user/form";
@@ -163,16 +166,16 @@ public class UserController extends BaseController {
      */
     @RequestMapping(value = "update.do", method = RequestMethod.POST)
     @ResponseBody
-    public Map updateUser(UserEntity user) {
+    public Map updateUser(UserEntity user) throws BaseException {
 
         if (user != null && StringUtils.isNotBlank(user.getId())){
-            try {
+            // try {
                 BaseEntity.setUpdateUser(user);
                 userService.update(user);
-            } catch (Exception e) {
-                logger.error("修改用户基础数据异常",e);
-                return returnAjax(false,"修改用户基础数据异常",null,null);
-            }
+            // } catch (Exception e) {
+            //     logger.error("修改用户基础数据异常",e);
+            //     return returnAjax(false,"修改用户基础数据异常",null,null);
+            // }
             return returnAjax(true,"保存成功",null,null);
         } else {
             logger.error("修改用户基础数据，参数不存在或者参数存在id");

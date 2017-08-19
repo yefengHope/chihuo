@@ -3,6 +3,7 @@ package com.fengyu.system.service.impl;
 import com.fengyu.system.dao.UserMapper;
 import com.fengyu.system.entity.UserEntity;
 import com.fengyu.system.service.UserService;
+import com.fengyu.util.BaseException;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang.StringUtils;
@@ -29,7 +30,7 @@ public class UserServiceImpl implements UserService{
     @Resource
     private UserMapper userMapper;
 
-    public UserEntity findOne(UserEntity user){
+    public UserEntity findOne(UserEntity user) throws BaseException {
         return userMapper.selectOne(user);
     }
 
@@ -45,17 +46,19 @@ public class UserServiceImpl implements UserService{
         return new PageInfo<>(users);
     }
 
-    public void save(UserEntity user){
+    public int save(UserEntity user){
+        int num = 0;
         if (user != null) {
             if (StringUtils.isBlank(user.getId())) {
-                userMapper.insert(user);
+                num = userMapper.insert(user);
             }
         } else {
             logger.error("保存数据，但是数据不存在");
         }
+        return num;
     }
 
-    public void update(UserEntity user) {
+    public void update(UserEntity user) throws BaseException {
         if (user != null && StringUtils.isNotBlank(user.getId())) {
             Example example = new Example(UserEntity.class);
             example.createCriteria().andEqualTo("id", user.getId());

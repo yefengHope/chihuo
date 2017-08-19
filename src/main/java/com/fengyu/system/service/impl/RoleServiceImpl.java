@@ -82,12 +82,14 @@ public class RoleServiceImpl implements RoleService {
     }
 
     @Override
-    public void save(RoleEntity role) {
+    public int save(RoleEntity role) {
+        int num = 0;
         if (role != null) {
-            roleMapper.insert(role);
+            num = roleMapper.insert(role);
         } else {
             logger.error("保存数据，但是数据不存在");
         }
+        return num;
     }
     @Override
     public void update(RoleEntity role) {

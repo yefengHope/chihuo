@@ -18,7 +18,6 @@ import java.util.Date;
 @Entity
 @Table(name = "ts_role")
 public class RoleEntity extends BaseIdEntity {
-
     private static final long serialVersionUID = 4292158331522374673L;
     /**
      * 业务系统编号
@@ -38,8 +37,8 @@ public class RoleEntity extends BaseIdEntity {
     /**
      * 角色有效期
      */
-    @JSONField(format = "yyyy-MM-dd hh:mm:ss")
-    @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    @JSONField(format = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "VALIDITY")
     private Date validity;
     /**

@@ -38,7 +38,7 @@ public class ${config.className} extends BaseIdEntity{
         */
         <#if fildModels.simpleDataTypeName == "Date">
         @JSONField(format="yyyy-MM-dd HH:mm:ss")
-        @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+        @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
         </#if>
         @Column(name = "${fildModels.dbColumName}")
         private ${fildModels.simpleDataTypeName} ${fildModels.lowerCamelCaseName} ;

@@ -7,13 +7,6 @@
     <meta name="keywords" content=""/>
 <#include "../../commom/include.hplus.css.ftl" />
 <#include "../../commom/include.hplus.form.css.ftl" />
-    <style>
-        .demo--label{margin:20px 20px 0 0;display:inline-block}
-        .demo--radio{display:none}
-        .demo--radioInput{background-color:#fff;border:1px solid rgba(0,0,0,0.15);border-radius:100%;display:inline-block;height:16px;margin-right:10px;margin-top:-1px;vertical-align:middle;width:16px;line-height:1}
-        .demo--radio:checked + .demo--radioInput:after{background-color:#57ad68;border-radius:100%;content:"";display:inline-block;height:12px;margin:2px;width:12px}
-        .demo--checkbox.demo--radioInput,.demo--radio:checked + .demo--checkbox.demo--radioInput:after{border-radius:0}
-    </style>
     <title>用户表单</title>
 </head>
 <body>
@@ -80,10 +73,6 @@
                 <div class="form-group">
                     <label class="col-sm-3 control-label">状态</label>
                     <div class="col-sm-5">
-                    <#--<select name="status" placeholder="状态" class="form-control" v-model="status">-->
-                    <#--<option value="1">启用</option>-->
-                    <#--<option value="2">禁用</option>-->
-                    <#--</select>-->
                         <div class="radio">
                             <label class="radio-inline">
                                 <input name="status" v-model="status" type="radio" value="1"><i></i>启用</label>
@@ -105,7 +94,6 @@
                 </div>-->
                 <div class="form-group">
                     <div class="col-sm-9 col-sm-offset-3">
-                        <!-- Do NOT use name="submit" or id="submit" for the Submit button -->
                         <button name="submitTo" type="submit" class="btn btn-default" v-if="!id">注 册</button>
                         <button name="submitTo" type="submit" class="btn btn-default" data-type="saveAndClose" v-if="!id">注册并关闭</button>
                         <button name="submitTo" type="submit" class="btn btn-default" v-if="id">修 改</button>

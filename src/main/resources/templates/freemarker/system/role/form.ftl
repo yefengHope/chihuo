@@ -65,12 +65,13 @@
                         <input type="text" class="form-control" name="hrights" v-model="hrights"/>
                     </div>
                 </div>
-            <#--<div class="form-group">-->
-            <#--<label class="col-sm-3 control-label">序号</label>-->
-            <#--<div class="col-sm-5">-->
-            <#--<input type="number" class="form-control" name="sort" v-model="sort"/>-->
-            <#--</div>-->
-            <#--</div>-->
+
+                <div class="form-group">
+                    <label class="col-sm-3 control-label">序号</label>
+                    <div class="col-sm-5">
+                        <input type="number" class="form-control" name="sort" v-model="sort"/>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label class="col-sm-3 control-label">状态</label>
                     <div class="col-sm-5">

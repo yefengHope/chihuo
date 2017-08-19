@@ -8,6 +8,7 @@ import com.fengyu.system.base.BaseController;
 import com.fengyu.system.base.BaseEntity;
 import com.fengyu.system.entity.SystemSettingEntity;
 import com.fengyu.system.service.SystemSettingService;
+import com.fengyu.util.BaseException;
 import com.github.pagehelper.PageInfo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,7 +60,7 @@ public class SystemSettingController extends BaseController {
     */
     @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
     @ResponseBody
-    public Map pageJson(Integer pageNumber , Integer pageSize, SystemSettingEntity systemSettingEntity) {
+    public Map pageJson(Integer pageNumber , Integer pageSize, SystemSettingEntity systemSettingEntity) throws BaseException {
         PageInfo<SystemSettingEntity> pageInfo = systemSettingService.findAllPageList(pageNumber,pageSize,systemSettingEntity);
         return returnBootTable(true,"查询成功",pageInfo);
     }
@@ -106,7 +107,7 @@ public class SystemSettingController extends BaseController {
     * @return {String} 页面路径
     */
     @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
-    public String toUpdate(Model model,SystemSettingEntity systemSettingEntity) {
+    public String toUpdate(Model model,SystemSettingEntity systemSettingEntity) throws BaseException {
         SystemSettingEntity systemSettingEntityOne = systemSettingService.findOne(systemSettingEntity);
         model.addAttribute("dataEntity", JSON.toJSONString(systemSettingEntityOne));
         return "system/systemSetting/form";

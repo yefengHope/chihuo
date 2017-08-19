@@ -11,7 +11,7 @@
     <meta name="description" content="">
 <#include "../../commom/include.hplus.css.ftl" />
 <#include "../../commom/include.hplus.list.css.ftl" />
-    <link href="/plugs/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css"  rel="stylesheet" type="text/css" />
+    <#--<link href="/plugs/bootstrap/bootstrap-select-1.11.2/dist/css/bootstrap-select.min.css"  rel="stylesheet" type="text/css" />-->
     <base target="_blank">
 </head>
 

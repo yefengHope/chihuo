@@ -9,7 +9,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link href="/html_model/hplus/css/login.min.css" rel="stylesheet">
-    <#include "../commom/include.hplus.css.ftl" />
+<#include "../commom/include.hplus.css.ftl" />
     <script>
         if (window.top !== window.self) {
             window.top.location = window.location
@@ -42,12 +42,19 @@
             <form method="post" action="/login.htm">
                 <h4 class="no-margins">登录：</h4>
                 <p class="m-t-md">登录到后台管理</p>
+                <div>
+                <#if (param.error)!false >
+                    <span>帐号或密码错误</span>
+                <#elseif (param.logout)!false >
+                    <span>您已经退出登录</span>
+                </#if>
+                </div>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 <input name="userName" type="text" class="form-control uname" placeholder="用户名"/>
                 <input name="userPwd" type="password" class="form-control pword m-b" placeholder="密码"/>
                 <a href="">忘记密码了？</a>
-                <button class="btn btn-success btn-block" type="submit">登录</button>
-            <#--<button class="btn btn-success btn-block" type="button" onclick="login()">登录</button>-->
+                <#--<button class="btn btn-success btn-block" type="submit">登录</button>-->
+            <button class="btn btn-success btn-block" type="button" onclick="login()">登录</button>
             </form>
         </div>
     </div>
@@ -71,12 +78,21 @@
 <script src="/html_model/hplus/js/plugins/pace/pace.min.js"></script>
 
 <#--<#include "../commom/include.hplus.js.ftl" />-->
-<#--<script>
+<script>
     function login() {
         ajaxWarp({
             url: basePath + "/login.htm",
-            data: $("form").serialize()
+            data: $("form").serialize(),
+            success: function (data,status,xhr) {
+                if (data.status === true) {
+                    location.href = encodeURI(basePath + "/admin/index.htm");
+//                    Toast.showSuccess(data.info);
+//                    setTimeout(function () {},500);
+                } else {
+                    Toast.showError(data.info)
+                }
+            },
         })
     }
-</script>-->
+</script>
 </html>

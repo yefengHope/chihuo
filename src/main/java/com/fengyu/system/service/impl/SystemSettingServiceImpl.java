@@ -66,12 +66,14 @@ public class SystemSettingServiceImpl implements SystemSettingService {
     }
 
     @Override
-    public void save(SystemSettingEntity systemSettingEntity) {
+    public int save(SystemSettingEntity systemSettingEntity) {
+        int num = 0;
         if (systemSettingEntity != null) {
-            systemSettingMapper.insert(systemSettingEntity);
+            num = systemSettingMapper.insert(systemSettingEntity);
         } else {
             logger.error("保存数据，但是数据不存在");
         }
+        return num;
     }
 
     @Override
