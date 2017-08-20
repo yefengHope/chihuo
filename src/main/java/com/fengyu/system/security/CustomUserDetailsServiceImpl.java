@@ -104,16 +104,16 @@ public class CustomUserDetailsServiceImpl implements UserDetailsService {
             // 用户不可用
             isEnabled = false;
             user = new UserExtendSecurity(
-                    login.getId(),
-                    login.getLoginPwd(),
+                    null,
+                    null,
                     isEnabled,               //是否可用
                     isAccountNonExpired,       //是否过期
                     isCredentialsNonExpired,   //证书不过期为true
                     isAccountNonLocked,       //账户未锁定为true
                     null,
-                    login.getId(),
-                    login.getName(),
-                    login.getLoginNum(),
+                    null,
+                    null,
+                    null,
                     null,
                     null
             );

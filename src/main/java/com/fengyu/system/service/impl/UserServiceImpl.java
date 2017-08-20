@@ -19,7 +19,7 @@ import java.util.List;
  * 用户类
  * Created by 韩峰 on 2016/8/10.
  */
-@Service("userServiceImpl")
+@Service()
 public class UserServiceImpl implements UserService{
 
     private static Logger logger;
