@@ -16,7 +16,7 @@ import java.text.MessageFormat;
  * Created by rain on 2017/8/20.
  */
 @Aspect
-@Component
+@Component //这个必须有，因为我被坑了
 public class ServiceAspect {
     private static Logger logger;
 
