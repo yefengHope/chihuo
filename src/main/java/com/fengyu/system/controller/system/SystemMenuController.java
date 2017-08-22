@@ -47,7 +47,7 @@ public class SystemMenuController extends BaseController {
      *
      * @return {String} 页面路径
      */
-    @RequestMapping(value = "page.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/page.htm", method = RequestMethod.GET)
     public String toPage() {
         return "system/menu/list";
     }
@@ -55,7 +55,7 @@ public class SystemMenuController extends BaseController {
     /**
      * 树形列表
      */
-    @RequestMapping(value = "page_tree.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/page_tree.htm", method = RequestMethod.GET)
     public String toTreeList(Model model) throws BaseException {
         SystemMenuEntity selectWhere = new SystemMenuEntity();
         selectWhere.setStatus(1);
@@ -75,7 +75,7 @@ public class SystemMenuController extends BaseController {
      * @param systemMenuEntity 查询参数
      * @return {Map} 返回Map结果
      */
-    @RequestMapping(value = "page_data.json", method = RequestMethod.POST)
+    @RequestMapping(value = "/page_data.json", method = RequestMethod.POST)
     @ResponseBody
     public Map pageJson(Integer pageNumber , Integer pageSize, SystemMenuEntity systemMenuEntity) throws BaseException {
         PageInfo<SystemMenuEntity> pageInfo = systemMenuService.findAllPageList(pageNumber,pageSize,systemMenuEntity);
@@ -87,7 +87,7 @@ public class SystemMenuController extends BaseController {
      *
      * @return {String} 页面路径
      */
-    @RequestMapping(value = "to_add.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/to_add.htm", method = RequestMethod.GET)
     public String toAdd(Model model) {
         SystemMenuEntity systemMenuEntity = (SystemMenuEntity) createObjFromClass(SystemMenuEntity.class);
         model.addAttribute("dataEntity", JSON.toJSONString(systemMenuEntity, SerializerFeature.WriteMapNullValue));
@@ -100,7 +100,7 @@ public class SystemMenuController extends BaseController {
      * @param systemMenuEntity 实体
      * @return {Map} 返回Map结果
      */
-    @RequestMapping(value = "add.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/add.do", method = RequestMethod.POST)
     @ResponseBody
     public Map add(SystemMenuEntity systemMenuEntity) throws BaseException {
         if (
@@ -153,14 +153,14 @@ public class SystemMenuController extends BaseController {
      *
      * @return {String} 页面路径
      */
-    @RequestMapping(value = "to_update.htm", method = RequestMethod.GET)
+    @RequestMapping(value = "/to_update.htm", method = RequestMethod.GET)
     public String toUpdate(Model model,SystemMenuEntity systemMenuEntity) throws BaseException {
         SystemMenuEntity systemMenuEntityOne = systemMenuService.findOne(systemMenuEntity);
         model.addAttribute("dataEntity", JSON.toJSONString(systemMenuEntityOne, SerializerFeature.WriteMapNullValue));
         return "system/menu/form";
     }
 
-    @RequestMapping(value = "update.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/update.do", method = RequestMethod.POST)
     @ResponseBody
     public Map update(SystemMenuEntity systemMenuEntity) {
         if (systemMenuEntity != null && null != systemMenuEntity.getId()){
@@ -184,7 +184,7 @@ public class SystemMenuController extends BaseController {
      * @param status    状态代码
      * @return
      */
-    @RequestMapping(value = "batch_update_state.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/batch_update_state.do", method = RequestMethod.POST)
     @ResponseBody
     public Map delRows(String ids,String status) {
         try {

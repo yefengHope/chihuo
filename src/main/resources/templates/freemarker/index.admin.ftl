@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit">
-    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <title>H+ 后台主题UI框架 - 主页</title>
 
     <meta name="keywords" content="">
@@ -24,7 +24,7 @@
             <ul class="nav" id="side-menu">
                 <li class="nav-header">
                     <div class="dropdown profile-element">
-                        <span><img alt="image" class="img-circle" src="/html_model/hplus/img/profile_small.jpg"  /></span>
+                        <span><img alt="image" class="img-circle" src="/html_model/hplus/img/profile_small.jpg"/></span>
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                                 <span class="clear">
                                <span class="block m-t-xs"><strong class="font-bold">${role}</strong></span>
@@ -32,16 +32,16 @@
                                 </span>
                         </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a class="J_menuItem" href="form_avatar.html" >修改头像</a>
+                            <li><a class="J_menuItem" href="form_avatar.html">修改头像</a>
                             </li>
-                            <li><a class="J_menuItem" href="profile.html" >个人资料</a>
+                            <li><a class="J_menuItem" href="profile.html">个人资料</a>
                             </li>
-                            <li><a class="J_menuItem" href="contacts.html" >联系我们</a>
+                            <li><a class="J_menuItem" href="contacts.html">联系我们</a>
                             </li>
-                            <li><a class="J_menuItem" href="mailbox.html" >信箱</a>
+                            <li><a class="J_menuItem" href="mailbox.html">信箱</a>
                             </li>
                             <li class="divider"></li>
-                            <li><a href="javascript:void(logout())" >安全退出</a>
+                            <li><a href="javascript:void(logout())">安全退出</a>
                             </li>
                         </ul>
                     </div>
@@ -55,7 +55,8 @@
                         <#--  ***目标工作为显示二级菜单 start***  -->
                             <#list tree.children as subTree><#--遍历二级菜单-->
                                 <li><#--显示的一级菜单 start-->
-                                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">${subTree.t.menuName}</span><span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-edit"></i> <span
+                                            class="nav-label">${subTree.t.menuName}</span><span class="fa arrow"></span></a>
                                     <#if (subTree.children)?? && (subTree.children?size > 0) > <#--如果二级菜单存在子菜单（即三级菜单,显示的二级菜单）-->
                                         <ul class="nav nav-second-level">
                                         <#--循环二级显示菜单 start-->
@@ -64,17 +65,20 @@
                                                 <#--判断是否有三级菜单，因为显示样式不一样-->
                                                     <#if (twoShowTree.children)?? && (twoShowTree.children?size > 0)>
                                                     <#--存在三级菜单-->
-                                                        <a href="#">${twoShowTree.t.menuName} <span class="fa arrow"></span></a>
+                                                        <a href="#">${twoShowTree.t.menuName} <span
+                                                                class="fa arrow"></span></a>
                                                         <ul class="nav nav-third-level">
                                                         <#--循环三级显示菜单-->
                                                             <#list twoShowTree.children as threeMenu>
-                                                                <li><a class="J_menuItem" href="${threeMenu.t.menuAddress}">${threeMenu.t.menuName}</a>
+                                                                <li><a class="J_menuItem"
+                                                                       href="${threeMenu.t.menuAddress}">${threeMenu.t.menuName}</a>
                                                                 </li>
                                                             </#list>
                                                         </ul>
                                                     <#else>
                                                     <#--只有二级显示菜单-->
-                                                        <a class="J_menuItem" href="${twoShowTree.t.menuAddress}" >${twoShowTree.t.menuName}</a>
+                                                        <a class="J_menuItem"
+                                                           href="${twoShowTree.t.menuAddress}">${twoShowTree.t.menuName}</a>
                                                     </#if>
                                                 </li>
                                             </#list>
@@ -88,28 +92,47 @@
                     </#if>
                 </#list>
             </#if>
-
-                <li>
-                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span class="fa arrow"></span></a>
+                <#--<li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">系统管理</span><span
+                            class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="form_basic.html" >基本表单</a>
+                        <li><a class="J_menuItem" href="/admin/user/page.htm">用户管理</a>
+                        <li><a class="J_menuItem" href="/admin/role/page.htm">角色管理</a>
+                        <li><a class="J_menuItem" href="/admin/system/menu/page_tree.htm">菜单管理</a>
+                        <li>
+                        <li><a class="J_menuItem" href="#">授权管理</a></li>
+                        <ul class="nav nav-third-level">
+                            <li><a class="J_menuItem" href="/admin/system/auth/user_role/page.htm">用户角色授权</a>
+                            </li>
+                            <li><a class="J_menuItem" href="/admin/system/auth/role_menu/page.htm">角色菜单授权</a>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                </li>-->
+                <li>
+                    <a href="#"><i class="fa fa-edit"></i> <span class="nav-label">表单</span><span
+                            class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level">
+                        <li><a class="J_menuItem" href="form_basic.html">基本表单</a>
                         <li>
                             <a href="#">文件上传 <span class="fa arrow"></span></a>
                             <ul class="nav nav-third-level">
-                                <li><a class="J_menuItem" href="form_webuploader.html" >百度WebUploader</a>
+                                <li><a class="J_menuItem" href="form_webuploader.html">百度WebUploader</a>
                                 </li>
-                                <li><a class="J_menuItem" href="form_file_upload.html" >DropzoneJS</a>
+                                <li><a class="J_menuItem" href="form_file_upload.html">DropzoneJS</a>
                                 </li>
-                                <li><a class="J_menuItem" href="form_avatar.html" >头像裁剪上传</a>
+                                <li><a class="J_menuItem" href="form_avatar.html">头像裁剪上传</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
                 <li>
-                    <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span class="fa arrow"></span></a>
+                    <a href="#"><i class="fa fa-cutlery"></i> <span class="nav-label">工具 </span><span
+                            class="fa arrow"></span></a>
                     <ul class="nav nav-second-level">
-                        <li><a class="J_menuItem" href="form_builder.html" >表单构建器</a>
+                        <li><a class="J_menuItem" href="form_builder.html">表单构建器</a>
                         </li>
                     </ul>
                 </li>
@@ -122,10 +145,13 @@
     <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
             <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
-                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
-                    <form role="search" class="navbar-form-custom" method="post" action="http://www.zi-han.net/theme/hplus/search_results.html">
+                <div class="navbar-header"><a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i
+                        class="fa fa-bars"></i> </a>
+                    <form role="search" class="navbar-form-custom" method="post"
+                          action="http://www.zi-han.net/theme/hplus/search_results.html">
                         <div class="form-group">
-                            <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search" id="top-search">
+                            <input type="text" placeholder="请输入您需要查找的内容 …" class="form-control" name="top-search"
+                                   id="top-search">
                         </div>
                     </form>
                 </div>
@@ -136,7 +162,7 @@
                         </a>
                         <ul class="dropdown-menu dropdown-alerts">
                             <li>
-                                <a href="mailbox.html" >
+                                <a href="mailbox.html">
                                     <div>
                                         <i class="fa fa-envelope fa-fw"></i> 您有16条未读消息
                                         <span class="pull-right text-muted small">4分钟前</span>
@@ -145,7 +171,7 @@
                             </li>
                             <li class="divider"></li>
                             <li>
-                                <a href="profile.html" >
+                                <a href="profile.html">
                                     <div>
                                         <i class="fa fa-qq fa-fw"></i> 3条新回复
                                         <span class="pull-right text-muted small">12分钟钱</span>
@@ -155,7 +181,7 @@
                             <li class="divider"></li>
                             <li>
                                 <div class="text-center link-block">
-                                    <a class="J_menuItem" href="notifications.html" >
+                                    <a class="J_menuItem" href="notifications.html">
                                         <strong>查看所有 </strong>
                                         <i class="fa fa-angle-right"></i>
                                     </a>
@@ -185,7 +211,8 @@
             <button class="roll-nav roll-right J_tabRight"><i class="fa fa-forward"></i>
             </button>
             <div class="btn-group roll-nav roll-right">
-                <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret" style="margin-left: 0px;"></span>
+                <button class="dropdown J_tabClose" data-toggle="dropdown">关闭操作<span class="caret"
+                                                                                     style="margin-left: 0px;"></span>
 
                 </button>
                 <ul role="menu" class="dropdown-menu dropdown-menu-right">
@@ -198,13 +225,17 @@
                     </li>
                 </ul>
             </div>
-            <a href="javascript:void(logout())" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i> 退出</a>
+            <a href="javascript:void(logout())" class="roll-nav roll-right J_tabExit"><i class="fa fa fa-sign-out"></i>
+                退出</a>
         </div>
         <div class="row J_mainContent" id="content-main">
-            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="index_v1.html-v=4.0.htm"  frameborder="0" data-id="index_v1.html" seamless></iframe>
+            <iframe class="J_iframe" name="iframe0" width="100%" height="100%" src="index_v1.html-v=4.0.htm"
+                    frameborder="0" data-id="index_v1.html" seamless></iframe>
         </div>
         <div class="footer">
-            <div class="pull-right">&copy; 2014-2015 <a href="javascript:if(confirm(%27http://www.zi-han.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.zi-han.net/%27"  target="_blank">zihan's blog</a>
+            <div class="pull-right">&copy; 2014-2015 <a
+                    href="javascript:if(confirm(%27http://www.zi-han.net/  \n\nThis file was not retrieved by Teleport Pro, because it is addressed on a domain or path outside the boundaries set for its Starting Address.  \n\nDo you want to open it from the server?%27))window.location=%27http://www.zi-han.net/%27"
+                    target="_blank">zihan's blog</a>
             </div>
         </div>
     </div>
@@ -233,7 +264,7 @@
             <div class="tab-content">
                 <div id="tab-1" class="tab-pane active">
                     <div class="sidebar-title">
-                        <h3> <i class="fa fa-comments-o"></i> 主题设置</h3>
+                        <h3><i class="fa fa-comments-o"></i> 主题设置</h3>
                         <small><i class="fa fa-tim"></i> 你可以从这里选择和预览主题的布局和样式，这些设置会被保存在本地，下次打开的时候会直接应用这些设置。</small>
                     </div>
                     <div class="skin-setttings">
@@ -242,7 +273,8 @@
                             <span>收起左侧菜单</span>
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox" id="collapsemenu">
+                                    <input type="checkbox" name="collapsemenu" class="onoffswitch-checkbox"
+                                           id="collapsemenu">
                                     <label class="onoffswitch-label" for="collapsemenu">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -255,7 +287,8 @@
 
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox" id="fixednavbar">
+                                    <input type="checkbox" name="fixednavbar" class="onoffswitch-checkbox"
+                                           id="fixednavbar">
                                     <label class="onoffswitch-label" for="fixednavbar">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -270,7 +303,8 @@
 
                             <div class="switch">
                                 <div class="onoffswitch">
-                                    <input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox" id="boxedlayout">
+                                    <input type="checkbox" name="boxedlayout" class="onoffswitch-checkbox"
+                                           id="boxedlayout">
                                     <label class="onoffswitch-label" for="boxedlayout">
                                         <span class="onoffswitch-inner"></span>
                                         <span class="onoffswitch-switch"></span>
@@ -305,7 +339,7 @@
                 <div id="tab-2" class="tab-pane">
 
                     <div class="sidebar-title">
-                        <h3> <i class="fa fa-comments-o"></i> 最新通知</h3>
+                        <h3><i class="fa fa-comments-o"></i> 最新通知</h3>
                         <small><i class="fa fa-tim"></i> 您当前有10条未读信息</small>
                     </div>
 
@@ -314,7 +348,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a1.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a1.jpg">
 
                                     <div class="m-t-xs">
                                         <i class="fa fa-star text-warning"></i>
@@ -332,7 +366,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a2.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a2.jpg">
                                 </div>
                                 <div class="media-body">
                                     HCY48之音乐大魔王会员专属皮肤已上线，快来一键换装拥有他，宣告你对华晨宇的爱吧！
@@ -344,7 +378,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
 
                                     <div class="m-t-xs">
                                         <i class="fa fa-star text-warning"></i>
@@ -362,7 +396,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
                                 </div>
 
                                 <div class="media-body">
@@ -375,7 +409,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a8.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a8.jpg">
                                 </div>
                                 <div class="media-body">
 
@@ -388,7 +422,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a7.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a7.jpg">
                                 </div>
                                 <div class="media-body">
                                     这哥们的新视频又来了，创意杠杠滴，帅炸了！
@@ -400,7 +434,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a3.jpg">
 
                                     <div class="m-t-xs">
                                         <i class="fa fa-star text-warning"></i>
@@ -418,7 +452,7 @@
                         <div class="sidebar-message">
                             <a href="#">
                                 <div class="pull-left text-center">
-                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg" >
+                                    <img alt="image" class="img-circle message-avatar" src="img/a4.jpg">
                                 </div>
                                 <div class="media-body">
                                     我发起了一个投票 【你认为下午大盘会翻红吗？】
@@ -443,16 +477,18 @@
         <div class="heading" draggable="true">
             <small class="chat-date pull-right">
                 2015.9.1
-            </small> 与 Beau-zihan 聊天中
+            </small>
+            与 Beau-zihan 聊天中
         </div>
 
         <div class="content">
 
             <div class="left">
                 <div class="author-name">
-                    Beau-zihan <small class="chat-date">
-                    10:02
-                </small>
+                    Beau-zihan
+                    <small class="chat-date">
+                        10:02
+                    </small>
                 </div>
                 <div class="chat-message active">
                     你好
@@ -534,9 +570,9 @@
 <script>
     function logout() {
         ajaxWarp({
-            url : encodeURI(basePath + "/admin/logout.do"),
+            url: encodeURI(basePath + "/admin/logout.do"),
             method: 'get',
-            success : function (data) {
+            success: function (data) {
                 if (data.status === true) {
                     location.href = encodeURI(basePath + "/admin/toLogin.htm");
                 } else {

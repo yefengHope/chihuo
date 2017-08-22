@@ -1,5 +1,6 @@
 package com.fengyu.system.controller.system;
 
+import com.alibaba.fastjson.JSON;
 import com.fengyu.system.base.BaseController;
 import com.fengyu.system.entity.SystemMenuEntity;
 import com.fengyu.system.entity.UserExtendSecurity;
@@ -72,7 +73,7 @@ public class IndexAdminController extends BaseController {
         });
         Collections.sort(menuList);
         model.addAttribute("menus",menuList);
-        // System.out.println(JSON.toJSONString(menuList));
+        System.out.println(JSON.toJSONString(menuList));
         return "index.admin";
         // return "test.index.admin";
     }
