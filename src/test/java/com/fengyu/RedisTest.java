@@ -90,6 +90,8 @@ public class RedisTest {
 
     @Test
     public void testObj() throws Exception {
+        redisTemplate.isExposeConnection();
+
         UserEntity user = new UserEntity();
         user.setEmail("aa@126.com");
         user.setLoginNum("aa");

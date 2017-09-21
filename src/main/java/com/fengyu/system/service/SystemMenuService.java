@@ -3,6 +3,7 @@ package com.fengyu.system.service;
 import com.fengyu.system.base.BaseService;
 import com.fengyu.system.entity.SystemMenuEntity;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 /**
@@ -11,5 +12,5 @@ import java.util.List;
 */
 public interface SystemMenuService extends BaseService<SystemMenuEntity>{
 
-    List<SystemMenuEntity> selectByIds(String ids);
+    List<SystemMenuEntity> selectByIds(@NotNull String ids);
 }

@@ -95,12 +95,6 @@ public class UserController extends BaseController {
 
         PageInfo<UserEntity> page = userService.findAllPageList(pageNumber, pageSize,userEntity);
         return returnBootTable(true, "查询成功", page);
-
-        //------------------ 测试代码 ------------------
-        // Object userName = applicationContext.getBean("user");
-        // Map<String,Object> map = applicationContext.getBeansWithAnnotation(Entity.class);
-        // System.out.println(map.toString());
-        // return JsonUtils.toJSONStringConvertNull(bootPage);
     }
 
     /**

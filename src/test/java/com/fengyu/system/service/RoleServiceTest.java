@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+import java.util.Calendar;
 import java.util.List;
 
 import static org.junit.Assert.*;

@@ -19,6 +19,8 @@ import java.util.Map;
  */
 public abstract class AbstractJdbcConnection extends JdbcConfig {
 
+    private static final long serialVersionUID = -2356985072215453063L;
+
     private static Logger logger = Logger.getLogger(AbstractJdbcConnection.class);
 
     Connection conn = null;

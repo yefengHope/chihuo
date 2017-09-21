@@ -14,6 +14,7 @@ import com.fengyu.util.BaseException;
  */
 public interface LoginService {
 
+
     /**
      * 通过登录账号查询用户
      * @param username  登录账号，邮箱，手机号

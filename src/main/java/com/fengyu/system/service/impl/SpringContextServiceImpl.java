@@ -7,7 +7,9 @@ import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.WebApplicationContext;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -21,7 +23,8 @@ public class SpringContextServiceImpl implements SpringContextService {
     /* 1.沿用springTest的这种方法 是否会更好？
     *  2.get/set方式*/
     @Autowired
-    private ApplicationContext applicationContext;
+    private ApplicationContext applicationContext; // (没有包含dao，entity，service)
+
 
 /*
     private static ApplicationContext applicationContext = null;
@@ -50,8 +53,14 @@ public class SpringContextServiceImpl implements SpringContextService {
 
     @Override
     public List<Object> getBeans() throws BeansException {
-        return null;
+        String[] beanDefinitionNames = applicationContext.getBeanDefinitionNames();
+        List<Object> list = new ArrayList<>();
+        for (String beanDefinitionName : beanDefinitionNames) {
+            list.add(applicationContext.getBean(beanDefinitionName));
+        }
+        return list;
     }
+
 
     /**
      * 根据类名获取到bean

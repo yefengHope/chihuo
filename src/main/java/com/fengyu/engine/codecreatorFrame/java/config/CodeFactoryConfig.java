@@ -8,7 +8,7 @@ import java.util.Map;
  * 获取代码生成器配置类
  * Created by rain on 2017/6/19.
  */
-public class CodeFactoryConfig {
+public abstract class CodeFactoryConfig {
 
     private static Map<String,String> configProp ;
 

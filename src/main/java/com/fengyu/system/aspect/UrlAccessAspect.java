@@ -1,16 +1,49 @@
 package com.fengyu.system.aspect;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.Before;
 import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.reflect.MethodSignature;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
+import org.springframework.util.PathMatcher;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+import org.springframework.web.method.HandlerMethod;
+import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
+import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
+
+import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 /**
  * 拦截url
  * Created by rain on 2017/8/20.
  */
 @Aspect
+@Component
 public class UrlAccessAspect {
+    
+    
+    private static Logger logger;
+    static {
+        logger = LoggerFactory.getLogger(UrlAccessAspect.class);
+    }
+
+    @Resource
+    private RequestMappingHandlerMapping handlerMapping;
 
     /*
     before 目标方法执行前执行，前置通知
@@ -60,14 +93,46 @@ public class UrlAccessAspect {
         @Pointcut("@annotation(com.zejian.spring.annotation.MarkerAnnotation)")
         private void myPointcut5(){}
      */
-    @Pointcut("@annotation(org.springframework.stereotype.Controller)")
+    @Pointcut("@annotation(org.springframework.web.bind.annotation.RequestMapping)")
     public void urlAccess(){
 
     }
 
+    @Before(value="urlAccess()")
+    public void accessUrlBefore(JoinPoint joinPoint) {
+        RequestAttributes ra = RequestContextHolder.getRequestAttributes();
+        ServletRequestAttributes sra = (ServletRequestAttributes) ra;
+        HttpServletRequest request = sra.getRequest();
+        String url = request.getRequestURL().toString();
+        String method = request.getMethod();
+        String uri = request.getRequestURI();
+        String queryString = request.getQueryString();
+        logger.debug("请求开始, 各个参数, url: {}, method: {}, uri: {}, params: {}", url, method, uri, queryString);
 
-    @AfterReturning(value = "urlAccess()")
-    public void accessUrlAfter(JoinPoint joinPoint) {
+        // 获取处理方法的链接
+        try {
 
+            String urlPath = handlerMapping.getUrlPathHelper().getLookupPathForRequest(request);
+            logger.debug(urlPath);
+
+            // 查询登录缓存，获取可以访问的路径，如果在列表之外则拒绝访问！
+            // 访问被拒绝的写入数据库
+
+
+            // 防止用户刷页面，Redis记录访问的次数，不需要持久化到数据库
+            // 如果需要根据数据库设置的访问权限限制
+
+            // 获取当前cpu，内存状态，磁盘读取情况
+            // 如果服务器状态差，则开启访问限制，优先会员访问
+
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
+
+    // @AfterReturning(value = "urlAccess()")
+    // public void accessUrlAfter(JoinPoint joinPoint) {
+    //
+    // }
 }

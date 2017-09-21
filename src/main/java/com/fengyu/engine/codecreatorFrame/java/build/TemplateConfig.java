@@ -1,12 +1,13 @@
 package com.fengyu.engine.codecreatorFrame.java.build;
 
+import com.alibaba.fastjson.JSON;
 import com.fengyu.engine.codecreatorFrame.java.config.CodeFactoryConfig;
 import org.apache.commons.lang.StringUtils;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * <p>@Title 模板配置 </p>
@@ -17,16 +18,18 @@ import java.util.Set;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-public class TemplateConfig implements Serializable {
+public abstract class TemplateConfig implements Serializable {
 
 
     private static final long serialVersionUID = 4347308140509715561L;
+
+    private final static String TEMPLATE_MODULE = "template.module.[0-9]+";
 
     private static Map<String, String> config = CodeFactoryConfig.getConfig();
 
     private static String dirPath;
 
-    private static String[] templateModule;
+    private static List<String> templateModule;
 
     static {
         String path = config.get("template.package.path");
@@ -34,16 +37,39 @@ public class TemplateConfig implements Serializable {
             throw new NullPointerException("template.package.path 变量不存在");
         }
         dirPath = path;
-
-        String module = config.get("template.module");
-        if (StringUtils.isBlank(module)) {
-            throw new NullPointerException("template.module 变量不存在");
-        }
-        templateModule = module.split(",");
     }
 
-    public static String[] getTemplateModule() {
+    /**
+     * 获取配置模块
+     */
+    public synchronized static List<String> getTemplateModule() {
+        if (templateModule == null) {
+            templateModule = new ArrayList<>();
+            Set<String> keyNames = config.keySet();
+            Pattern pattern = Pattern.compile(TEMPLATE_MODULE);
+            for (String key : keyNames) {
+                if (pattern.matcher(key).find()) {
+                    templateModule.add(config.get(key));
+                }
+            }
+        }
         return templateModule;
+    }
+
+    /**
+     * 获取配置模块名称对应的ftl文件
+     * @param name
+     * @return
+     */
+    public static String getTemplateModuleMatcherFtl(String name) {
+        if (StringUtils.isEmpty(name)){
+            return null;
+        }
+        return config.get("build.ftl." + name);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(JSON.toJSONString(getTemplateModule()));
     }
 
     /**
@@ -56,9 +82,9 @@ public class TemplateConfig implements Serializable {
 
         Map<String, String> map = new HashMap<>();
         Set<String> keys = config.keySet();
-        for (String keyStr : keys){
-            if (keyStr.contains(name)){
-                map.put(keyStr,config.get(keyStr));
+        for (String keyStr : keys) {
+            if (keyStr.contains(name)) {
+                map.put(keyStr, config.get(keyStr));
             }
         }
         return map;

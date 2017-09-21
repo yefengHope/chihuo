@@ -23,8 +23,9 @@ public abstract class AbstractInit {
 
     public abstract void init();
 
-    private static List<Map<String, Object>> dataStructureList ;
+    private static List<Map<String, Object>> dataStructureList;
     private static List<FieldModel> fieldModels;
+
     static {
         JdbcResult jdbcResult = new JdbcResultImpl();
         dataStructureList = jdbcResult.getTableStructureList();
@@ -34,6 +35,7 @@ public abstract class AbstractInit {
 
     /**
      * 根据配置内容获取数据表结构
+     *
      * @return {List<Map<String, Object>>}
      */
     public List<Map<String, Object>> selectDataStructureList() {
@@ -42,72 +44,44 @@ public abstract class AbstractInit {
 
     /**
      * 转换数表结构
+     *
      * @param list 查询出来的数据库的表结构
      * @return {List<FieldModel>}
      */
-    public List<FieldModel> selectFieldModels (List<Map<String, Object>> list){
+    public List<FieldModel> selectFieldModels(List<Map<String, Object>> list) {
         return fieldModels;
     }
 
     /**
      * 转换数表结构
      * <p>已经内部查询数据库表结构
+     *
      * @return {List<FieldModel>}
      */
-    public List<FieldModel> selectFieldModels (){
+    public List<FieldModel> selectFieldModels() {
         List<Map<String, Object>> list = selectDataStructureList();
         List<FieldModel> fieldModels = JdbcResultConvert.formatColumn(list);
         return fieldModels;
     }
 
+
     /**
      * 根据模块名称匹配模块使用的ftl文件
      */
-    public String matchFtl(String name){
-        String matchStr = null;
-        switch (name) {
-            case "model" : {
-                matchStr = "javaModel.ftl";
-            } break;
-            case "dao" : {
-                matchStr = "javaDao.ftl";
-            } break;
-            case "service" : {
-                matchStr =  "javaService.ftl";
-            } break;
-            case "service.impl" : {
-                matchStr = "javaServiceImpl.ftl";
-            } break;
-            case "controller" : {
-                matchStr = "javaController.ftl";
-            } break;
-            case "mybatis" : {
-                matchStr = "sqlMybatis.ftl";
-            } break;
-            case "html.list" : {
-                matchStr = "htmlList.ftl";
-            } break;
-            case "html.addOrEdit" : {
-                matchStr = "htmlAddOrEditForm.ftl";
-            } break;
-            case "js.list" : {
-                matchStr = "jsList.ftl";
-            } break;
-            case "js.addOrEdit" : {
-                matchStr = "jsForm.ftl";
-            } break;
-            default: {
-                throw new RuntimeException("未找到对应的模板");
-            }
+    public String matchFtl(String name) {
+        String matchStr = TemplateConfig.getTemplateModuleMatcherFtl(name);
+        if (StringUtils.isEmpty(matchStr)) {
+            throw new RuntimeException("未找到对应的模板");
         }
         return matchStr;
     }
 
     /**
      * 默认初始化方法
-     * @param name  模块名称
+     *
+     * @param name 模块名称
      */
-    public void defaultInit(String name){
+    public void defaultInit(String name) {
         Map<String, String> configModulAttr = TemplateConfig.getConfigType(name);
 
         String build = null;
@@ -116,20 +90,20 @@ public abstract class AbstractInit {
         String packagePath = null;
         String fileType = null;
         Set<String> attrKeys = configModulAttr.keySet();
-        for (String keyName : attrKeys){
-            if (keyName.contains("build")){
+        for (String keyName : attrKeys) {
+            if (keyName.contains("build."+name)) {
                 build = configModulAttr.get(keyName);
             }
-            if (keyName.contains("fileName")){
+            if (keyName.contains("fileName")) {
                 fileName = configModulAttr.get(keyName);
             }
-            if (keyName.contains("comment")){
+            if (keyName.contains("comment")) {
                 comment = configModulAttr.get(keyName);
             }
-            if (keyName.contains("packagePath")){
+            if (keyName.contains("packagePath")) {
                 packagePath = configModulAttr.get(keyName);
             }
-            if (keyName.contains("fileType")){
+            if (keyName.contains("fileType")) {
                 fileType = configModulAttr.get(keyName);
             }
         }
@@ -167,7 +141,7 @@ public abstract class AbstractInit {
                     + File.separator + "main"
                     + File.separator + "java"
                     + File.separator
-                    + packagePath.replace(".",File.separator)
+                    + packagePath.replace(".", File.separator)
                     + File.separator + fileName
                     + fileType
             );

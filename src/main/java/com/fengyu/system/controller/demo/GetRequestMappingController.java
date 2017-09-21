@@ -1,6 +1,12 @@
 package com.fengyu.system.controller.demo;
 
+import com.alibaba.fastjson.JSON;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.method.HandlerMethod;
@@ -8,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.method.RequestMappingInfo;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Iterator;
@@ -22,39 +29,52 @@ import java.util.Map;
  * <p>hanfeng@dgg.com 作者的公司邮箱</p>
  * <p>Copyright © dgg group.All Rights Reserved. 版权信息</p>
  */
-// @Controller
+@Controller
 public class GetRequestMappingController {
 
-    // @RequestMapping(value = "getUrlMapping")
-    public ModelAndView getUrlMapping(HttpServletRequest request) {
-        WebApplicationContext wc = getWebApplicationContext(request.getSession().getServletContext());
-        RequestMappingHandlerMapping rmhp = (RequestMappingHandlerMapping)wc
-                .getBean("org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping#0");
-        Map<RequestMappingInfo, HandlerMethod> map = rmhp.getHandlerMethods();
-        for (Iterator<RequestMappingInfo> iterator = map.keySet().iterator();
-             iterator.hasNext();
-             ) {
-            RequestMappingInfo info = iterator.next();
-            System.out.print(info.getConsumesCondition());
-            System.out.print(info.getCustomCondition());
-            System.out.print(info.getHeadersCondition());
-            System.out.print(info.getMethodsCondition());
-            System.out.print(info.getParamsCondition());
-            System.out.print(info.getPatternsCondition());
-            System.out.print(info.getProducesCondition());
-
-            System.out.print("===");
-
-            HandlerMethod method = map.get(info);
-            System.out.print(method.getMethod().getName() + "--");
-            System.out.print(method.getMethodAnnotation(RequestMapping.class).params()[0]);
-            System.out.println();
-        }
-        return null;
+    private static Logger logger;
+    static {
+        logger = LoggerFactory.getLogger(GetRequestMappingController.class);
     }
 
+    @Resource
+    private ApplicationContext applicationContext;
 
-    public WebApplicationContext getWebApplicationContext(ServletContext sc) {
-        return WebApplicationContextUtils.getRequiredWebApplicationContext(sc);
+    @Resource
+    RequestMappingHandlerMapping handlerMapping;
+
+    @RequestMapping(value = "/getUrlMapping.do")
+    @ResponseBody
+    public Map getUrlMapping(HttpServletRequest request) {
+
+        try {
+            Map<RequestMappingInfo, HandlerMethod> handlerMethods = handlerMapping.getHandlerMethods();
+            for (Iterator<RequestMappingInfo> iterator = handlerMethods.keySet().iterator();
+                 iterator.hasNext();
+                    ) {
+                RequestMappingInfo info = iterator.next();
+                StringBuilder sb = new StringBuilder();
+                sb.append(info.getPatternsCondition().toString());
+                sb.append(info.getProducesCondition().toString());
+                // sb.append(info.getConsumesCondition());
+                // sb.append(info.getCustomCondition());
+                // sb.append(info.getHeadersCondition());
+                // sb.append(info.getMethodsCondition());
+                // sb.append(info.getParamsCondition());
+
+                sb.append("===");
+
+                HandlerMethod method = handlerMethods.get(info);
+                sb.append(method.getMethod().getName() + "--");
+                try {
+                    sb.append(JSON.toJSONString(method.getMethodAnnotation(RequestMapping.class)));
+                } catch (Exception e) {
+                }
+                logger.info(sb.toString());
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }

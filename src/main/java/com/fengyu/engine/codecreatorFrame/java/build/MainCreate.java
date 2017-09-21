@@ -5,6 +5,7 @@ import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 
 import java.io.File;
+import java.util.List;
 
 /**
  * 创建
@@ -15,40 +16,17 @@ public class MainCreate {
 
     public static void createFile() {
 
-        AbstractInit init ;
-        init = new InitModel();
-        init.init();
-
-        init = new InitDao();
-        init.init();
-
-        init = new InitService();
-        init.init();
-
-        init = new InitServiceImpl();
-        init.init();
-
-        init = new InitController();
-        init.init();
-
-        init = new InitMapper();
-        init.init();
-
-        init = new InitHtmlList();
-        init.init();
-
-        init = new InitHtmlForm();
-        init.init();
-
-        init = new InitJsList();
-        init.init();
-
-        init = new InitJsForm();
-        init.init();
+        AbstractInit init;
+        List<String> moduleConfigList = TemplateConfig.getTemplateModule();
+        for (String moduleName : moduleConfigList) {
+            init = new InitCommon(moduleName);
+            init.init();
+        }
     }
 
     /**
      * 包路径转换成文件夹路径
+     *
      * @param packagePath
      * @return
      */
@@ -57,14 +35,15 @@ public class MainCreate {
             return null;
         }
         String[] packagePaths = packagePath.split(".");
-        if (packagePaths.length <= 0){
+        if (packagePaths.length <= 0) {
             return null;
         }
-        return StringUtils.join(packagePaths,File.separator);
+        return StringUtils.join(packagePaths, File.separator);
     }
 
     /**
      * 文件夹路径转换成包路径
+     *
      * @param dirPath
      * @return
      */
@@ -73,10 +52,10 @@ public class MainCreate {
             return null;
         }
         String[] dirPaths = dirPath.split(".");
-        if (dirPaths.length <= 0){
+        if (dirPaths.length <= 0) {
             return null;
         }
-        return StringUtils.join(dirPaths,".");
+        return StringUtils.join(dirPaths, ".");
     }
 
     public static void main(String[] args) {
