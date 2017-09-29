@@ -211,7 +211,7 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jdbc</artifactId>
-			<version>RELEASE</version>
+			<!--<version>RELEASE</version>-->
 		</dependency>
 		<dependency>
 			<groupId>org.mybatis</groupId>
