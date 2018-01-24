@@ -27,6 +27,10 @@
 		<spring-cloud.version>Edgware.SR1</spring-cloud.version>
 		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
 		<!--框架定义  end  -->
+
+		<!--工具类定义 start -->
+		<fastjson.version>1.2.16</fastjson.version>
+		<!--工具类定义  end  -->
 	</properties>
 
 	<dependencyManagement>
@@ -45,6 +49,12 @@
 				<version>${spring-boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>com.alibaba</groupId>
+				<artifactId>fastjson</artifactId>
+				<version>${fastjson.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
