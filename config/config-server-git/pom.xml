@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.xingzhiwei</groupId>
-	<artifactId>config-server-git</artifactId>
-	<version>${xingzhiwei.config.config-server-git.version}</version>
+	<artifactId>xingzhiwei-config-server-git</artifactId>
+	<version>${xingzhiwei.config.xingzhiwei-config-server-git.version}</version>
 	<packaging>jar</packaging>
 
-	<name>config-server-git</name>
+	<name>xingzhiwei-config-server-git</name>
 	<description></description>
 
 	<parent>
 		<groupId>cn.xingzhiwei</groupId>
-		<artifactId>config-pom</artifactId>
+		<artifactId>xingzhiwei-config-pom</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

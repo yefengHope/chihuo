@@ -4,16 +4,16 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>cn.xingzhiwei</groupId>
-	<artifactId>config-client</artifactId>
-	<version>${xingzhiwei.config.config-client.version}</version>
+	<artifactId>xingzhiwei-config-client</artifactId>
+	<version>${xingzhiwei.config.xingzhiwei-config-client.version}</version>
 	<packaging>jar</packaging>
 
-	<name>config-client</name>
+	<name>xingzhiwei-config-client</name>
 	<description></description>
 
 	<parent>
 		<groupId>cn.xingzhiwei</groupId>
-		<artifactId>config-pom</artifactId>
+		<artifactId>xingzhiwei-config-pom</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
@@ -27,6 +27,11 @@
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 
 		<dependency>

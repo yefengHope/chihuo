@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * Created by HF on 2018/1/24.
  */
-@RefreshScope
+// @RefreshScope
 @RestController
 public class TestEnvController {
 
