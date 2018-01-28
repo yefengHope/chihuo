@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.xingzhiwei.upms</groupId>
+    <artifactId>upms</artifactId>
+    <version>${xingzhiwei.upms.version}</version>
+    <packaging>pom</packaging>
+
+    <name>upms</name>
+    <description></description>
+
+    <parent>
+        <groupId>cn.xingzhiwei</groupId>
+        <artifactId>xingzhiwei-config-pom</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+    </parent>
+
+    <modules>
+        <module>upms-facade</module>
+        <module>upms-service</module>
+        <module>upms-web</module>
+    </modules>
+
+    <properties>
+        <xingzhiwei.upms.upms-facade.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-facade.version>
+        <xingzhiwei.upms.upms-service.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-service.version>
+        <xingzhiwei.upms.upms-web.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-web.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+    </dependencies>
+</project>
