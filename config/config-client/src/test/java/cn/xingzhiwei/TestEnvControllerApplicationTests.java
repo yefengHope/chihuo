@@ -1,6 +1,6 @@
 package cn.xingzhiwei;
 
-import cn.xingzhiwei.controller.TestEnvController;
+import cn.xingzhiwei.upms.controller.TestEnvController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

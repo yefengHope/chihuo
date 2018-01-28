@@ -3,20 +3,22 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.xingzhiwei</groupId>
-	<artifactId>xingzhiwei-config-pom</artifactId>
-	<version>${xingzhiwei.xingzhiwei-config-pom.version}</version>
+	<groupId>cn.xingzhiwei.config</groupId>
+	<artifactId>config-pom</artifactId>
+	<version>${xingzhiwei.config-pom.version}</version>
 	<packaging>pom</packaging>
 
-	<name>xingzhiwei-config-pom</name>
+	<name>config-pom</name>
 	<description>配置pom</description>
 
 	<properties>
 		<!-- 项目模块内容定义 start-->
-		<xingzhiwei.xingzhiwei-config-pom.version>0.0.1-SNAPSHOT</xingzhiwei.xingzhiwei-config-pom.version>
-		<xingzhiwei.config.xingzhiwei-config-client.version>0.0.1-SNAPSHOT</xingzhiwei.config.xingzhiwei-config-client.version>
-		<xingzhiwei.config.xingzhiwei-config-server-git.version>0.0.1-SNAPSHOT</xingzhiwei.config.xingzhiwei-config-server-git.version>
+		<xingzhiwei.config-pom.version>0.0.1-SNAPSHOT</xingzhiwei.config-pom.version>
+		<xingzhiwei.config.config-client.version>0.0.1-SNAPSHOT</xingzhiwei.config.config-client.version>
+		<xingzhiwei.config.config-server-git.version>0.0.1-SNAPSHOT</xingzhiwei.config.config-server-git.version>
 
+		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version>
+		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version>
 		<!-- 项目模块内容定义  end -->
 
 

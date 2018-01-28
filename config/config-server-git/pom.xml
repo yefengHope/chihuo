@@ -3,17 +3,16 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>cn.xingzhiwei</groupId>
 	<artifactId>xingzhiwei-config-server-git</artifactId>
-	<version>${xingzhiwei.config.xingzhiwei-config-server-git.version}</version>
+	<version>${xingzhiwei.config.config-server-git.version}</version>
 	<packaging>jar</packaging>
 
-	<name>xingzhiwei-config-server-git</name>
+	<name>config-server-git</name>
 	<description></description>
 
 	<parent>
-		<groupId>cn.xingzhiwei</groupId>
-		<artifactId>xingzhiwei-config-pom</artifactId>
+		<groupId>cn.xingzhiwei.config</groupId>
+		<artifactId>config-pom</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 

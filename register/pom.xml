@@ -12,8 +12,8 @@
     <description></description>
 
     <parent>
-        <groupId>cn.xingzhiwei</groupId>
-        <artifactId>xingzhiwei-config-pom</artifactId>
+        <groupId>cn.xingzhiwei.config</groupId>
+        <artifactId>config-pom</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
