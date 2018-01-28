@@ -2,8 +2,9 @@ package cn.xingzhiwei.upms;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
-// @EnableEurekaServer //默认服务中心也会将自己作为客户端来尝试注册自己
+@EnableEurekaClient
 @SpringBootApplication
 public class XingzhiweiUpmsWebApplication {
 
