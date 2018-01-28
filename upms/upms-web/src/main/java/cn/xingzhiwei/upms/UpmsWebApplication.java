@@ -6,9 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @EnableDiscoveryClient
 @SpringBootApplication
-public class XingzhiweiUpmsWebApplication {
+public class UpmsWebApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(XingzhiweiUpmsWebApplication.class, args);
+		SpringApplication.run(UpmsWebApplication.class, args);
 	}
 }
