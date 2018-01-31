@@ -13,12 +13,15 @@
 
 	<properties>
 		<!-- 项目模块内容定义 start-->
-		<xingzhiwei.config-pom.version>0.0.1-SNAPSHOT</xingzhiwei.config-pom.version>
+		<xingzhiwei.config-pom.version>0.0.1-SNAPSHOT</xingzhiwei.config-pom.version> <!--根配置pom-->
+		<!--获取配置服务客户端 demo-->
 		<xingzhiwei.config.config-client.version>0.0.1-SNAPSHOT</xingzhiwei.config.config-client.version>
+		<!--git配置服务中心-->
 		<xingzhiwei.config.config-server-git.version>0.0.1-SNAPSHOT</xingzhiwei.config.config-server-git.version>
 
-		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version>
-		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version>
+		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version> <!--登录-->
+		<xingzhiwei.repo.version>0.0.1-SNAPSHOT</xingzhiwei.repo.version> <!--静态资源 仓库-->
+		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version> <!--注册中心-->
 		<!-- 项目模块内容定义  end -->
 
 
