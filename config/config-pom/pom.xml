@@ -22,6 +22,7 @@
 		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version> <!--登录-->
 		<xingzhiwei.repo.version>0.0.1-SNAPSHOT</xingzhiwei.repo.version> <!--静态资源 仓库-->
 		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version> <!--注册中心-->
+		<xingzhiwei.common.version>0.0.1-SNAPSHOT</xingzhiwei.common.version>
 		<!-- 项目模块内容定义  end -->
 
 
