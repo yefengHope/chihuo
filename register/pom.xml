@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <xingzhiwei.register.register-eureka.version>0.0.1-SNAPSHOT</xingzhiwei.register.register-eureka.version>
+
     </properties>
 
     <dependencies>
@@ -35,4 +35,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.xingzhiwei.register</groupId>
+                <artifactId>register-eureka-web</artifactId>
+                <version>${xingzhiwei.register.register-eureka-web.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

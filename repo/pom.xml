@@ -22,7 +22,7 @@
     </modules>
 
     <properties>
-        <xingzhiwei.repo.repo-statics.version>0.0.1-SNAPSHOT</xingzhiwei.repo.repo-statics.version>
+
     </properties>
 
     <dependencies>
@@ -35,4 +35,14 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.xingzhiwei.repo</groupId>
+                <artifactId>repo-statics</artifactId>
+                <version>${xingzhiwei.static.static-resources.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

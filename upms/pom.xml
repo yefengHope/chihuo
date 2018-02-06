@@ -24,9 +24,7 @@
     </modules>
 
     <properties>
-        <xingzhiwei.upms.upms-facade.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-facade.version>
-        <xingzhiwei.upms.upms-service.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-service.version>
-        <xingzhiwei.upms.upms-web.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-web.version>
+
     </properties>
 
     <dependencies>
@@ -38,5 +36,38 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
+        <dependency>
+            <groupId>cn.xingzhiwei.common</groupId>
+            <artifactId>common-pojo</artifactId>
+            <version>${xingzhiwei.common.common-poji.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xingzhiwei.common</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>${xingzhiwei.common.common-utils.version}</version>
+        </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.xingzhiwei.upms</groupId>
+                <artifactId>upms-facade</artifactId>
+                <version>${xingzhiwei.upms.upms-facade.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.xingzhiwei.upms</groupId>
+                <artifactId>upms-service</artifactId>
+                <version>${xingzhiwei.upms.upms-service.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.xingzhiwei.upms</groupId>
+                <artifactId>upms-web</artifactId>
+                <version>${xingzhiwei.upms.upms-web.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
 </project>

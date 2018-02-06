@@ -23,8 +23,7 @@
     </modules>
 
     <properties>
-        <xingzhiwei.common.common-poji.version>0.0.1-SNAPSHOT</xingzhiwei.common.common-poji.version>
-        <xingzhiwei.common.common-utils.version>0.0.1-SNAPSHOT</xingzhiwei.common.common-utils.version>
+
     </properties>
 
     <dependencies>
@@ -37,4 +36,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
     </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.xingzhiwei.common</groupId>
+                <artifactId>common-pojo</artifactId>
+                <version>${xingzhiwei.common.common-poji.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.xingzhiwei.common</groupId>
+                <artifactId>common-utils</artifactId>
+                <version>${xingzhiwei.common.common-utils.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

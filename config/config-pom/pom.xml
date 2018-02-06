@@ -12,6 +12,7 @@
 	<description>配置pom</description>
 
 	<properties>
+		<xingzhiwei.version>0.0.1-SNAPSHOT</xingzhiwei.version> <!--根配置pom-->
 		<!-- 项目模块内容定义 start-->
 		<xingzhiwei.config-pom.version>0.0.1-SNAPSHOT</xingzhiwei.config-pom.version> <!--根配置pom-->
 		<!--获取配置服务客户端 demo-->
@@ -20,9 +21,16 @@
 		<xingzhiwei.config.config-server-git.version>0.0.1-SNAPSHOT</xingzhiwei.config.config-server-git.version>
 
 		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version> <!--登录-->
+		<xingzhiwei.upms.upms-facade.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-facade.version>
+		<xingzhiwei.upms.upms-service.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-service.version>
+		<xingzhiwei.upms.upms-web.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-web.version>
 		<xingzhiwei.repo.version>0.0.1-SNAPSHOT</xingzhiwei.repo.version> <!--静态资源 仓库-->
+		<xingzhiwei.repo.repo-statics.version>0.0.1-SNAPSHOT</xingzhiwei.repo.repo-statics.version>
 		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version> <!--注册中心-->
+		<xingzhiwei.register.register-eureka.version>0.0.1-SNAPSHOT</xingzhiwei.register.register-eureka.version>
 		<xingzhiwei.common.version>0.0.1-SNAPSHOT</xingzhiwei.common.version>
+		<xingzhiwei.common.common-poji.version>0.0.1-SNAPSHOT</xingzhiwei.common.common-poji.version>
+		<xingzhiwei.common.common-utils.version>0.0.1-SNAPSHOT</xingzhiwei.common.common-utils.version>
 		<!-- 项目模块内容定义  end -->
 
 
@@ -55,6 +63,36 @@
 				<version>${spring-boot.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.xingzhiwei.common</groupId>
+				<artifactId>common</artifactId>
+				<version>${xingzhiwei.common.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.xingzhiwei.config</groupId>
+				<artifactId>xingzhiwei-config-server-git</artifactId>
+				<version>${xingzhiwei.config.config-server-git.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.xingzhiwei.register</groupId>
+				<artifactId>register</artifactId>
+				<version>${xingzhiwei.register.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.xingzhiwei.repo</groupId>
+				<artifactId>repo</artifactId>
+				<version>${xingzhiwei.repo.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>cn.xingzhiwei.upms</groupId>
+				<artifactId>upms</artifactId>
+				<version>${xingzhiwei.upms.version}</version>
 			</dependency>
 
 			<dependency>
