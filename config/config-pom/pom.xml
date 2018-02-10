@@ -22,6 +22,7 @@
 
 		<xingzhiwei.upms.version>0.0.1-SNAPSHOT</xingzhiwei.upms.version> <!--登录-->
 		<xingzhiwei.upms.upms-facade.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-facade.version>
+		<xingzhiwei.upms.upms-mapper.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-mapper.version>
 		<xingzhiwei.upms.upms-service.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-service.version>
 		<xingzhiwei.upms.upms-web.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-web.version>
 		<xingzhiwei.repo.version>0.0.1-SNAPSHOT</xingzhiwei.repo.version> <!--静态资源 仓库-->

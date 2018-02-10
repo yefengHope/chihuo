@@ -20,6 +20,7 @@
 
     <modules>
         <module>upms-facade</module>
+        <module>upms-mapper</module>
         <module>upms-service</module>
         <module>upms-web</module>
     </modules>
