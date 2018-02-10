@@ -6,7 +6,13 @@ package cn.xingzhiwei.common.pojo.enumm;
  */
 public enum LogType {
 
-    BEFORE,
+    /**
+     * 记录所有的参数
+     */
+    All,
 
-    AFTER
+    /**
+     * 差异日志
+     */
+    DIFF,
 }

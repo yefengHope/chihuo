@@ -5,6 +5,8 @@ import cn.xingzhiwei.common.pojo.enumm.LogType;
 import java.lang.annotation.*;
 
 /**
+ * 参数日志
+ * 适用于业务日志
  * Created by HF on 2018/2/7.
  */
 @Retention(RetentionPolicy.RUNTIME)

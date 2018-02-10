@@ -1,6 +1,7 @@
 package cn.xingzhiwei.upms.aop;
 
 import cn.xingzhiwei.common.pojo.annotation.LoginLog;
+import cn.xingzhiwei.common.pojo.annotation.ParamsLog;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;
@@ -10,6 +11,8 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -54,21 +57,24 @@ public class LoginLogAspect {
         String[] paramNames = signature.getParameterNames();
         Object[] joinPointArgs = joinPoint.getArgs();
         List<JSONObject> params = new ArrayList<>();
-        // pas:
-        // for (int i = 0; i < parameterAnnotations.length; i++) {
-        //     JSONObject json = new JSONObject();
-        //     for (int i1 = 0; i1 < parameterAnnotations[i].length; i1++) {
-        //         if (LoginLog.class.isInstance(parameterAnnotations[i][i1])) {
-        //             json.put(paramNames[i], joinPointArgs[i]);
-        //             params.add(json);
-        //         }
-        //     }
-        // }
 
-        for (int i = 0; i < paramNames.length; i++) {
+        pas: for (int i = 0; i < parameterAnnotations.length; i++) {
+            // 参数映射
             JSONObject json = new JSONObject();
-            json.put(paramNames[i],joinPointArgs[i]);
+            json.put(paramNames[i], joinPointArgs[i]);
+            List<JSONObject> logs = new ArrayList<>();
+            json.put("annotations", logs);
             params.add(json);
+
+            for (int i1 = 0; i1 < parameterAnnotations[i].length; i1++) {
+                if (ParamsLog.class.isInstance(parameterAnnotations[i][i1])) {
+                    ParamsLog annotation = (ParamsLog) parameterAnnotations[i][i1];
+                    JSONObject anno = new JSONObject();
+                    anno.put("name",annotation.name());
+                    anno.put("type",annotation.type());
+                    logs.add(anno);
+                }
+            }
         }
 
         System.out.println(JSON.toJSONString(params));

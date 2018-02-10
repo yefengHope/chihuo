@@ -53,7 +53,11 @@
                 <artifactId>upms-facade</artifactId>
                 <version>${xingzhiwei.upms.upms-facade.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>cn.xingzhiwei.upms</groupId>
+                <artifactId>upms-mapper</artifactId>
+                <version>${xingzhiwei.upms.upms-mapper.version}</version>
+            </dependency>
             <dependency>
                 <groupId>cn.xingzhiwei.upms</groupId>
                 <artifactId>upms-service</artifactId>
