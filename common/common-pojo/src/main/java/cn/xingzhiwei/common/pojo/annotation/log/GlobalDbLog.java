@@ -1,4 +1,4 @@
-package cn.xingzhiwei.common.pojo.annotation;
+package cn.xingzhiwei.common.pojo.annotation.log;
 
 import java.lang.annotation.*;
 
