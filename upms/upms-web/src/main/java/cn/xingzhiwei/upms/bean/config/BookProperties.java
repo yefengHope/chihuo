@@ -1,18 +1,18 @@
 package cn.xingzhiwei.upms.bean.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Profile;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 /**
+ * 书籍，安全注入测试
  * Created by HF on 2018/2/5.
  */
-@Profile({"dev","local"})
+// @Profile({"dev","local"})
 @Component
 @ConfigurationProperties(prefix = "book")
 @PropertySource(value = "classpath:/property/book.properties",encoding = "UTF-8")
-public class BookConfig {
+public class BookProperties {
 
     private String name;
 
