@@ -24,6 +24,7 @@
         <module>config/config-server-git</module>
         <module>register</module>
         <module>repo</module>
+        <module>logger</module>
         <module>upms</module>
     </modules>
 

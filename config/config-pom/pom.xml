@@ -25,6 +25,13 @@
 		<xingzhiwei.upms.upms-mapper.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-mapper.version>
 		<xingzhiwei.upms.upms-service.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-service.version>
 		<xingzhiwei.upms.upms-web.version>0.0.1-SNAPSHOT</xingzhiwei.upms.upms-web.version>
+
+		<xingzhiwei.logger.version>0.0.1-SNAPSHOT</xingzhiwei.logger.version> <!--登录-->
+		<xingzhiwei.logger.logger-facade.version>0.0.1-SNAPSHOT</xingzhiwei.logger.logger-facade.version>
+		<xingzhiwei.logger.logger-mapper.version>0.0.1-SNAPSHOT</xingzhiwei.logger.logger-mapper.version>
+		<xingzhiwei.logger.logger-service.version>0.0.1-SNAPSHOT</xingzhiwei.logger.logger-service.version>
+		<xingzhiwei.logger.logger-web.version>0.0.1-SNAPSHOT</xingzhiwei.logger.logger-web.version>
+
 		<xingzhiwei.repo.version>0.0.1-SNAPSHOT</xingzhiwei.repo.version> <!--静态资源 仓库-->
 		<xingzhiwei.repo.repo-statics.version>0.0.1-SNAPSHOT</xingzhiwei.repo.repo-statics.version>
 		<xingzhiwei.register.version>0.0.1-SNAPSHOT</xingzhiwei.register.version> <!--注册中心-->

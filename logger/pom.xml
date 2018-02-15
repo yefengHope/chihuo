@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.xingzhiwei.logger</groupId>
+    <artifactId>logger</artifactId>
+    <version>${xingzhiwei.logger.version}</version>
+    <packaging>pom</packaging>
+
+    <name>logger</name>
+    <description></description>
+
+    <parent>
+        <groupId>cn.xingzhiwei.config</groupId>
+        <artifactId>config-pom</artifactId>
+        <version>${xingzhiwei.config-pom.version}</version>
+        <relativePath>../config/config-pom</relativePath>
+    </parent>
+
+    <modules>
+        <module>logger-facade</module>
+        <module>logger-mapper</module>
+        <module>logger-service</module>
+        <module>logger-web</module>
+    </modules>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>cn.xingzhiwei.common</groupId>
+            <artifactId>common-pojo</artifactId>
+            <version>${xingzhiwei.common.common-poji.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.xingzhiwei.common</groupId>
+            <artifactId>common-utils</artifactId>
+            <version>${xingzhiwei.common.common-utils.version}</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cn.xingzhiwei.logger</groupId>
+                <artifactId>logger-facade</artifactId>
+                <version>${xingzhiwei.logger.logger-facade.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.xingzhiwei.logger</groupId>
+                <artifactId>logger-mapper</artifactId>
+                <version>${xingzhiwei.logger.logger-mapper.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.xingzhiwei.logger</groupId>
+                <artifactId>logger-service</artifactId>
+                <version>${xingzhiwei.logger.logger-service.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cn.xingzhiwei.logger</groupId>
+                <artifactId>logger-web</artifactId>
+                <version>${xingzhiwei.logger.logger-web.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
