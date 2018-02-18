@@ -33,6 +33,20 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!-- tk mapper start -->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!--mapper-->
+		<dependency>
+			<groupId>tk.mybatis</groupId>
+			<artifactId>mapper-spring-boot-starter</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- tk mapper  end  -->
 	</dependencies>
 
 	<build>
