@@ -1,5 +1,6 @@
 package cn.xingzhiwei.upms.bean.config;
 
+import cn.xingzhiwei.upms.bean.properties.BookProperties;
 import com.alibaba.fastjson.JSON;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -16,7 +17,7 @@ import javax.annotation.Resource;
 public class BookConfigTest {
 
     @Resource
-    private BookConfig bookConfig;
+    private BookProperties bookConfig;
 
     @Test
     public void contextLoads() {

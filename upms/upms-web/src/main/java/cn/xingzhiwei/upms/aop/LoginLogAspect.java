@@ -1,7 +1,7 @@
 package cn.xingzhiwei.upms.aop;
 
-import cn.xingzhiwei.common.pojo.annotation.LoginLog;
-import cn.xingzhiwei.common.pojo.annotation.ParamsLog;
+import cn.xingzhiwei.common.pojo.annotation.log.LoginLog;
+import cn.xingzhiwei.common.pojo.annotation.log.ParamsLog;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import org.aspectj.lang.JoinPoint;
@@ -11,8 +11,6 @@ import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.Annotation;
-import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +23,7 @@ import java.util.List;
 @Aspect
 public class LoginLogAspect {
 
-    @Pointcut("@annotation(cn.xingzhiwei.common.pojo.annotation.LoginLog)")
+    @Pointcut("@annotation(cn.xingzhiwei.common.pojo.annotation.log.LoginLog)")
     public void loginPointcut() {
     }
 

@@ -70,7 +70,7 @@
  *     表 1. Bean Validation 规范内嵌的约束注解定义
  *     约束注解名称  约束注解说明
  *     <pre> @Null           验证对象是否为空</pre>
- *     <pre> @NotNull    验证对象是否为非空</pre>
+ *     <pre> @NotNull        验证对象是否为非空</pre>
  *     <pre> @AssertTrue     验证 Boolean 对象是否为 true</pre>
  *     <pre> @AssertFalse    验证 Boolean 对象是否为 false</pre>
  *     <pre> @Min            验证 Number 和 String 对象是否大等于指定的值</pre>
@@ -78,10 +78,10 @@
  *     <pre> @DecimalMin     验证 Number 和 String 对象是否大等于指定的值，小数存在精度</pre>
  *     <pre> @DecimalMax     验证 Number 和 String 对象是否小等于指定的值，小数存在精度</pre>
  *     <pre> @Size           验证对象（Array,Collection,Map,String）长度是否在给定的范围之内</pre>
- *     <pre> @Digits     验证 Number 和 String 的构成是否合法</pre>
+ *     <pre> @Digits         验证 Number 和 String 的构成是否合法</pre>
  *     <pre> @Past           验证 Date 和 Calendar 对象是否在当前时间之前</pre>
- *     <pre> @Future     验证 Date 和 Calendar 对象是否在当前时间之后</pre>
- *     <pre> @Pattern    验证 String 对象是否符合正则表达式的规则</pre>
+ *     <pre> @Future         验证 Date 和 Calendar 对象是否在当前时间之后</pre>
+ *     <pre> @Pattern        验证 String 对象是否符合正则表达式的规则</pre>
  * </pre>
  *
  * 2） Validate的触发

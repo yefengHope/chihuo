@@ -1,6 +1,6 @@
 package cn.xingzhiwei.upms;
 
-import cn.xingzhiwei.upms.bean.config.BookProperties;
+import cn.xingzhiwei.upms.bean.properties.BookProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;

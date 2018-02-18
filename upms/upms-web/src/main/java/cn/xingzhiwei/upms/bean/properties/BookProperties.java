@@ -1,4 +1,4 @@
-package cn.xingzhiwei.upms.bean.config;
+package cn.xingzhiwei.upms.bean.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.PropertySource;
