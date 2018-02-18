@@ -40,13 +40,22 @@
 			<artifactId>mapper</artifactId>
 			<optional>true</optional>
 		</dependency>
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<!-- tk mapper  end  -->
 		<!--mapper-->
 		<dependency>
 			<groupId>tk.mybatis</groupId>
 			<artifactId>mapper-spring-boot-starter</artifactId>
 			<optional>true</optional>
 		</dependency>
-		<!-- tk mapper  end  -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
 	</dependencies>
 
 	<build>

@@ -50,12 +50,16 @@
 		<spring-boot.version>1.5.9.RELEASE</spring-boot.version>
 
 		<tk.mapper.mybatis.version>3.4.2</tk.mapper.mybatis.version>
+		<pagehelper.version>4.1.1</pagehelper.version>
 		<tk.mapper.mybatis.spring.boot.version>1.1.3</tk.mapper.mybatis.spring.boot.version>
 		<!--框架定义  end  -->
 
 
 		<!--工具类定义 start -->
 		<fastjson.version>1.2.16</fastjson.version>
+		<javax.persistence.version>1.0.2</javax.persistence.version>
+		<hibernate-annotations.version>3.5.0-Final</hibernate-annotations.version>
+		<hibernate-validator.version>5.2.4.Final</hibernate-validator.version>
 		<!--工具类定义  end  -->
 	</properties>
 
@@ -83,6 +87,11 @@
 				<artifactId>mapper</artifactId>
 				<version>${tk.mapper.mybatis.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>${pagehelper.version}</version>
+			</dependency>
 			<!--mapper-->
 			<dependency>
 				<groupId>tk.mybatis</groupId>
@@ -90,6 +99,22 @@
 				<version>${tk.mapper.mybatis.spring.boot.version}</version>
 			</dependency>
 			<!-- tk mapper  end  -->
+
+			<dependency>
+				<groupId>javax.persistence</groupId>
+				<artifactId>persistence-api</artifactId>
+				<version>${javax.persistence.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-annotations</artifactId>
+				<version>${hibernate-annotations.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate-validator.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>cn.xingzhiwei.common</groupId>
