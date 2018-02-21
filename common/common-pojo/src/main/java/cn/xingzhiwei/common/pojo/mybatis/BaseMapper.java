@@ -1,6 +1,8 @@
 package cn.xingzhiwei.common.pojo.mybatis;
 
+import tk.mybatis.mapper.common.IdsMapper;
 import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
 /**
  * 1.Mapper<T>
@@ -13,5 +15,5 @@ import tk.mybatis.mapper.common.Mapper;
  *     InsertUseGeneratedKeysMapper 插入数据，限制为实体包含id属性并且必须为自增列，实体配置的主键策略无效
  * Created by rain on 2018/2/15.
  */
-public interface BaseMapper<T> extends Mapper<T> {
+public interface BaseMapper<T> extends Mapper<T>,IdsMapper<T>,MySqlMapper<T> {
 }

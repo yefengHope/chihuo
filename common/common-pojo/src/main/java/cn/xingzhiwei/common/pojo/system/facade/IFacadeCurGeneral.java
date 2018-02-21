@@ -1,4 +1,4 @@
-package cn.xingzhiwei.common.pojo.facade;
+package cn.xingzhiwei.common.pojo.system.facade;
 
 import com.github.pagehelper.PageInfo;
 
@@ -40,6 +40,13 @@ public interface IFacadeCurGeneral<T> {
     List<T> selectValidListByIds(List<String> ids) throws RuntimeException;
 
     /**
+     * 根据ids查询有效
+     * @param ids [1,2,3,...]
+     * @return {@code List<T>}
+     */
+    List<T> selectAllListByIds(List<String> ids) throws RuntimeException;
+
+    /**
      * 根据ids查询所有
      * @param ids 1,2,3,...
      * @return {@code Map<String ,T>}
@@ -60,7 +67,7 @@ public interface IFacadeCurGeneral<T> {
     int insert(T user) throws RuntimeException;
 
     /**
-     * 插入 - 批量
+     * 插入 - 批量,该接口限制实体包含id属性并且必须为自增列
      * @param users {@link T}
      * @return {@link T}
      */
@@ -71,12 +78,12 @@ public interface IFacadeCurGeneral<T> {
      * @param user {@link T}
      * @return {@link T}
      */
-    int update(T user) throws RuntimeException;
+    int updateById(T user) throws RuntimeException;
 
     /**
      * 删除
      * @param id {@link T}的id
      * @return {@link T}
      */
-    int delete(String id) throws RuntimeException;
+    int delete(Object id) throws RuntimeException;
 }
