@@ -17,5 +17,13 @@
 	</parent>
 
 	<dependencies>
+        <dependency>
+            <groupId>cn.xingzhiwei.upms</groupId>
+            <artifactId>upms-facade</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>cn.xingzhiwei.upms</groupId>
+			<artifactId>upms-mapper</artifactId>
+		</dependency>
 	</dependencies>
 </project>
