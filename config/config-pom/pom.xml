@@ -51,6 +51,7 @@
 
 		<tk.mapper.mybatis.version>3.4.2</tk.mapper.mybatis.version>
 		<pagehelper.version>4.1.1</pagehelper.version>
+		<flyway.version>5.0.3</flyway.version>
 		<tk.mapper.mybatis.spring.boot.version>1.1.3</tk.mapper.mybatis.spring.boot.version>
 		<mybatis-spring-boot-starter.version>1.2.0</mybatis-spring-boot-starter.version>
 		<mybatis-spring.version>1.3.0</mybatis-spring.version>
@@ -86,6 +87,12 @@
 			</dependency>
 
 			<!-- tk mapper start -->
+			<dependency>
+				<groupId>org.flywaydb</groupId>
+				<artifactId>flyway-core</artifactId>
+				<version>${flyway.version}</version>
+			</dependency>
+
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
 				<artifactId>mybatis-spring-boot-starter</artifactId>

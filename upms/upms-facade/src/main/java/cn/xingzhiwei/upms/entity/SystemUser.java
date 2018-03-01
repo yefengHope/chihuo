@@ -8,13 +8,18 @@ import cn.xingzhiwei.common.utils.UUIDUtils;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Size;
 
 /**
  * 系统用户
  * Created by rain on 2018/2/18.
  */
+@Entity
+@Table(name = "t_sys_user")
 public class SystemUser extends EntityGeneral implements IEntityUuid<SystemUser> {
 
     private static final long serialVersionUID = -3246570641856197850L;
@@ -24,10 +29,12 @@ public class SystemUser extends EntityGeneral implements IEntityUuid<SystemUser>
 
     @NotBlank(groups = {EntityUpdate.class})
     @Size(min = 6,max = 20)
+    @Column(name= "user_name")
     private String userName;
 
     @NotBlank(groups = {EntityUpdate.class})
     @Size(min = 6,max = 20)
+    @Column(name= "user_pwd")
     private String userPwd;
 
     @NotBlank

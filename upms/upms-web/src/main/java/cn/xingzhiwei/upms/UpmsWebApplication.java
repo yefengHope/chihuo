@@ -15,7 +15,7 @@ import javax.annotation.Resource;
 //启注解事务管理
 @EnableTransactionManagement  // 启注解事务管理，等同于xml配置方式的 <tx:annotation-driven />
 @SpringBootApplication
-@MapperScan(basePackages = "cn.xingzhiwei.upms.dao", markerInterface = BaseMapper.class)
+@MapperScan(basePackages = "cn.xingzhiwei.upms.dao")
 public class UpmsWebApplication {
 
 	@Resource
