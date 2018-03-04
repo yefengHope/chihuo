@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
@@ -17,13 +19,18 @@ import java.util.Map;
  * 通用service
  * Created by 韩峰 on 2018/2/21.
  */
-@Service
-public abstract class ServiceCurGeneral<T> implements IFacadeCurGeneral<T> {
+public abstract class AbstractServiceCurGeneral<T> implements IFacadeCurGeneral<T> {
 
     @Resource
     private BaseMapper<T> mapper;
 
     private Class<T> tClass;
+
+    public AbstractServiceCurGeneral() {
+        Type genType = getClass().getGenericSuperclass();
+        Type[] params = ((ParameterizedType) genType).getActualTypeArguments();
+        tClass = (Class) params[0];
+    }
 
     @Override
     public PageInfo<T> selectAllPage(Map<String, Object> map) throws RuntimeException {
